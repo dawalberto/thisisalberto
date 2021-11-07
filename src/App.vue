@@ -1,30 +1,98 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <nav class="shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-16 flex justify-between">
+      <div class="flex space-x-7">
+        <!-- Website Logo -->
+        <div class="my-2">
+          <a href="#" class="flex items-center">
+            <img src="@/assets/i.png" alt="Logo" class="w-28 sm:w-36" />
+          </a>
+        </div>
+        <!-- Primary Navbar items -->
+        <div class="flex items-center space-x-1">
+          <a
+            href=""
+            class="
+              text-4xl
+              md:text-lg
+              opacity-80
+              cursor-pointer
+              py-4
+              px-2
+              text-gray-600
+              font-semibold
+              hover:text-yellow-500
+              transition
+              duration-300
+            "
+          >
+            {{ windowWidth >= 768 ? 'Projects' : '🧑🏻‍💻' }}
+          </a>
+          <a
+            href=""
+            class="
+              text-4xl
+              md:text-lg
+              opacity-80
+              cursor-pointer
+              py-4
+              px-2
+              text-gray-600
+              font-semibold
+              hover:text-yellow-500
+              transition
+              duration-300
+            "
+          >
+            {{ windowWidth >= 768 ? 'Studies' : '🎓' }}
+          </a>
+        </div>
+      </div>
+      <!-- Secondary Navbar items -->
+      <div class="flex items-center space-x-3">
+        <a
+          href=""
+          class="
+            text-4xl
+            md:text-lg
+            opacity-80
+            cursor-pointer
+            py-4
+            px-2
+            text-gray-600
+            font-semibold
+            hover:text-yellow-500
+            transition
+            duration-300
+          "
+        >
+          {{ windowWidth >= 768 ? 'Contact' : '📞' }}
+        </a>
+      </div>
+    </div>
+  </nav>
   <router-view />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { ref } from 'vue'
+import { useWindowSize } from 'vue-window-size'
 
-#nav {
-  padding: 30px;
-}
+export default {
+  setup() {
+    let windowWidth = ref(useWindowSize().width)
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    let projectsTitle = ref('')
+    let studiesTitle = ref('')
+    let contactTitle = ref('')
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+    projectsTitle = windowWidth.value >= 768 ? 'Projects' : '🧑🏻‍💻'
+    studiesTitle = windowWidth.value >= 768 ? 'Studies' : '🎓'
+    contactTitle = windowWidth.value >= 768 ? 'Contact' : '📞'
+
+    return { projectsTitle, studiesTitle, contactTitle, windowWidth }
+  },
 }
-</style>
+</script>
+
+<style></style>
