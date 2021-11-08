@@ -54,9 +54,9 @@ export default {
 
 <style>
 .menu-item {
-  @apply text-4xl md:text-lg opacity-80 
+  @apply text-4xl md:text-xl opacity-80 
   cursor-pointer py-4 px-2 
-  text-gray-600 font-semibold hover:text-yellow-500 
+  text-gray-800 font-light hover:text-yellow-500 
   transition duration-300;
 }
 </style>
