@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-col md:flex-row h-full">
+    <div class="flex flex-col md:flex-row md:space-x-14">
       <div class="md:flex-none md:w-2/5"><terminal-simulator /></div>
       <div class="md:flex-none md:w-3/5">
         <img src="@/assets/yoSofa.png" alt="me on the couch" />
