@@ -1,5 +1,5 @@
 <template>
-  <menu-bar />
+  <menu-bar class="sticky top-0" />
   <router-view />
 </template>
 

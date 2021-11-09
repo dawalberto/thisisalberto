@@ -1,12 +1,12 @@
 <template>
-  <nav class="shadow-none">
-    <div class="max-w-6xl mx-auto px-4 sm:px-16 flex justify-between">
+  <nav class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 md:px-16 flex justify-between">
       <div class="flex sm:space-x-9">
         <!-- Website Logo -->
         <div class="my-2">
-          <a href="#" class="flex items-center">
-            <img src="@/assets/i.png" alt="Logo" class="w-28 sm:w-36" />
-          </a>
+          <router-link to="/" class="flex items-center">
+            <img src="@/assets/yo.png" alt="Logo" class="w-28 sm:w-36" />
+          </router-link>
         </div>
         <!-- Primary Navbar items -->
         <div class="flex items-center space-x-4">
