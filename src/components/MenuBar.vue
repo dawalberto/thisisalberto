@@ -10,9 +10,9 @@
         </div>
         <!-- Primary Navbar items -->
         <div class="flex items-center space-x-4">
-          <a href="" class="menu-item">
+          <router-link to="/projects" class="menu-item">
             {{ projectsTitle }}
-          </a>
+          </router-link>
           <a href="" class="menu-item">
             {{ studiesTitle }}
           </a>
