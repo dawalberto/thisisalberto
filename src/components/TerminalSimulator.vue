@@ -5,8 +5,8 @@
       <div class="terminal-button terminal-button-yellow"></div>
       <div class="terminal-button terminal-button-green"></div>
     </div>
-    <div class="screen px-2">
-      <p class="font-mono text-gray-800">
+    <div class="screen">
+      <p>
         root@10.0.0.1:~$ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         pellentesque feugiat nibh eget facilisis. Vivamus in urna mauris. Morbi sagittis
         facilisis felis et porttitor. Aliquam erat volutpat. Proin blandit eros eros,
@@ -27,7 +27,8 @@
 <style>
 .terminal {
   border: 1.5px solid;
-  @apply w-full rounded-xl bg-white border-gray-800;
+  border-color: #32557f;
+  @apply w-full rounded-xl bg-white;
 }
 
 .terminal-button {
@@ -44,5 +45,10 @@
 
 .terminal-button-green {
   background-color: #36ce40;
+}
+
+.screen {
+  @apply font-mono px-2;
+  color: #32557f;
 }
 </style>
