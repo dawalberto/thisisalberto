@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white z-50">
+  <nav v-show="$route.name !== 'ProjectDetails'" class="bg-white z-40">
     <div class="max-w-6xl mx-auto px-4 md:px-16 flex justify-between">
       <div class="flex sm:space-x-9">
         <!-- Website Logo -->
@@ -8,23 +8,26 @@
             <img
               src="@/assets/yo.png"
               alt="Logo"
-              class="w-28 sm:w-36 transform hover:rotate-6 hover:scale-110"
+              class="w-28 sm:w-36 transform hover:rotate-6 hover:scale-110 duration-300"
             />
           </router-link>
         </div>
         <!-- Primary Navbar items -->
         <div class="flex items-center space-x-4">
-          <router-link to="/projects" class="underline-title text-4xl">
+          <router-link
+            to="/projects"
+            class="underline-title underline-title-yellow text-4xl"
+          >
             {{ projectsTitle }}
           </router-link>
-          <a href="" class="underline-title text-4xl">
-            {{ studiesTitle }}
+          <a href="" class="underline-title underline-title-yellow text-4xl">
+            {{ experienceTitle }}
           </a>
         </div>
       </div>
       <!-- Secondary Navbar items -->
       <div class="flex items-center space-x-3">
-        <a href="" class="underline-title text-4xl">
+        <a href="" class="underline-title underline-title-yellow text-4xl">
           {{ contactTitle }}
         </a>
       </div>
@@ -44,14 +47,14 @@ export default {
     const projectsTitle = computed(() => {
       return windowWidth.value >= 768 ? 'Projects' : '🧑🏻‍💻'
     })
-    const studiesTitle = computed(() => {
-      return windowWidth.value >= 768 ? 'Studies' : '🎓'
+    const experienceTitle = computed(() => {
+      return windowWidth.value >= 768 ? 'Experience' : '🎓'
     })
     const contactTitle = computed(() => {
       return windowWidth.value >= 768 ? 'Contact' : '📞'
     })
 
-    return { projectsTitle, studiesTitle, contactTitle }
+    return { projectsTitle, experienceTitle, contactTitle }
   },
 }
 </script>

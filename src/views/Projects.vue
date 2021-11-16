@@ -1,18 +1,20 @@
 <template>
-  <div class="flex flex-col space-y-16">
-    <div class="project-container">
+  <div class="flex flex-col space-y-16 pb-24">
+    <router-link to="/project-details" class="project-container">
       <div class="logo-container">
         <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
       </div>
       <div class="self-center">
-        <h1 class="project-title md:text-left underline-title">Jjoin</h1>
+        <h1 class="project-title md:text-left underline-title underline-title-yellow">
+          Jjoin
+        </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magni tempore
           consequatur facere ducimus quas voluptatem quidem repellat quaerat. Dolores
           delectus aspernatur optio suscipit, alias porro quo corporis obcaecati nisi...
         </p>
       </div>
-    </div>
+    </router-link>
     <div class="project-container md:flex-row-reverse">
       <div class="logo-container">
         <img
@@ -22,7 +24,9 @@
         />
       </div>
       <div class="self-center">
-        <h1 class="project-title md:text-right underline-title">Clasicaguitarra</h1>
+        <h1 class="project-title md:text-right underline-title underline-title-yellow">
+          Clasicaguitarra
+        </h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magni tempore
           consequatur facere ducimus quas voluptatem quidem repellat quaerat. Dolores
@@ -41,14 +45,15 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Projects',
+}
 </script>
 
 <style>
 .project-container {
   @apply flex md:space-x-4 flex-col 
-  md:flex-row p-4 rounded-xl 
-  cursor-pointer;
+  md:flex-row p-4 cursor-pointer;
 }
 
 .logo-container {

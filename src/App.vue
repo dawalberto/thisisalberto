@@ -59,12 +59,6 @@ body {
     );
   box-decoration-break: clone;
   background-repeat: no-repeat;
-  background-image: linear-gradient(
-      180deg,
-      var(--underline-color),
-      var(--underline-color)
-    ),
-    var(--cap-image-left), var(--cap-image-right);
   background-position-x: calc(var(--underline-cap-width) * var(--underline-width-scale)),
     0, 100%;
   background-position-y: calc(100% - var(--underline-offset-y) * -1);
@@ -79,7 +73,16 @@ body {
   --underline-width: 20;
   --underline-offset-y: -2px;
   /* The cap images to use that form the left and right shape.*/
-  --cap-image-left: url('./assets/underline-left-2.svg');
-  --cap-image-right: url('./assets/underline-right-2.svg');
+  --cap-image-left: url('./assets/underline-left-yellow.svg');
+  --cap-image-right: url('./assets/underline-right-yellow.svg');
+}
+
+.underline-title-yellow {
+  background-image: linear-gradient(
+      180deg,
+      var(--underline-color),
+      var(--underline-color)
+    ),
+    var(--cap-image-left), var(--cap-image-right);
 }
 </style>
