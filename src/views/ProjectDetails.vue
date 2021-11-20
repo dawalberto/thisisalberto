@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white pb-24">
-    <router-link to="/">
+    <router-link to="/projects">
       <button
         class="
           terminal-button terminal-button-red
