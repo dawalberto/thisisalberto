@@ -20,9 +20,12 @@
           >
             {{ projectsTitle }}
           </router-link>
-          <a href="" class="underline-title underline-title-yellow text-4xl">
-            {{ experienceTitle }}
-          </a>
+          <router-link
+            to="/career"
+            class="underline-title underline-title-yellow text-4xl"
+          >
+            {{ careerTitle }}
+          </router-link>
         </div>
       </div>
       <!-- Secondary Navbar items -->
@@ -47,14 +50,14 @@ export default {
     const projectsTitle = computed(() => {
       return windowWidth.value >= 768 ? 'Projects' : '🧑🏻‍💻'
     })
-    const experienceTitle = computed(() => {
-      return windowWidth.value >= 768 ? 'Experience' : '🎓'
+    const careerTitle = computed(() => {
+      return windowWidth.value >= 768 ? 'Career' : '🎓'
     })
     const contactTitle = computed(() => {
       return windowWidth.value >= 768 ? 'Contact' : '📞'
     })
 
-    return { projectsTitle, experienceTitle, contactTitle }
+    return { projectsTitle, careerTitle, contactTitle }
   },
 }
 </script>
