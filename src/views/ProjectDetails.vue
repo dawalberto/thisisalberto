@@ -21,7 +21,11 @@
       </button>
     </router-link>
     <div class="mx-auto w-2/4 md:w-1/4 mt-24">
-      <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
+      <kinesis-container>
+        <kinesis-element :strength="20" type="depth">
+          <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
+        </kinesis-element>
+      </kinesis-container>
     </div>
     <div class="w-full mx-auto px-2 my-24">
       <h1
@@ -123,7 +127,14 @@
       </div>
     </div>
     <div class="w-full text-center">
-      <button class="button-project-details transform hover:scale-105 hover:-rotate-3">
+      <button
+        class="
+          button-project-details
+          duration-200
+          transform
+          hover:scale-105 hover:-rotate-3
+        "
+      >
         Disfruta de Jjoin
       </button>
     </div>
@@ -138,8 +149,11 @@
 </template>
 
 <script>
+import { KinesisContainer, KinesisElement } from 'vue-kinesis'
+
 export default {
   name: 'ProjectDetails',
+  components: { KinesisContainer, KinesisElement },
 }
 </script>
 

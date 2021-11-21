@@ -2,11 +2,7 @@
   <div class="flex flex-col space-y-16 pb-24">
     <router-link to="/project-details" class="project-container">
       <div class="logo-container">
-        <kinesis-container>
-          <kinesis-element :strength="20" type="depth">
-            <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
-          </kinesis-element>
-        </kinesis-container>
+        <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
       </div>
       <div class="self-center">
         <h1 class="project-title md:text-left underline-title underline-title-yellow">
@@ -21,15 +17,11 @@
     </router-link>
     <div class="project-container md:flex-row-reverse">
       <div class="logo-container">
-        <kinesis-container>
-          <kinesis-element :strength="20" type="depth">
-            <img
-              class="w-full"
-              src="@/assets/clasicaguitarraLogo.png"
-              alt="logo clasicaguitarra"
-            />
-          </kinesis-element>
-        </kinesis-container>
+        <img
+          class="w-full"
+          src="@/assets/clasicaguitarraLogo.png"
+          alt="logo clasicaguitarra"
+        />
       </div>
       <div class="self-center">
         <h1 class="project-title md:text-right underline-title underline-title-yellow">
@@ -53,11 +45,8 @@
 </template>
 
 <script>
-import { KinesisContainer, KinesisElement } from 'vue-kinesis'
-
 export default {
   name: 'Projects',
-  components: { KinesisContainer, KinesisElement },
 }
 </script>
 
