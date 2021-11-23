@@ -10,25 +10,7 @@
       <career-item :direction="'direction-l'" />
     </ul>
     <div v-show="showDetails" class="career-details">
-      <button
-        @click="showDetails = false"
-        class="
-          terminal-button terminal-button-red
-          fixed
-          left-2
-          top-2
-          w-5
-          h-5
-          cursor-pointer
-          flex
-          content-center
-          items-center
-        "
-      >
-        <span class="self-center mx-auto opacity-0 hover:opacity-100 duration-150">
-          X
-        </span>
-      </button>
+      <close-button @click="showDetails = false" />
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, consequatur
         fuga recusandae odio, sapiente beatae dolor voluptatem totam, dolores debitis vero
@@ -46,11 +28,12 @@
 
 <script>
 import CareerItem from '@/components/CareerItem.vue'
+import CloseButton from '@/components/CloseButton.vue'
 import { ref } from 'vue'
 
 export default {
   name: 'Career',
-  components: { CareerItem },
+  components: { CareerItem, CloseButton },
   setup() {
     let showDetails = ref(false)
 

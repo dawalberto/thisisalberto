@@ -1,24 +1,7 @@
 <template>
   <div class="bg-white pb-24">
     <router-link to="/projects">
-      <button
-        class="
-          terminal-button terminal-button-red
-          fixed
-          left-2
-          top-2
-          w-5
-          h-5
-          cursor-pointer
-          flex
-          content-center
-          items-center
-        "
-      >
-        <span class="self-center mx-auto opacity-0 hover:opacity-100 duration-150">
-          X
-        </span>
-      </button>
+      <close-button />
     </router-link>
     <div class="mx-auto w-2/4 md:w-1/4 mt-24">
       <kinesis-container>
@@ -150,10 +133,11 @@
 
 <script>
 import { KinesisContainer, KinesisElement } from 'vue-kinesis'
+import CloseButton from '@/components/CloseButton.vue'
 
 export default {
   name: 'ProjectDetails',
-  components: { KinesisContainer, KinesisElement },
+  components: { KinesisContainer, KinesisElement, CloseButton },
 }
 </script>
 
