@@ -2,22 +2,64 @@
   <div>
     <!-- The Timeline -->
     <ul class="timeline">
-      <career-item :direction="'direction-r'" />
+      <career-item @click="showDetails = true" :direction="'direction-r'" />
       <career-item :direction="'direction-l'" />
       <career-item :direction="'direction-r'" />
       <career-item :direction="'direction-l'" />
       <career-item :direction="'direction-r'" />
       <career-item :direction="'direction-l'" />
     </ul>
+    <div v-show="showDetails" class="career-details">
+      <button
+        @click="showDetails = false"
+        class="
+          terminal-button terminal-button-red
+          fixed
+          left-2
+          top-2
+          w-5
+          h-5
+          cursor-pointer
+          flex
+          content-center
+          items-center
+        "
+      >
+        <span class="self-center mx-auto opacity-0 hover:opacity-100 duration-150">
+          X
+        </span>
+      </button>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, consequatur
+        fuga recusandae odio, sapiente beatae dolor voluptatem totam, dolores debitis vero
+        reprehenderit voluptatibus? Doloremque nemo laboriosam modi delectus tenetur
+        dolorem! Lorem ipsum dolor sit amet consectetur, adipisicing elit. At harum rem
+        quis eos nobis sed velit perferendis saepe aliquid? Libero possimus tempora rerum
+        expedita minima blanditiis nam, minus aperiam quasi? dolorem! Lorem ipsum dolor
+        sit amet consectetur, adipisicing elit. At harum rem quis eos nobis sed velit
+        perferendis saepe aliquid? Libero possimus tempora rerum expedita minima
+        blanditiis nam, minus aperiam quasi?
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 import CareerItem from '@/components/CareerItem.vue'
+import { ref } from 'vue'
 
 export default {
   name: 'Career',
   components: { CareerItem },
+  setup() {
+    let showDetails = ref(false)
+
+    document.addEventListener('scroll', () => {
+      showDetails.value = false
+    })
+
+    return { showDetails }
+  },
 }
 </script>
 
@@ -63,5 +105,15 @@ export default {
     padding: 4em 0 1em 0;
     @apply w-full;
   }
+}
+
+.career-details {
+  border: 1.5px solid;
+  border-color: #32557f;
+  @apply fixed top-2/4 left-2/4 
+  transform -translate-x-1/2 -translate-y-1/2 
+  w-11/12 md:w-2/4 z-50 
+  pb-6 pt-12 px-9 
+  rounded-lg bg-white;
 }
 </style>
