@@ -30,9 +30,13 @@
       </div>
       <!-- Secondary Navbar items -->
       <div class="flex items-center space-x-3">
-        <a href="" class="underline-title underline-title-yellow text-4xl">
+        <router-link
+          to="/contact"
+          class="underline-title underline-title-yellow text-4xl"
+        >
           {{ contactTitle }}
-        </a>
+        </router-link>
+        <a href="" class="underline-title underline-title-yellow text-4xl"> </a>
       </div>
     </div>
   </nav>

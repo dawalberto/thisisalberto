@@ -1,5 +1,5 @@
 <template>
-  <menu-bar class="sticky top-0" />
+  <menu-bar />
   <router-view class="w-screen max-w-6xl mx-auto p-2 overflow-x-hidden" />
 </template>
 

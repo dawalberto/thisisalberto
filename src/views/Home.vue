@@ -5,7 +5,9 @@
     <div class="bar bar-left"></div>
     <!-- content -->
     <div class="flex flex-col-reverse md:flex-row lg:space-x-14">
-      <div class="md:flex-none md:w-2/5"><terminal-simulator /></div>
+      <div class="md:flex-none md:w-2/5">
+        <terminal-simulator />
+      </div>
       <div class="md:flex-none md:w-3/5">
         <img src="@/assets/yoSofa.png" class="img-home" alt="me on the couch" />
       </div>
