@@ -10,7 +10,8 @@
       <career-item :direction="'direction-l'" />
     </ul>
     <div v-show="showDetails" class="career-details">
-      <close-button @click="showDetails = false" />
+      <close-button @click="showDetails = false" class="absolute -top-3 -left-2" />
+      <close-button @click="showDetails = false" class="absolute -bottom-3 -right-2" />
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, consequatur
         fuga recusandae odio, sapiente beatae dolor voluptatem totam, dolores debitis vero
@@ -91,12 +92,11 @@ export default {
 }
 
 .career-details {
-  border: 1.5px solid;
   border-color: #32557f;
   @apply fixed top-2/4 left-2/4 
   transform -translate-x-1/2 -translate-y-1/2 
   w-11/12 md:w-2/4 z-50 
-  pb-6 pt-12 px-9 
-  rounded-lg bg-white;
+  pb-6 pt-6 px-9 
+  border-t-2 border-b-2 bg-white;
 }
 </style>

@@ -2,9 +2,6 @@
   <button
     class="
       terminal-button terminal-button-red
-      fixed
-      left-2
-      top-2
       w-5
       h-5
       cursor-pointer

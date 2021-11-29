@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white">
     <router-link to="/projects">
-      <close-button />
+      <close-button class="fixed left-2 top-2" />
     </router-link>
     <div class="mx-auto w-2/4 md:w-1/4 mt-24">
       <kinesis-container>
