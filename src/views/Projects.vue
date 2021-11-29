@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col space-y-16 pb-24">
+  <div class="flex flex-col space-y-16">
     <router-link to="/project-details" class="project-container">
       <div class="logo-container">
         <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
@@ -34,7 +34,7 @@
         </p>
       </div>
     </div>
-    <div class="flex md:space-x-4 flex-col md:flex-row p-2">
+    <div class="flex md:space-x-4 flex-col md:flex-row">
       <p>
         Considero que estos son mis proyectos más interesantes por la idea y tecnologías
         usadas para llevarlos a cabo pero también tengo

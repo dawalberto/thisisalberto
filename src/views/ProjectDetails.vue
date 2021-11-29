@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white pb-24">
+  <div class="bg-white">
     <router-link to="/projects">
       <close-button />
     </router-link>
@@ -120,13 +120,6 @@
       >
         Disfruta de Jjoin
       </button>
-    </div>
-    <div class="mt-2">
-      <span class="text-xs">
-        Illustrations from
-        <a href="https://absurd.design" target="_blank">absurd.design</a>
-        (esto se mostrará en el footer condicionalemnte si estoy en esta página)
-      </span>
     </div>
   </div>
 </template>

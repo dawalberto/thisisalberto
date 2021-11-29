@@ -1,14 +1,16 @@
 <template>
   <menu-bar />
-  <router-view class="w-screen max-w-6xl mx-auto p-2 overflow-x-hidden" />
+  <router-view class="w-screen max-w-6xl mx-auto p-2 overflow-x-hidden pb-8" />
+  <footer-simple />
 </template>
 
 <script>
 import MenuBar from '@/components/MenuBar.vue'
+import FooterSimple from '@/components/FooterSimple.vue'
 
 export default {
   name: 'App',
-  components: { MenuBar },
+  components: { MenuBar, FooterSimple },
 }
 </script>
 
