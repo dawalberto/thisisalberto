@@ -9,7 +9,7 @@
         <terminal-simulator />
       </div>
       <div class="md:flex-none md:w-3/5">
-        <img src="@/assets/yoSofa.png" class="img-home" alt="me on the couch" />
+        <img src="@/assets/yoSofa.png" class="img-home my-img" alt="me on the couch" />
       </div>
     </div>
   </div>
