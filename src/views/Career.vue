@@ -1,30 +1,32 @@
 <template>
-  <div>
-    <!-- The Timeline -->
-    <ul class="timeline">
-      <career-item @click="showDetails = true" :direction="'direction-r'" />
-      <career-item :direction="'direction-l'" />
-      <career-item :direction="'direction-r'" />
-      <career-item :direction="'direction-l'" />
-      <career-item :direction="'direction-r'" />
-      <career-item :direction="'direction-l'" />
-    </ul>
-    <div v-show="showDetails" class="career-details">
-      <close-button @click="showDetails = false" class="absolute -top-3 -left-2" />
-      <close-button @click="showDetails = false" class="absolute -bottom-3 -right-2" />
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, consequatur
-        fuga recusandae odio, sapiente beatae dolor voluptatem totam, dolores debitis vero
-        reprehenderit voluptatibus? Doloremque nemo laboriosam modi delectus tenetur
-        dolorem! Lorem ipsum dolor sit amet consectetur, adipisicing elit. At harum rem
-        quis eos nobis sed velit perferendis saepe aliquid? Libero possimus tempora rerum
-        expedita minima blanditiis nam, minus aperiam quasi? dolorem! Lorem ipsum dolor
-        sit amet consectetur, adipisicing elit. At harum rem quis eos nobis sed velit
-        perferendis saepe aliquid? Libero possimus tempora rerum expedita minima
-        blanditiis nam, minus aperiam quasi?
-      </p>
+  <transition name="slide-fade" appear>
+    <div>
+      <!-- The Timeline -->
+      <ul class="timeline">
+        <career-item @click="showDetails = true" :direction="'direction-r'" />
+        <career-item :direction="'direction-l'" />
+        <career-item :direction="'direction-r'" />
+        <career-item :direction="'direction-l'" />
+        <career-item :direction="'direction-r'" />
+        <career-item :direction="'direction-l'" />
+      </ul>
+      <div v-show="showDetails" class="career-details">
+        <close-button @click="showDetails = false" class="absolute -top-3 -left-2" />
+        <close-button @click="showDetails = false" class="absolute -bottom-3 -right-2" />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, consequatur
+          fuga recusandae odio, sapiente beatae dolor voluptatem totam, dolores debitis
+          vero reprehenderit voluptatibus? Doloremque nemo laboriosam modi delectus
+          tenetur dolorem! Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
+          harum rem quis eos nobis sed velit perferendis saepe aliquid? Libero possimus
+          tempora rerum expedita minima blanditiis nam, minus aperiam quasi? dolorem!
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At harum rem quis eos
+          nobis sed velit perferendis saepe aliquid? Libero possimus tempora rerum
+          expedita minima blanditiis nam, minus aperiam quasi?
+        </p>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>

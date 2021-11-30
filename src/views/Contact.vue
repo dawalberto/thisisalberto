@@ -1,46 +1,48 @@
 <template>
-  <div class="flex flex-col md:flex-row items-center justify-center content-center">
-    <div class="w-100 md:w-2/4 flex flex-col items-center">
-      <div
-        class="
-          flex flex-col
-          space-y-9
-          md:text-xl
-          font-light
-          mt-28
-          md:mt-5 md:items-center
-        "
-      >
-        <a
-          class="flex flex-wrap items-center space-x-4 cursor-pointer"
-          href="mailto:albertoinformatica97@gmail.com"
-          target="_blank"
+  <transition name="slide-fade" appear>
+    <div class="flex flex-col md:flex-row items-center justify-center content-center">
+      <div class="w-100 md:w-2/4 flex flex-col items-center">
+        <div
+          class="
+            flex flex-col
+            space-y-9
+            md:text-xl
+            font-light
+            mt-28
+            md:mt-5 md:items-center
+          "
         >
-          <svg-icon :icon="'message'" />
-          <p>albertoinformatica97@gmail.com</p>
-        </a>
-        <a
-          class="flex flex-wrap items-center space-x-4 cursor-pointer"
-          href="https://www.linkedin.com/in/alberto-garcia-sola/"
-          target="_blank"
-        >
-          <svg-icon :icon="'linkedin'" />
-          <p>/alberto-garcia-sola</p>
-        </a>
-        <a
-          class="flex flex-wrap items-center space-x-4 cursor-pointer"
-          href="https://github.com/dawalberto"
-          target="_blank"
-        >
-          <svg-icon :icon="'github'" />
-          <p>/dawalberto</p>
-        </a>
+          <a
+            class="flex flex-wrap items-center space-x-4 cursor-pointer"
+            href="mailto:albertoinformatica97@gmail.com"
+            target="_blank"
+          >
+            <svg-icon :icon="'message'" />
+            <p>albertoinformatica97@gmail.com</p>
+          </a>
+          <a
+            class="flex flex-wrap items-center space-x-4 cursor-pointer"
+            href="https://www.linkedin.com/in/alberto-garcia-sola/"
+            target="_blank"
+          >
+            <svg-icon :icon="'linkedin'" />
+            <p>/alberto-garcia-sola</p>
+          </a>
+          <a
+            class="flex flex-wrap items-center space-x-4 cursor-pointer"
+            href="https://github.com/dawalberto"
+            target="_blank"
+          >
+            <svg-icon :icon="'github'" />
+            <p>/dawalberto</p>
+          </a>
+        </div>
+      </div>
+      <div class="w-100 md:w-5/12 mt-28 md:mt-0">
+        <img class="w-100 my-img" src="@/assets/yoCabeza.png" alt="yo animacion" />
       </div>
     </div>
-    <div class="w-100 md:w-5/12 mt-28 md:mt-0">
-      <img class="w-100 my-img" src="@/assets/yoCabeza.png" alt="yo animacion" />
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
