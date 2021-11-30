@@ -1,6 +1,6 @@
 <template>
   <nav v-show="$route.name !== 'ProjectDetails'" class="bg-white z-40">
-    <div class="max-w-6xl mx-auto px-4 md:px-16 flex justify-between">
+    <div class="max-w-6xl mx-auto md:px-16 flex justify-between">
       <div class="flex sm:space-x-9">
         <!-- Website Logo -->
         <div class="my-2">
@@ -13,7 +13,7 @@
           </router-link>
         </div>
         <!-- Primary Navbar items -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center md:space-x-8">
           <router-link
             to="/projects"
             class="underline-title underline-title-yellow text-4xl"
@@ -29,7 +29,7 @@
         </div>
       </div>
       <!-- Secondary Navbar items -->
-      <div class="flex items-center space-x-3">
+      <div class="flex items-center space-x-4">
         <router-link
           to="/contact"
           class="underline-title underline-title-yellow text-4xl"
