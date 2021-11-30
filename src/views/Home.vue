@@ -19,9 +19,15 @@
 
 <script>
 import TerminalSimulator from '@/components/TerminalSimulator.vue'
+import { useI18n } from 'vue-i18n'
+
 export default {
   name: 'Home',
   components: { TerminalSimulator },
+  setup() {
+    const { t } = useI18n()
+    return { t }
+  },
 }
 </script>
 

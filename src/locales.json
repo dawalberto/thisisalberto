@@ -1,0 +1,10 @@
+{
+  "messages": {
+    "en": {
+      "hello": "hello world"
+    },
+    "es": {
+      "hello": "hola mundo"
+    }
+  }
+}
