@@ -12,8 +12,11 @@
       text-sm
     "
   >
+    <div>
+      <language-changer />
+    </div>
     <div class="flex flex-col md:flex-row md:justify-between">
-      <p>Made with ❤️ by Alberto García Sola</p>
+      <p>{{ $t('made') }}</p>
       <p>© 2021</p>
     </div>
     <p v-if="path === '/project-details'">
@@ -26,8 +29,10 @@
 <script>
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
+import LanguageChanger from '@/components/LanguageChanger.vue'
 
 export default {
+  components: { LanguageChanger },
   name: 'FooterSimple',
   setup() {
     const route = useRoute()

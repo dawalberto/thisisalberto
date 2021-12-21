@@ -1,8 +1,8 @@
 <template>
   <div>
-    <select v-model="langSelected">
-      <option v-for="(lang, i) in langs" :key="`Lang${i}${lang}`" :value="lang">
-        {{ lang }}
+    <select v-model="localeSelected">
+      <option v-for="(locale, i) in locales" :key="`lang${i}${locale}`" :value="locale">
+        {{ locale }}
       </option>
     </select>
   </div>
@@ -16,16 +16,20 @@ export default {
   name: 'LanguageChanger',
   setup() {
     const i18n = useI18n()
-    const langs = ['es', 'en']
-    let langSelected = ref('es')
+    const locales = []
 
-    const setLocale = (lang) => {
-      i18n.setLocale(lang)
+    for (let locale in i18n.messages) {
+      locales.push(locale)
+    }
+    let localeSelected = ref(locales[0])
+
+    const setLocale = (locale) => {
+      i18n.setLocale(locale)
     }
 
-    watchEffect(() => setLocale(langSelected.value))
+    watchEffect(() => setLocale(localeSelected.value))
 
-    return { langs, langSelected, setLocale }
+    return { locales, localeSelected, setLocale }
   },
 }
 </script>

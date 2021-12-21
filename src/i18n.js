@@ -2,10 +2,20 @@ import { createI18n } from 'vue3-i18n'
 
 const messages = {
   en: {
-    test: 'Hello world',
+    menu: {
+      projects: 'Projects',
+      career: 'Career',
+      contact: 'Contact',
+    },
+    made: 'Made with ❤️ by Alberto García Sola',
   },
   es: {
-    test: 'Hola mundo',
+    menu: {
+      projects: 'Proyectos',
+      career: 'Carrera',
+      contact: 'Contacto',
+    },
+    made: 'Hecho con ❤️ por Alberto García Sola',
   },
 }
 

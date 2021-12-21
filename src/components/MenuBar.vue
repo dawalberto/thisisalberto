@@ -45,20 +45,22 @@
 <script>
 import { ref, computed } from 'vue'
 import { useWindowSize } from 'vue-window-size'
+import { useI18n } from 'vue3-i18n'
 
 export default {
   name: 'MenuBar',
   setup() {
+    let i18n = useI18n()
     let windowWidth = ref(useWindowSize().width)
 
     const projectsTitle = computed(() => {
-      return windowWidth.value >= 768 ? 'Projects' : '🧑🏻‍💻'
+      return windowWidth.value >= 768 ? i18n.t('menu.projects') : '🧑🏻‍💻'
     })
     const careerTitle = computed(() => {
-      return windowWidth.value >= 768 ? 'Career' : '🎓'
+      return windowWidth.value >= 768 ? i18n.t('menu.career') : '🎓'
     })
     const contactTitle = computed(() => {
-      return windowWidth.value >= 768 ? 'Contact' : '📞'
+      return windowWidth.value >= 768 ? i18n.t('menu.contact') : '📞'
     })
 
     return { projectsTitle, careerTitle, contactTitle }
