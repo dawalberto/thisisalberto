@@ -10,7 +10,7 @@
           <terminal-simulator />
         </div>
         <div class="md:flex-none md:w-3/5">
-          <img src="@/assets/yoSofa.png" class="img-home my-img" alt="me on the couch" />
+          <img src="@/assets/thisisalberto.png" class="my-img" alt="me on the couch" />
         </div>
       </div>
     </transition>
@@ -45,9 +45,5 @@ export default {
   right: -24%;
   bottom: 0;
   transform: rotate(35deg);
-}
-
-.img-home {
-  filter: brightness(95%);
 }
 </style>

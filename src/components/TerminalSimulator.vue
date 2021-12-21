@@ -7,18 +7,19 @@
     </div>
     <div class="screen">
       <p>
-        root@10.0.0.1:~$ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-        pellentesque feugiat nibh eget facilisis. Vivamus in urna mauris. Morbi sagittis
-        facilisis felis et porttitor. Aliquam erat volutpat. Proin blandit eros eros,
-        venenatis dignissim tellus sollicitudin eget. Vivamus et est pretium, rutrum arcu
-        ac, tempus risus. Nunc dapibus urna nec tincidunt volutpat. Nullam egestas erat et
-        orci auctor eleifend. Aliquam et turpis quis eros pulvinar tincidunt. Integer
-        volutpat, ex eu vehicula iaculis, metus erat rutrum tellus, quis efficitur mi ex
-        et libero. Aliquam faucibus, ipsum vitae tincidunt tempus, metus est ullamcorper
-        justo, nec tincidunt lectus augue vitae libero. Vivamus dapibus est sit amet
-        lectus porta molestie. Fusce in enim eu nisl sagittis laoreet in ac neque.
-        Phasellus non commodo arcu, id dignissim magna. Donec dapibus lacus dui, vel
-        congue tellus facilisis sed.
+        <span class="font-bold text-green-500">➜</span>
+        <span class="font-bold text-blue-500 px-3">~</span> Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Vivamus pellentesque feugiat nibh eget facilisis.
+        Vivamus in urna mauris. Morbi sagittis facilisis felis et porttitor. Aliquam erat
+        volutpat. Proin blandit eros eros, venenatis dignissim tellus sollicitudin eget.
+        Vivamus et est pretium, rutrum arcu ac, tempus risus. Nunc dapibus urna nec
+        tincidunt volutpat. Nullam egestas erat et orci auctor eleifend. Aliquam et turpis
+        quis eros pulvinar tincidunt. Integer volutpat, ex eu vehicula iaculis, metus erat
+        rutrum tellus, quis efficitur mi ex et libero. Aliquam faucibus, ipsum vitae
+        tincidunt tempus, metus est ullamcorper justo, nec tincidunt lectus augue vitae
+        libero. Vivamus dapibus est sit amet lectus porta molestie. Fusce in enim eu nisl
+        sagittis laoreet in ac neque. Phasellus non commodo arcu, id dignissim magna.
+        Donec dapibus lacus dui, vel congue tellus facilisis sed.
       </p>
     </div>
   </div>
