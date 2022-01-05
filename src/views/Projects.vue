@@ -66,6 +66,7 @@ export default {
     let showProjectDetails = ref(false)
 
     const showProjectDetailsAction = () => {
+      window.scrollTo(0, 0)
       showProjectDetails.value = true
     }
 

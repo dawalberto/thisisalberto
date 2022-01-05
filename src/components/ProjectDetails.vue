@@ -27,7 +27,9 @@
         <!-- question -->
         <div>
           <div class="flex justify-start">
-            <h1 class="text-2xl underline-title underline-title-yellow">¿Por qué?</h1>
+            <h1 class="text-2xl underline-title underline-title-yellow">
+              {{ $t('projectDetails.why') }}
+            </h1>
           </div>
           <div class="flex flex-row items-center">
             <p class="md:pl-2">
@@ -44,7 +46,7 @@
         <div class="w-full">
           <div class="flex justify-end">
             <h1 class="text-2xl underline-title underline-title-yellow">
-              ¿Qué es exactamente?
+              {{ $t('projectDetails.whatExactly') }}
             </h1>
           </div>
           <div class="flex flex-row-reverse items-center">
@@ -62,7 +64,7 @@
         <div>
           <div class="flex justify-start">
             <h1 class="text-2xl underline-title underline-title-yellow">
-              Tecnologías que he usado
+              {{ $t('projectDetails.technologies') }}
             </h1>
           </div>
           <div class="flex flex-row items-center">
@@ -83,7 +85,9 @@
         <!-- question -->
         <div class="w-full">
           <div class="flex justify-start">
-            <h1 class="text-2xl underline-title underline-title-yellow">Repositorio</h1>
+            <h1 class="text-2xl underline-title underline-title-yellow">
+              {{ $t('projectDetails.repository') }}
+            </h1>
           </div>
           <div class="flex items-center justify-start">
             <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
