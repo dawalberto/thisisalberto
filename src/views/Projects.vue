@@ -2,11 +2,12 @@
   <div class="flex flex-col space-y-16">
     <project-details
       v-if="showProjectDetails"
+      :project="project"
       @close-project-details="hiddeProjectDetailsAction"
       class="z-50 absolute top-0 left-1/2 transform -translate-x-1/2"
     />
     <transition name="slide-fade-left" appear>
-      <div @click="showProjectDetailsAction" class="project-container">
+      <div @click="showProjectDetailsAction('jjoin')" class="project-container">
         <div class="logo-container">
           <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
         </div>
@@ -23,7 +24,10 @@
       </div>
     </transition>
     <transition name="slide-fade-right" appear>
-      <div class="project-container md:flex-row-reverse">
+      <div
+        @click="showProjectDetailsAction('clasicaguitarra')"
+        class="project-container md:flex-row-reverse"
+      >
         <div class="logo-container">
           <img
             class="w-full"
@@ -64,8 +68,10 @@ export default {
   components: { ProjectDetails },
   setup() {
     let showProjectDetails = ref(false)
+    let project = ref('')
 
-    const showProjectDetailsAction = () => {
+    const showProjectDetailsAction = (projectSelected) => {
+      project.value = projectSelected
       window.scrollTo(0, 0)
       showProjectDetails.value = true
     }
@@ -74,7 +80,12 @@ export default {
       showProjectDetails.value = false
     }
 
-    return { showProjectDetailsAction, showProjectDetails, hiddeProjectDetailsAction }
+    return {
+      project,
+      showProjectDetailsAction,
+      showProjectDetails,
+      hiddeProjectDetailsAction,
+    }
   },
 }
 </script>

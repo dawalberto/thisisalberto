@@ -4,24 +4,30 @@
     <div class="mx-auto w-2/4 md:w-1/4 mt-24">
       <kinesis-container>
         <kinesis-element :strength="20" type="depth">
-          <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
+          <img
+            v-if="project == 'jjoin'"
+            class="w-full"
+            src="@/assets/jjoinLogo.png"
+            alt="logo jjoin"
+          />
+          <img
+            v-else-if="project == 'clasicaguitarra'"
+            class="w-full"
+            src="@/assets/clasicaguitarraLogo.png"
+            alt="logo clasicaguitarra"
+          />
         </kinesis-element>
       </kinesis-container>
     </div>
     <div class="w-full mx-auto px-2 my-24">
       <h1
-        class="
-          absolute
-          top-7
-          right-4
-          transform
-          rotate-45
-          text-4xl
-          md:text-5xl
-          text-center
-        "
+        :class="{
+          'top-7 right-4 text-4xl': project == 'jjoin',
+          'top-20 md:top-28 -right-6 md:right-0 text-4xl': project == 'clasicaguitarra',
+        }"
+        class="absolute transform rotate-45 md:text-5xl text-center capitalize"
       >
-        Jjoin
+        {{ project }}
       </h1>
       <div class="flex flex-col space-y-20 w-full">
         <!-- question -->
@@ -32,10 +38,8 @@
             </h1>
           </div>
           <div class="flex flex-row items-center">
-            <p class="md:pl-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-              accusamus suscipit a saepe quas non recusandae explicabo porro veniam earum
-              quasi, delectus enim neque ipsam harum modi fugit omnis consequuntur.
+            <p class="md:pl-2" style="white-space: pre-line">
+              {{ $t(`projectDetails.${project}.why`) }}
             </p>
             <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
               <img src="@/assets/absurd-por-que.png" class="w-full" alt="why img" />
@@ -50,10 +54,8 @@
             </h1>
           </div>
           <div class="flex flex-row-reverse items-center">
-            <p class="md:pl-2 text-right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-              accusamus suscipit a saepe quas non recusandae explicabo porro veniam earum
-              quasi, delectus enim neque ipsam harum modi fugit omnis consequuntur.
+            <p class="md:pl-2 text-right" style="white-space: pre-line">
+              {{ $t(`projectDetails.${project}.whatExactly`) }}
             </p>
             <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
               <img src="@/assets/absurd-que-es.png" class="w-full" alt="what is img" />
@@ -69,9 +71,7 @@
           </div>
           <div class="flex flex-row items-center">
             <p class="md:pl-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-              accusamus suscipit a saepe quas non recusandae explicabo porro veniam earum
-              quasi, delectus enim neque ipsam harum modi fugit omnis consequuntur.
+              {{ $t(`projectDetails.${project}.technologies`) }}
             </p>
             <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
               <img
@@ -120,7 +120,7 @@
           hover:scale-105 hover:-rotate-3
         "
       >
-        Disfruta de Jjoin
+        Disfruta de <span class="capitalize">{{ project }}</span>
       </button>
     </div>
     <footer-simple class="mt-10" />
@@ -136,6 +136,12 @@ export default {
   name: 'ProjectDetails',
   components: { KinesisContainer, KinesisElement, CloseButton, FooterSimple },
   emits: ['close-project-details'],
+  props: {
+    project: {
+      type: String,
+      required: true,
+    },
+  },
   setup(props, { emit }) {
     const close = () => {
       emit('close-project-details')
