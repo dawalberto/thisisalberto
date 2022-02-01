@@ -17,28 +17,20 @@
     </div>
     <div class="flex flex-col md:flex-row md:justify-between">
       <p>{{ $t('made') }}</p>
-      <p>© 2021</p>
+      <p>© 2021 / {{ currentYear }}</p>
     </div>
-    <p v-if="path === '/project-details'">
-      Illustrations from
-      <a href="https://absurd.design" target="_blank">absurd.design</a>
-    </p>
   </div>
 </template>
 
 <script>
-import { useRoute } from 'vue-router'
-import { computed } from 'vue'
 import LanguageChanger from '@/components/LanguageChanger.vue'
 
 export default {
   components: { LanguageChanger },
   name: 'FooterSimple',
   setup() {
-    const route = useRoute()
-    const path = computed(() => route.path)
-
-    return { path }
+    const currentYear = new Date().getFullYear()
+    return { currentYear }
   },
 }
 </script>

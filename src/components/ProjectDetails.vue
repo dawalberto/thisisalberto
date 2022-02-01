@@ -123,18 +123,20 @@
         Disfruta de <span class="capitalize">{{ project }}</span>
       </button>
     </div>
-    <footer-simple class="mt-10" />
+    <p class="text-sm mt-5">
+      Illustrations from
+      <a href="https://absurd.design" target="_blank">absurd.design</a>
+    </p>
   </div>
 </template>
 
 <script>
 import { KinesisContainer, KinesisElement } from 'vue-kinesis'
 import CloseButton from '@/components/CloseButton.vue'
-import FooterSimple from '@/components/FooterSimple.vue'
 
 export default {
   name: 'ProjectDetails',
-  components: { KinesisContainer, KinesisElement, CloseButton, FooterSimple },
+  components: { KinesisContainer, KinesisElement, CloseButton },
   emits: ['close-project-details'],
   props: {
     project: {

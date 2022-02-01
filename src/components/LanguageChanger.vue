@@ -21,7 +21,13 @@ export default {
     for (let locale in i18n.messages) {
       locales.push(locale)
     }
-    let localeSelected = ref(locales[0])
+
+    const browserLangugae = navigator.language.includes('es') ? 'es' : 'en'
+    const positionBrowserLanguageInLocales = locales.includes(browserLangugae)
+      ? locales.indexOf(browserLangugae)
+      : 0
+
+    let localeSelected = ref(locales[positionBrowserLanguageInLocales])
 
     const setLocale = (locale) => {
       i18n.setLocale(locale)

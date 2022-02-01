@@ -1,5 +1,14 @@
 import { createI18n } from 'vue3-i18n'
 
+function calculate_age(date) {
+  var diff_ms = Date.now() - date.getTime()
+  var age_dt = new Date(diff_ms)
+
+  return Math.abs(age_dt.getUTCFullYear() - 1970)
+}
+
+const currentAge = calculate_age(new Date(1997, 12, 30))
+
 const messages = {
   en: {
     menu: {
@@ -63,7 +72,7 @@ const messages = {
     },
     home: {
       aboutMe: `Hi 👋 \n Me llamo Alberto y soy Desarrollador Web!
-                Tengo 24 años y llevo más de seis en el mundo de la informática de los cuales cuatro he estado totalmente enfocado en lo que más me gusta, el desarrollo web.
+                Tengo ${currentAge} años y llevo más de seis en el mundo de la informática de los cuales cuatro he estado totalmente enfocado en lo que más me gusta, el desarrollo web.
                 Entre otras cosas me gusta porque te obliga a superarte cada día planteándote nuevos problemas, estudiando la mejor manera de resolverlos, refactorizándolos, superándote a ti mismo y siempre aprendiendo.
                 Como desarrollador web soy consciente de que los lenguajes o tecnologías son solo el medio y debemos ser capaces de hallar una solución independientemente de estos, pero a pesar de ello no puedo evitar sentir una gran debilidad por JavaScript y todo el ecosistema que ha ido creciendo a su alrededor(Node, Vue, Angular, etc)
                 Pero no solo me gusta estar pegado al ordenador, también disfruto haciendo deporte, escapándome a la montaña y pasando tiempo con los míos.`,
@@ -72,9 +81,11 @@ const messages = {
   },
 }
 
+const browserLangugae = navigator.language.includes('es') ? 'es' : 'en'
+
 const i18n = createI18n({
   legacy: false, // you must set `false`, to use Composition API
-  locale: 'en', // set locale
+  locale: browserLangugae, // set locale
   fallbackLocale: 'en', // set fallback locale
   messages, // set locale messages
 })
