@@ -3,12 +3,20 @@
     <div>
       <!-- The Timeline -->
       <ul class="timeline">
-        <career-item @click="showDetails = true" :direction="'direction-r'" />
-        <career-item :direction="'direction-l'" />
-        <career-item :direction="'direction-r'" />
-        <career-item :direction="'direction-l'" />
-        <career-item :direction="'direction-r'" />
-        <career-item :direction="'direction-l'" />
+        <!-- <career-item
+          @click="showDetails = true"
+          :direction="'direction-r'"
+          :description="'description'"
+        /> -->
+        <career-item
+          v-for="careerItem in careerList"
+          :key="careerItem.position"
+          :emoji="careerItem.emoji"
+          :title="careerItem.title"
+          :period="careerItem.period"
+          :description="careerItem.description"
+          :direction="careerItem.direction"
+        />
       </ul>
       <div v-show="showDetails" class="career-details">
         <close-button @click="showDetails = false" class="absolute -top-3 -left-2" />
@@ -33,18 +41,51 @@
 import CareerItem from '@/components/CareerItem.vue'
 import CloseButton from '@/components/CloseButton.vue'
 import { ref } from 'vue'
+import { useI18n } from 'vue3-i18n'
 
 export default {
   name: 'Career',
   components: { CareerItem, CloseButton },
   setup() {
-    let showDetails = ref(false)
+    let i18n = useI18n()
+    let locale = i18n.getLocale()
 
+    let showDetails = ref(false)
     document.addEventListener('scroll', () => {
       showDetails.value = false
     })
 
-    return { showDetails }
+    let career = i18n.messages[locale].career
+    let jobs = career.jobs
+    let studies = career.studies
+
+    jobs = Object.keys(jobs).map((key) => {
+      let job = jobs[key]
+      job.emoji = '👨🏼‍💻'
+      return job
+    })
+
+    studies = Object.keys(studies).map((key) => {
+      let study = studies[key]
+      study.emoji = '🎓'
+      return study
+    })
+
+    let careerList = [...jobs, ...studies]
+
+    careerList = careerList.map((careerItem, i) => {
+      let direction = 'direction-r'
+
+      if (i % 2 === 0) {
+        direction = 'direction-l'
+      }
+
+      return { ...careerItem, direction }
+    })
+
+    careerList.sort((a, b) => a.position - b.position)
+
+    return { showDetails, careerList }
   },
 }
 </script>

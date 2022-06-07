@@ -1,15 +1,15 @@
 <template>
   <li class="relative">
-    <span class="emoji underline-title underline-title-yellow">👨🏼‍💻🎓</span>
+    <span class="emoji underline-title underline-title-yellow">{{ emoji }}</span>
     <div :class="direction" class="cursor-pointer">
       <div class="relative inline-block text-center">
-        <h1 class="flag">Desarrollador Web</h1>
-        <span class="time-wrapper"><span class="time">Sep 2019 - Marz 2021</span></span>
+        <h1 class="flag">{{ title }}</h1>
+        <span class="time-wrapper"
+          ><span class="time">{{ period }}</span></span
+        >
       </div>
       <div class="desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est totam tenetur
-        deserunt minus dicta labore modi impedit velit? Qui deleniti nobis, omnis
-        obcaecati expedita natus non maxime mollitia molestiae modi...
+        {{ description }}
       </div>
     </div>
   </li>
@@ -19,6 +19,10 @@
 export default {
   name: 'CareerItem',
   props: {
+    emoji: String,
+    title: String,
+    description: String,
+    period: String,
     direction: String,
   },
 }
