@@ -3,11 +3,6 @@
     <div>
       <!-- The Timeline -->
       <ul class="timeline">
-        <!-- <career-item
-          @click="showDetails = true"
-          :direction="'direction-r'"
-          :description="'description'"
-        /> -->
         <career-item
           v-for="careerItem in careerList"
           :key="careerItem.position"
@@ -16,21 +11,14 @@
           :period="careerItem.period"
           :description="careerItem.description"
           :direction="careerItem.direction"
+          @open-full-descriptions="openFullDescription"
         />
       </ul>
-      <div v-show="showDetails" class="career-details">
-        <close-button @click="showDetails = false" class="absolute -top-3 -left-2" />
-        <close-button @click="showDetails = false" class="absolute -bottom-3 -right-2" />
+      <div v-show="showFullDescription" class="career-details">
+        <close-button @click="closeFullDescription" class="absolute -top-3 -left-2" />
+        <close-button @click="closeFullDescription" class="absolute -bottom-3 -right-2" />
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, consequatur
-          fuga recusandae odio, sapiente beatae dolor voluptatem totam, dolores debitis
-          vero reprehenderit voluptatibus? Doloremque nemo laboriosam modi delectus
-          tenetur dolorem! Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
-          harum rem quis eos nobis sed velit perferendis saepe aliquid? Libero possimus
-          tempora rerum expedita minima blanditiis nam, minus aperiam quasi? dolorem!
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At harum rem quis eos
-          nobis sed velit perferendis saepe aliquid? Libero possimus tempora rerum
-          expedita minima blanditiis nam, minus aperiam quasi?
+          {{ fullDescription }}
         </p>
       </div>
     </div>
@@ -49,11 +37,8 @@ export default {
   setup() {
     let i18n = useI18n()
     let locale = i18n.getLocale()
-
-    let showDetails = ref(false)
-    document.addEventListener('scroll', () => {
-      showDetails.value = false
-    })
+    let showFullDescription = ref(false)
+    let fullDescription = ref('')
 
     let career = i18n.messages[locale].career
     let jobs = career.jobs
@@ -85,7 +70,23 @@ export default {
 
     careerList.sort((a, b) => a.position - b.position)
 
-    return { showDetails, careerList }
+    const openFullDescription = ({ description }) => {
+      fullDescription.value = description
+      showFullDescription.value = true
+    }
+
+    const closeFullDescription = () => {
+      showFullDescription.value = false
+    }
+    document.addEventListener('scroll', closeFullDescription)
+
+    return {
+      careerList,
+      showFullDescription,
+      openFullDescription,
+      fullDescription,
+      closeFullDescription,
+    }
   },
 }
 </script>
@@ -110,28 +111,6 @@ export default {
   content: '';
   visibility: hidden;
   @apply clear-both h-0 block;
-}
-
-.direction-l {
-  width: 400px;
-  @apply text-right float-left relative;
-}
-
-.direction-r {
-  width: 400px;
-  @apply float-right relative;
-}
-
-@media screen and (max-width: 900px) {
-  .direction-l,
-  .direction-r {
-    @apply float-none w-full text-center;
-  }
-
-  .timeline {
-    padding: 4em 0 1em 0;
-    @apply w-full;
-  }
 }
 
 .career-details {

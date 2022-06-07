@@ -1,15 +1,15 @@
 <template>
-  <li class="relative">
+  <li @click="openFullDescription" class="relative">
     <span class="emoji underline-title underline-title-yellow">{{ emoji }}</span>
     <div :class="direction" class="cursor-pointer">
       <div class="relative inline-block text-center">
         <h1 class="flag">{{ title }}</h1>
-        <span class="time-wrapper"
-          ><span class="time">{{ period }}</span></span
-        >
+        <h2 class="time-wrapper">
+          <span class="time">{{ period }}</span>
+        </h2>
       </div>
       <div class="desc">
-        {{ description }}
+        {{ shortDescription }}
       </div>
     </div>
   </li>
@@ -18,12 +18,24 @@
 <script>
 export default {
   name: 'CareerItem',
+  emits: ['open-full-descriptions'],
   props: {
     emoji: String,
     title: String,
     description: String,
     period: String,
     direction: String,
+  },
+  setup(props, { emit }) {
+    const shortDescription = props.description
+      ? `${props.description.substring(0, 200)}...`
+      : ''
+
+    const openFullDescription = () => {
+      emit('open-full-descriptions', { description: props.description })
+    }
+
+    return { shortDescription, openFullDescription }
   },
 }
 </script>
@@ -95,6 +107,27 @@ export default {
   .direction-l .desc,
   .direction-r .desc {
     @apply relative p-2 z-20 m-1;
+  }
+}
+.direction-l {
+  width: 400px;
+  @apply text-right float-left relative;
+}
+
+.direction-r {
+  width: 400px;
+  @apply float-right relative;
+}
+
+@media screen and (max-width: 900px) {
+  .direction-l,
+  .direction-r {
+    @apply float-none w-full text-center;
+  }
+
+  .timeline {
+    padding: 4em 0 1em 0;
+    @apply w-full;
   }
 }
 </style>
