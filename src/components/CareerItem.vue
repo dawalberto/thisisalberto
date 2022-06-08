@@ -8,9 +8,7 @@
           <span class="time">{{ period }}</span>
         </h2>
       </div>
-      <div class="desc">
-        {{ shortDescription }}
-      </div>
+      <div class="desc">{{ description.substring(0, 200) }}...</div>
     </div>
   </li>
 </template>
@@ -27,15 +25,11 @@ export default {
     direction: String,
   },
   setup(props, { emit }) {
-    const shortDescription = props.description
-      ? `${props.description.substring(0, 200)}...`
-      : ''
-
     const openFullDescription = () => {
       emit('open-full-descriptions', { description: props.description })
     }
 
-    return { shortDescription, openFullDescription }
+    return { openFullDescription }
   },
 }
 </script>

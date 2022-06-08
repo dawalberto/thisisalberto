@@ -30,45 +30,58 @@ import CareerItem from '@/components/CareerItem.vue'
 import CloseButton from '@/components/CloseButton.vue'
 import { ref } from 'vue'
 import { useI18n } from 'vue3-i18n'
+import emitter from '@/services/emitter'
 
 export default {
   name: 'Career',
   components: { CareerItem, CloseButton },
   setup() {
-    let i18n = useI18n()
-    let locale = i18n.getLocale()
     let showFullDescription = ref(false)
     let fullDescription = ref('')
 
-    let career = i18n.messages[locale].career
-    let jobs = career.jobs
-    let studies = career.studies
+    let i18n = useI18n()
+    let locale = i18n.getLocale()
+    let careerList = ref([])
 
-    jobs = Object.keys(jobs).map((key) => {
-      let job = jobs[key]
-      job.emoji = '👨🏼‍💻'
-      return job
+    const getSanitizedCareerList = (i18n, locale) => {
+      let career = i18n.messages[locale].career
+      let jobs = career.jobs
+      let studies = career.studies
+
+      jobs = Object.keys(jobs).map((key) => {
+        let job = jobs[key]
+        job.emoji = '👨🏼‍💻'
+        return job
+      })
+
+      studies = Object.keys(studies).map((key) => {
+        let study = studies[key]
+        study.emoji = '🎓'
+        return study
+      })
+
+      careerList.value = [...jobs, ...studies]
+
+      careerList.value = careerList.value.map((careerItem, i) => {
+        let direction = 'direction-r'
+
+        if (i % 2 === 0) {
+          direction = 'direction-l'
+        }
+
+        return { ...careerItem, direction }
+      })
+
+      careerList.value.sort((a, b) => a.position - b.position)
+
+      return careerList.value
+    }
+
+    careerList.value = getSanitizedCareerList(i18n, locale)
+
+    emitter.on('locale-changed', (localeSelected) => {
+      careerList.value = getSanitizedCareerList(i18n, localeSelected)
     })
-
-    studies = Object.keys(studies).map((key) => {
-      let study = studies[key]
-      study.emoji = '🎓'
-      return study
-    })
-
-    let careerList = [...jobs, ...studies]
-
-    careerList = careerList.map((careerItem, i) => {
-      let direction = 'direction-r'
-
-      if (i % 2 === 0) {
-        direction = 'direction-l'
-      }
-
-      return { ...careerItem, direction }
-    })
-
-    careerList.sort((a, b) => a.position - b.position)
 
     const openFullDescription = ({ description }) => {
       fullDescription.value = description

@@ -11,6 +11,7 @@
 <script>
 import { useI18n } from 'vue3-i18n'
 import { ref, watchEffect } from 'vue'
+import emitter from '@/services/emitter'
 
 export default {
   name: 'LanguageChanger',
@@ -33,7 +34,10 @@ export default {
       i18n.setLocale(locale)
     }
 
-    watchEffect(() => setLocale(localeSelected.value))
+    watchEffect(() => {
+      setLocale(localeSelected.value)
+      emitter.emit('locale-changed', localeSelected.value)
+    })
 
     return { locales, localeSelected, setLocale }
   },
