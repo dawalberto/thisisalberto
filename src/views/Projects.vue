@@ -52,7 +52,13 @@
         <p>
           Considero que estos son mis proyectos más interesantes por la idea y tecnologías
           usadas para llevarlos a cabo pero también tengo
-          <a href="#" class="text-yellow-500"> otros proyectitos chulos </a>
+          <a
+            href="https://github.com/dawalberto?tab=repositories"
+            target="_blank"
+            class="text-yellow-500"
+          >
+            otros proyectitos chulos
+          </a>
         </p>
       </div>
     </transition>

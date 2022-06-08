@@ -37,8 +37,8 @@
               {{ $t('projectDetails.why') }}
             </h1>
           </div>
-          <div class="flex flex-row items-center">
-            <p class="md:pl-2" style="white-space: pre-line">
+          <div class="flex flex-row items-center mt-2">
+            <p class="md:p-10" style="white-space: pre-line">
               {{ $t(`projectDetails.${project}.why`) }}
             </p>
             <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
@@ -53,8 +53,8 @@
               {{ $t('projectDetails.whatExactly') }}
             </h1>
           </div>
-          <div class="flex flex-row-reverse items-center">
-            <p class="md:pl-2 text-right" style="white-space: pre-line">
+          <div class="flex flex-row-reverse items-center mt-2">
+            <p class="md:p-10" style="white-space: pre-line">
               {{ $t(`projectDetails.${project}.whatExactly`) }}
             </p>
             <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
@@ -69,8 +69,8 @@
               {{ $t('projectDetails.technologies') }}
             </h1>
           </div>
-          <div class="flex flex-row items-center">
-            <p class="md:pl-2">
+          <div class="flex flex-row-reverse items-center mt-2">
+            <p class="md:p-10">
               {{ $t(`projectDetails.${project}.technologies`) }}
             </p>
             <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
@@ -84,27 +84,47 @@
         </div>
         <!-- question -->
         <div class="w-full">
-          <div class="flex justify-start">
+          <div class="flex justify-center">
             <h1 class="text-2xl underline-title underline-title-yellow">
               {{ $t('projectDetails.repository') }}
             </h1>
           </div>
-          <div class="flex items-center justify-start">
-            <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
+          <div class="flex items-center justify-center mt-2">
+            <!-- <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
               <img
                 src="@/assets/absurd-repositorio.png"
                 class="w-full"
                 alt="what is img"
               />
-            </div>
-            <ul class="md:pl-2">
+            </div> -->
+            <ul v-if="project === 'jjoin'" class="md:pl-2">
+              <li>
+                <span class="font-semibold">👉 </span>
+                <a :href="repoJjoin" target="_blank" class="text-yellow-500">
+                  {{ repoJjoin }}
+                </a>
+              </li>
+            </ul>
+            <ul v-else class="md:pl-2">
               <li>
                 <span class="font-semibold">👉 Front </span>
-                <a href="#">blablablablabla</a>
+                <a
+                  :href="repoFrontClasicaguitarra"
+                  target="_blank"
+                  class="text-yellow-500"
+                >
+                  {{ repoFrontClasicaguitarra }}
+                </a>
               </li>
               <li>
                 <span class="font-semibold">👉 Back </span>
-                <a href="#">blablablablabla</a>
+                <a
+                  :href="repoBackClasicaguitarra"
+                  target="_blank"
+                  class="text-yellow-500"
+                >
+                  {{ repoBackClasicaguitarra }}
+                </a>
               </li>
             </ul>
           </div>
@@ -112,7 +132,9 @@
       </div>
     </div>
     <div class="w-full text-center">
-      <button
+      <a
+        target="_blank"
+        :href="project === 'jjoin' ? linkJjoin : linkClasicaguitarra"
         class="
           button-project-details
           duration-200
@@ -121,9 +143,9 @@
         "
       >
         Disfruta de <span class="capitalize">{{ project }}</span>
-      </button>
+      </a>
     </div>
-    <p class="text-sm mt-5">
+    <p class="text-sm mt-10 text-center">
       Illustrations from
       <a href="https://absurd.design" target="_blank">absurd.design</a>
     </p>
@@ -149,7 +171,21 @@ export default {
       emit('close-project-details')
     }
 
-    return { close }
+    const repoFrontClasicaguitarra =
+      'https://github.com/dawalberto/proyecto-final-frontend'
+    const repoBackClasicaguitarra = 'https://github.com/dawalberto/proyecto-final-backend'
+    const linkClasicaguitarra = 'https://clasicaguitarra.com/'
+    const repoJjoin = 'https://github.com/dawalberto/Jjoin'
+    const linkJjoin = 'https://github.com/dawalberto/Jjoin/releases'
+
+    return {
+      close,
+      repoFrontClasicaguitarra,
+      repoBackClasicaguitarra,
+      linkClasicaguitarra,
+      repoJjoin,
+      linkJjoin,
+    }
   },
 }
 </script>
