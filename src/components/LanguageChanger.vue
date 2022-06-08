@@ -2,7 +2,7 @@
   <div>
     <select v-model="localeSelected">
       <option v-for="(locale, i) in locales" :key="`lang${i}${locale}`" :value="locale">
-        {{ locale }}
+        {{ locale == 'es' ? '🇪🇸' : '🇬🇧' }}
       </option>
     </select>
   </div>

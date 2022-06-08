@@ -18,24 +18,37 @@ const messages = {
     },
     projectDetails: {
       why: 'Why',
-      whatExactly: 'What exactly',
+      whatExactly: `What it's exactly`,
       technologies: 'Technologies',
       repository: 'Repository',
       jjoin: {
-        why: '',
-        whatExactly: '',
-        technologies: '',
-        repository: '',
+        why: `Let supose that we have to join two excel sheets to get data from both and get a file with the records that match with the condition that we wish. How would you do that? \n
+        Nowadays Excel himself has a option to do that but it's not easy to use and let alone intuitive`,
+        whatExactly: `Jjoin is a desktop app developed with web technologies.
+                      Consists in three intuitive screens that will guide you through the joining process of the excel sheets. \n
+                      In the first screen you will select the files.
+                      In the second screen you will create the condition to join the files.
+                      And last you will choose wich fields of both sheets you want to record in the new file. Also you will choose if you want to save only one file with every match and/or to save as many files as matches with the data/fields that you want`,
+        technologies: `To develop this project I've used these languages and technologies: HTML, CSS, JavaScript, Tailwindcss, Vue, Nuxt, Electron.`,
       },
-      clasicaGuitarra: {
-        why: '',
-        whatExactly: '',
-        technologies: '',
-        repository: '',
+      clasicaguitarra: {
+        why: `Many classical guitarists have their own website where we can usually find their career and current concerts.
+              But if a person wants to attend a classical guitar concert and doesn't know a specific classical guitarist, he will hardly find out about the concerts. \n
+              The goal of clasicaguitarra is to gather the profiles and concerts of all registered guitarists. Being in this way very easy for anyone to see the next concert of any guitarist. And all from one place, classicguitarra.`,
+        whatExactly: `Clasicaguitarra is a website where classical guitarists can create their own profile and concerts with their corresponding classical music programs. \n
+        As a visitor or lover of classical guitar you can subscribe to any guitarist to be aware of all their concerts, and the next concerts of all registered guitarists will always be displayed on the home page.
+        In addition, you will be able to follow and see the trajectory of each guitarist and other interesting data such as the guitar with which he currently plays, his social networks or his website.`,
+        technologies: `To carry out this project I have used the following technologies and languages: HTML, CSS, JavaScript, Vue, Vuetify, Node, MongoDB, Heroku, Firebase, Cloudinary`,
       },
     },
     home: {
-      aboutMe: ``,
+      aboutMe: `Hi 👋 \n
+                My name is Alberto and I'm a Web Developer!
+                I'm ${currentAge} years old and I'm more than six years in the IT world of which four of them I've been completely focused in the most I like, Web Development. \n
+                Among other things I like it because it pushes you to improve yourself every day with new problems and ways to solve them. \n
+                As a Web Developer I know that the languages and technologies are only the tool and way and not the finish, that's because we should be able to find a solution regardless of them. But although I know this I can't help it feel a special love for JavaScript and the whole new ecosystem that it's growing around him(Node, Vue, Angular, etc) \n
+                But I don't only enjoy my time being on the computer, I'm a big fan of the sport and I really like to expend time with my friends and family.
+      `,
     },
     career: {
       jobs: {
@@ -70,7 +83,7 @@ const messages = {
       },
       clasicaguitarra: {
         why: `Muchos guitarristas clásicos cuentan con su propia página web donde habitualmente podemos encontrar su trayectoria y conciertos actuales.
-              Pero si una persona quiere asistir a un concierto de guitarra clásica y no conoce al guitarrista en cuestión difícilmente asistirá porque no se habrá enterado. \n
+              Pero si una persona quiere asistir a un concierto de guitarra clásica y no conoce a un guitarrística clásico en concreto dificilmente se enterará de los conciertos. \n
               El objetivo de clasicaguitarra es reunir los perfiles y conciertos de todos los guitarristas registrados. Siendo de esta manera muy fácil para cualquier persona ver el próximo concierto de cualquier guitarrista. Y todo desde un único lugar, clasicaguitarra.`,
         whatExactly: `Clasicaguitarra es una página web en la que los guitarristas clásicos podrán crear su propio perfil y conciertos con sus programas de música clásica correspondientes. \n
                       Como visitante o amante de la guitarra clásica podrás suscribirte a cualquier guitarrista para estar al tanto de todos sus conciertos, además en la página de inicio siempre se visualizarán los próximos conciertos de todos los guitarristas registrados.
@@ -83,7 +96,7 @@ const messages = {
                 Me llamo Alberto y soy Desarrollador Web!
                 Tengo ${currentAge} años y llevo más de seis en el mundo de la informática de los cuales cuatro he estado totalmente enfocado en lo que más me gusta, el desarrollo web. \n
                 Entre otras cosas me gusta porque te obliga a superarte cada día planteándote nuevos problemas y estudiando la mejor manera de resolverlos. \n
-                Como desarrollador web soy consciente de que los lenguajes y tecnologías son solo el medio y no el fin por lo que debemos de ser capaces de hallar una solución independientemente de estos pero a pesar de esto no puedo evitar sentir una gran debilidad por JavaScript y todo el ecosistema que ha ido creciendo a su alrededor(Node, Vue, Angular, etc)\n
+                Como desarrollador web soy consciente de que los lenguajes y tecnologías son solo el medio y no el fin por lo que debemos de ser capaces de hallar una solución independientemente de estos .Pero a pesar de esto no puedo evitar sentir una gran debilidad por JavaScript y todo el ecosistema que ha ido creciendo a su alrededor(Node, Vue, Angular, etc)\n
                 Pero no solo me gusta estar pegado al ordenador, soy un gran fan del deporte y me encanta pasar tiempo con los mios.`,
     },
     career: {
