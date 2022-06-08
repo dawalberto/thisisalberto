@@ -1,7 +1,9 @@
 <template>
-  <menu-bar />
-  <router-view class="w-screen max-w-6xl mx-auto p-2 overflow-x-hidden pb-8" />
-  <footer-simple />
+  <div style="min-height: calc(100vh - 6rem)">
+    <menu-bar />
+    <router-view class="w-screen max-w-6xl mx-auto p-2 overflow-x-hidden pb-8" />
+  </div>
+  <footer-simple class="h-24" />
 </template>
 
 <script>

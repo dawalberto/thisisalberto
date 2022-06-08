@@ -1,7 +1,6 @@
 <template>
   <div
     class="
-      footer-simple
       max-w-6xl
       mx-auto
       py-6
@@ -10,7 +9,9 @@
       md:text-left
       bg-white
       text-sm
+      bg-opacity-80
     "
+    style="border-top: 1px solid #32557f"
   >
     <div>
       <language-changer />
@@ -35,8 +36,4 @@ export default {
 }
 </script>
 
-<style>
-.footer-simple {
-  border-top: 1px solid #32557f;
-}
-</style>
+<style></style>
