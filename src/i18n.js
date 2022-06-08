@@ -21,6 +21,9 @@ const messages = {
       whatExactly: `What it's exactly`,
       technologies: 'Technologies',
       repository: 'Repository',
+      otherProjects:
+        'I consider that these are my most interesting projects because of the idea and technologies used to carry them out, but I also have',
+      otherProjectsLink: 'other cool little projects',
       jjoin: {
         why: `Let supose that we have to join two excel sheets to get data from both and get a file with the records that match with the condition that we wish. How would you do that? \n
         Nowadays Excel himself has a option to do that but it's not easy to use and let alone intuitive`,
@@ -71,6 +74,9 @@ const messages = {
       whatExactly: '¿Qué es exactamente?',
       technologies: 'Tecnologías que he usado',
       repository: 'Repositorio',
+      otherProjects:
+        'Considero que estos son mis proyectos más interesantes por la idea y tecnologías usadas para llevarlos a cabo pero también tengo',
+      otherProjectsLink: 'otros proyectitos chulos',
       jjoin: {
         why: `Imagina que tienes que unir dos hojas de excel para obtener datos de ambas y conseguir un único archivo con los registros que coincidan según la condición que tu desees ¿cómo lo harías? \n
               Actualmente el propio Excel cuenta con opciones para conseguir tal objetivo, pero no es precisamente fácil ni mucho menos intuitivo, sobre todo para un internauta corriente.`,

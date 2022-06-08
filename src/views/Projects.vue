@@ -15,11 +15,7 @@
           <h1 class="project-title md:text-left underline-title underline-title-yellow">
             Jjoin
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magni tempore
-            consequatur facere ducimus quas voluptatem quidem repellat quaerat. Dolores
-            delectus aspernatur optio suscipit, alias porro quo corporis obcaecati nisi...
-          </p>
+          <p>{{ $t('projectDetails.jjoin.whatExactly').substring(0, 240) }}...</p>
         </div>
       </div>
     </transition>
@@ -40,9 +36,7 @@
             Clasicaguitarra
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magni tempore
-            consequatur facere ducimus quas voluptatem quidem repellat quaerat. Dolores
-            delectus aspernatur optio suscipit, alias porro quo corporis obcaecati nisi...
+            {{ $t('projectDetails.clasicaguitarra.whatExactly').substring(0, 240) }}...
           </p>
         </div>
       </div>
@@ -50,14 +44,13 @@
     <transition name="slide-fade" appear>
       <div class="flex md:space-x-4 flex-col md:flex-row">
         <p>
-          Considero que estos son mis proyectos más interesantes por la idea y tecnologías
-          usadas para llevarlos a cabo pero también tengo
+          {{ $t('projectDetails.otherProjects') }}
           <a
             href="https://github.com/dawalberto?tab=repositories"
             target="_blank"
             class="text-yellow-500"
           >
-            otros proyectitos chulos
+            {{ $t('projectDetails.otherProjectsLink') }}
           </a>
         </p>
       </div>
