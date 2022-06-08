@@ -60,7 +60,7 @@ const messages = {
           title: 'Web Developer',
           period: 'sept. 2019 - may. 2021 · 1 año 9 meses',
           description:
-            'During my stay at Code 10 I was lucky enough to be part of a small team of developers, due to the small size of the department, all the members touched all the fields, so I learned to defend myself well in the usual fields in which a developer is usually specialize: front, back and database. In Code 10 I learned to work as a team more than ever. It was a stage that gave me a lot both professionally and personally. Mainly I was developing functionalities for online stores and also for an ERP. Among other languages and technologies I was working with Java, HTML, CSS, JavaScript, Angular, MySQL and PHP',
+            'During my stay at Código 10 I was lucky enough to be part of a small team of developers, due to the small size of the department, all the members touched all the fields, so I learned to defend myself well in the usual fields in which a developer is usually specialize: front, back and database. In Code 10 I learned to work as a team more than ever. It was a stage that gave me a lot both professionally and personally. Mainly I was developing functionalities for online stores and also for an ERP. Among other languages and technologies I was working with Java, HTML, CSS, JavaScript, Angular, MySQL and PHP',
           place: 'Alicante',
           position: 1,
         },
