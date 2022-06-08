@@ -131,7 +131,18 @@
         </div>
       </div>
     </div>
-    <div class="w-full text-center">
+    <!-- Video -->
+    <div v-if="project == 'clasicaguitarra'" class="w-full text-center">
+      <iframe
+        class="w-full md:w-1/2 h-72 block mx-auto"
+        src="https://www.youtube.com/embed/rBnUq__gGd0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="w-full text-center mt-10">
       <button
         class="
           button-project-details
