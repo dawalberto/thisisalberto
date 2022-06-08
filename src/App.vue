@@ -13,6 +13,9 @@ import FooterSimple from '@/components/FooterSimple.vue'
 export default {
   name: 'App',
   components: { MenuBar, FooterSimple },
+  mounted() {
+    document.title = 'Alberto García Sola'
+  },
 }
 </script>
 
