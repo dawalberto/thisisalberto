@@ -93,7 +93,8 @@ export default {
 
 <style>
 .timeline {
-  width: 900px;
+  /* width: 900px; */
+  @apply md:w-9/12;
   @apply relative my-0 mx-auto mt-5 py-5 list-none;
 }
 
