@@ -132,9 +132,7 @@
       </div>
     </div>
     <div class="w-full text-center">
-      <a
-        target="_blank"
-        :href="project === 'jjoin' ? linkJjoin : linkClasicaguitarra"
+      <button
         class="
           button-project-details
           duration-200
@@ -142,8 +140,10 @@
           hover:scale-105 hover:-rotate-3
         "
       >
-        Disfruta de <span class="capitalize">{{ project }}</span>
-      </a>
+        <a target="_blank" :href="project === 'jjoin' ? linkJjoin : linkClasicaguitarra">
+          Disfruta de <span class="capitalize">{{ project }}</span>
+        </a>
+      </button>
     </div>
     <p class="text-sm mt-10 text-center">
       Illustrations from

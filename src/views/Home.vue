@@ -7,7 +7,7 @@
     <transition name="slide-fade" appear>
       <div class="flex flex-col-reverse md:flex-row lg:space-x-14">
         <div class="md:flex-none md:w-2/5">
-          <terminal-simulator />
+          <terminal-simulator class="md:mt-10" />
         </div>
         <div class="md:flex-none md:w-3/5">
           <img src="@/assets/thisisalberto.png" class="my-img" alt="me on the couch" />
