@@ -55,11 +55,79 @@ const messages = {
     },
     career: {
       jobs: {
-        job1: {},
-        job2: {},
-        job3: {},
+        job1: {
+          institution: 'Codigo10 Soluciones Informaticas',
+          title: 'Web Developer',
+          period: 'sept. 2019 - may. 2021 · 1 año 9 meses',
+          description:
+            'During my stay at Code 10 I was lucky enough to be part of a small team of developers, due to the small size of the department, all the members touched all the fields, so I learned to defend myself well in the usual fields in which a developer is usually specialize: front, back and database. In Code 10 I learned to work as a team more than ever. It was a stage that gave me a lot both professionally and personally. Mainly I was developing functionalities for online stores and also for an ERP. Among other languages and technologies I was working with Java, HTML, CSS, JavaScript, Angular, MySQL and PHP',
+          place: 'Alicante',
+          position: 1,
+        },
+        job2: {
+          institution: 'Labaqua',
+          title: 'Web Developer',
+          period: 'jun. 2018 - mar. 2019 · 10 meses',
+          description: `I was part of a program called "Dual Professional Training", which allows you to carry out twice as many internships as are carried out in
+                        a normal course. This allowed me to complete 400 hours of internships in addition to the 400 that must be done on a mandatory basis. Thanks to this I learned many things before reaching the second year of the higher degree of Development of
+                        Web Applications and I faced it much more prepared and with new points of view and knowledge.
+
+                        All of my efforts and focus during my time at the company were focused on modern JavaScript, Vue.js, and Quasar.
+                        As a web developer, I was part of a project to develop a huge website for the company's labs that currently still in development. My stay there sparked a great interest in me for modern JavaScript and server-side JavaScript.`,
+          place: 'Alicante',
+          position: 2,
+        },
+        job3: {
+          institution: 'Mobisoft Software',
+          title: 'Computer Technician',
+          period: 'abr. 2017 - jun. 2017 · 3 meses',
+          description: `Internships for the intermediate degree of Technician in Microcomputer Systems and Networks lasted 380 hours and although I am currently focused on in web development these internships helped me expand my knowledge in other areas totally different from web development, which has helped me on more than one occasion.
+
+                        The Mobisoft company is a company that developed a software called Glop for hospitality, they have a desktop application that generally installed in POS terminals, they also have an Android version that communicates with the desktop application to make orders. It is designed to facilitate the work of sector employees, being able to manage products, place orders and a wide range of options that accommodate each client.
+
+                        My work in the company as a Technician in Microcomputer Systems and Networks consisted of the installation, configuration and installation of the POS as well as the necessary programs for the final client. I also fixed equipment at the hardware level on some occasions.`,
+          place: 'Alicante',
+          position: 3,
+        },
       },
-      studies: {},
+      studies: {
+        studies1: {
+          institution: 'IES Mare Nostrum',
+          title: 'Web Application Developer',
+          period: '2017 - 2019',
+          place: 'Alicante',
+          description: `In this course I learned everything necessary to be able to create a complete website from scratch to deployment, covering all aspects necessary to be able to become a full-stack web developer.`,
+          position: 4,
+        },
+        studies2: {
+          institution: 'CIP FP Batoi',
+          title: 'Technician in Microcomputer Systems and Networks',
+          period: '2015 - 2017',
+          place: 'Alcoy',
+          description: `Although my studies and efforts are basically focused on web development, I previously did a medium degree where I learned to defend myself better than I already knew in computer environments.
+
+                        I also got a lot of knowledge regarding the hardware part so unlike many developers I’ve don't always dedicated myself to writing code I have knowledge that covers more fields than just development, something that has come in handy on more than one occasion.`,
+          position: 5,
+        },
+        studies3: {
+          institution: 'Cámara de comercio',
+          title: 'Web Development with JavaScript y Angular',
+          period: '2019 . 150 hours',
+          place: 'Alicante',
+          description:
+            '150 hour face-to-face course to improve my JavaScript skills and learn how to develop web applications with Angular.',
+          position: 6,
+        },
+        studies4: {
+          institution: 'Cámara de comercio',
+          title: 'Social Skills and Employability',
+          period: '2019 . 65 hours',
+          place: 'Alicante',
+          description:
+            '65-hour face-to-face course to develop fundamental skills for integration into the world of work (trust, empathy, emotions, teamwork...)',
+          position: 7,
+        },
+      },
     },
     made: 'Made with ❤️ by Alberto García Sola',
   },
@@ -111,7 +179,8 @@ const messages = {
           institution: 'Codigo10 Soluciones Informaticas',
           title: 'Desarrollador Web',
           period: 'sept. 2019 - may. 2021 · 1 año 9 meses',
-          description: 'Durante mi estancia en Código 10...',
+          description:
+            'Durante mi estancia en Código 10 tuve la suerte de formar parte de un pequeño equipo de desarrolladores, debido al reducido tamaño del departamento todos los integrantes tocábamos todos los campos por lo que aprendí a defenderme bien en los campos habituales en los que un desarrollador se suele especializar: front, back y base de datos. En Código 10 aprendí a trabajar en equipo más que nunca. Fue una etapa que me aportó muchísimo tanto profesional como personalmente. Principalmente estuve desarrollando funcionalidades para tiendas online y también para un ERP. Entre otros lenguajes y tecnologías estuve trabajando con Java, HTML, CSS, JavaScript, Angular, MySQL y PHP',
           place: 'Alicante',
           position: 1,
         },
@@ -119,14 +188,10 @@ const messages = {
           institution: 'Labaqua',
           title: 'Desarrollador de Aplicaciones Web',
           period: 'jun. 2018 - mar. 2019 · 10 meses',
-          description: `Formé parte de un programa llamado "Formación Profesional Dual", el cual te permite realizar el doble de prácticas que se realizan en 
-                        un curso normal. Esto me permitió realizar 400 horas de prácticas adicionales a las 400 que hay que hacer de manera obligatoria en el 
-                        periodo de prácticas. Gracias a esto aprendí muchas cosas antes de llegar al segundo curso del grado superior de Desarrollo de 
-                        Aplicaciones Web y lo afronté mucho más preparado y con nuevos puntos de vista y conocimientos. 
-                        
+          description: `Formé parte de un programa llamado "Formación Profesional Dual", el cual te permite realizar el doble de prácticas que se realizan en un curso normal. Esto me permitió realizar 400 horas de prácticas adicionales a las 400 que hay que hacer de manera obligatoria. Gracias a esto aprendí muchas cosas antes de llegar al segundo curso del grado superior de Desarrollo de Aplicaciones Web y lo afronté mucho más preparado y con nuevos puntos de vista y conocimientos. 
+
                         Todos mis esfuerzos y centro de atención durante mi estancia en la empresa se centraron en JavaScript moderno, Vue.js y Quasar. 
-                        Como desarrollador web, formé parte de un proyecto para desarrollar una enorme web para los laboratorios de la empresa que actualmente 
-                        sigue en desarrollo. Mi estancia allí despertó un gran interés en mi por JavaScript moderno y JavaScript en entorno servidor.`,
+                        Como desarrollador web, formé parte de un proyecto para desarrollar una enorme web para los laboratorios de la empresa que actualmente sigue en desarrollo. Mi estancia allí despertó un gran interés en mi por JavaScript moderno y JavaScript en entorno servidor.`,
           place: 'Alicante',
           position: 2,
         },
@@ -134,17 +199,11 @@ const messages = {
           institution: 'Mobisoft Software',
           title: 'Técnico informático',
           period: 'abr. 2017 - jun. 2017 · 3 meses',
-          description: `Las prácticas del grado medio de Técnico en Sistemas Microinformáticos y Redes duraron 380 horas y aunque actualmente estoy centrado 
-                        en el desarrollo web estas prácticas me ayudaron a ampliar mis conocimientos en otras áreas totalmente distintas al desarrollo web, 
-                        cosa que me ha ayudado en más de una ocasión.
-                        
-                        La empresa Mobisoft es una empresa que desarrolló un software llamado Glop para hostelería, tienen una aplicación de escritorio que 
-                        generalmente instalan en TPVs, también cuentan con una versión para Android que se comunica con la aplicación de escritorio para 
-                        realizar comandas. Está diseñado para facilitar la labor a los empleados del sector, pudiendo gestionar los productos, realizar pedidos 
-                        y una amplia gama de opciones que se acomodan a cada cliente. 
-                        
-                        Mi trabajo en la empresa como Técnico en Sistemas Microinformáticos y Redes consistió en la instalación, configuración e instalación 
-                        de los TPVs así como los programas necesarios para el cliente final.
+          description: `Las prácticas del grado medio de Técnico en Sistemas Microinformáticos y Redes duraron 380 horas y aunque actualmente estoy centrado en el desarrollo web estas prácticas me ayudaron a ampliar mis conocimientos en otras áreas totalmente distintas al desarrollo web, cosa que me ha ayudado en más de una ocasión.
+
+                        La empresa Mobisoft es una empresa que desarrolló un software llamado Glop para hostelería, tienen una aplicación de escritorio que generalmente instalan en TPVs, también cuentan con una versión para Android que se comunica con la aplicación de escritorio para realizar comandas. Está diseñado para facilitar la labor a los empleados del sector, pudiendo gestionar los productos, realizar pedidos y una amplia gama de opciones que se acomodan a cada cliente. 
+
+                        Mi trabajo en la empresa como Técnico en Sistemas Microinformáticos y Redes consistió en la instalación, configuración e instalación de los TPVs así como los programas necesarios para el cliente final.
                         También arreglaba equipos a nivel hardware en algunas ocasiones.`,
           place: 'Alicante',
           position: 3,
@@ -156,8 +215,7 @@ const messages = {
           title: 'Desarrollador de Aplicaciones Web',
           period: '2017 - 2019',
           place: 'Alicante',
-          description: `En este curso aprendí todo lo necesario para poder crear un sitio web completo, cubriendo todos los aspectos 
-                        necesarios como para poder convertirme en un desarrollador web full-stack.`,
+          description: `En este curso aprendí todo lo necesario para poder crear un sitio web completo desde cero hasta despliegue, cubriendo todos los aspectos necesarios como para poder convertirme en un desarrollador web full-stack.`,
           position: 4,
         },
         studies2: {
@@ -165,12 +223,9 @@ const messages = {
           title: 'Técnico en Sistemas Microinformáticos y Redes',
           period: '2015 - 2017',
           place: 'Alcoi',
-          description: `Aunque mis estudios y esfuerzos se centran básicamente en el desarrollo web, con anterioridad realicé un grado medio 
-                        donde aprendí a defenderme mejor de lo que ya sabía en entornos informáticos. 
+          description: `Aunque mis estudios y esfuerzos se centran básicamente en el desarrollo web, con anterioridad realicé un grado medio donde aprendí a defenderme mejor de lo que ya sabía en entornos informáticos. 
 
-                        Además obtuve bastantes conocimiento respecto a la parte hardware, por lo que a diferencia de muchos desarrolladores no 
-                        siempre me he dedicado a escribir código, tengo unos conocimientos que abarcan más campos que únicamente el desarrollo, 
-                        algo que me ha venido muy bien en más de una ocasión.`,
+                        Además obtuve bastantes conocimiento respecto a la parte hardware, por lo que a diferencia de muchos desarrolladores no siempre me he dedicado a escribir código, tengo unos conocimientos que abarcan más campos que únicamente el desarrollo, algo que me ha venido muy bien en más de una ocasión.`,
           position: 5,
         },
         studies3: {
