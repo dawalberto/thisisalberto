@@ -70,9 +70,7 @@
             </h1>
           </div>
           <div class="flex flex-row-reverse items-center mt-2">
-            <p class="md:p-10">
-              {{ $t(`projectDetails.${project}.technologies`) }}
-            </p>
+            <p class="md:p-10" v-html="$t(`projectDetails.${project}.technologies`)"></p>
             <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
               <img
                 src="@/assets/absurd-tecnologias.png"

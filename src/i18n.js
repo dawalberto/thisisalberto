@@ -32,7 +32,7 @@ const messages = {
                       In the first screen you will select the files.
                       In the second screen you will create the condition to join the files.
                       And last you will choose wich fields of both sheets you want to record in the new file. Also you will choose if you want to save only one file with every match and/or to save as many files as matches with the data/fields that you want`,
-        technologies: `To develop this project I've used these languages and technologies: HTML, CSS, JavaScript, Tailwindcss, Vue, Nuxt, Electron.`,
+        technologies: `To develop this project I've used these languages and technologies: <span class="font-bold">HTML, CSS, JavaScript, Tailwindcss, Vue, Nuxt, Electron</span>.`,
       },
       clasicaguitarra: {
         why: `Many classical guitarists have their own website where we can usually find their career and current concerts.
@@ -41,7 +41,7 @@ const messages = {
         whatExactly: `Clasicaguitarra is a website where classical guitarists can create their own profile and concerts with their corresponding classical music programs. \n
         As a visitor or lover of classical guitar you can subscribe to any guitarist to be aware of all their concerts, and the next concerts of all registered guitarists will always be displayed on the home page.
         In addition, you will be able to follow and see the trajectory of each guitarist and other interesting data such as the guitar with which he currently plays, his social networks or his website.`,
-        technologies: `To carry out this project I have used the following technologies and languages: HTML, CSS, JavaScript, Vue, Vuetify, Node, MongoDB, Heroku, Firebase, Cloudinary`,
+        technologies: `To carry out this project I have used the following technologies and languages: <span class="font-bold">HTML, CSS, JavaScript, Vue, Vuetify, Node, MongoDB, Heroku, Firebase, Cloudinary</span>.`,
       },
     },
     home: {
@@ -153,7 +153,7 @@ const messages = {
                       En la primera pantalla podrás seleccionar los archivos que desees.
                       En la segunda pantalla crearás la condición por la cual quieres que se unan las hojas.
                       Por último elegirás que campos de cada hoja deseas grabar en el nuevo fichero y si deseas guardar un único archivo con todas las coincidencias y/o guardar un archivo con el contenido que desees por cada coincidencia.`,
-        technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: HTML, CSS, JavaScript, Tailwindcss, Vue, Nuxt, Electron.`,
+        technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: <span class="font-bold">HTML, CSS, JavaScript, Tailwindcss, Vue, Nuxt, Electron</span>.`,
       },
       clasicaguitarra: {
         why: `Muchos guitarristas clásicos cuentan con su propia página web donde habitualmente podemos encontrar su trayectoria y conciertos actuales.
@@ -162,7 +162,7 @@ const messages = {
         whatExactly: `Clasicaguitarra es una página web en la que los guitarristas clásicos podrán crear su propio perfil y conciertos con sus programas de música clásica correspondientes. \n
                       Como visitante o amante de la guitarra clásica podrás suscribirte a cualquier guitarrista para estar al tanto de todos sus conciertos, además en la página de inicio siempre se visualizarán los próximos conciertos de todos los guitarristas registrados.
                       Además podrás seguir y ver la trayectoria de cada guitarrista y otros datos de interés como la guitarra con la que toca actualmente, sus redes sociales o su página web.`,
-        technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: HTML, CSS, JavaScript, Vue, Vuetify, Node, MongoDB, Heroku, Firebase, Cloudinary`,
+        technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: <span class="font-bold">HTML, CSS, JavaScript, Vue, Vuetify, Node, MongoDB, Heroku, Firebase, Cloudinary</span>.`,
       },
     },
     home: {
