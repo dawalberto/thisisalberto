@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col space-y-16">
+  <div class="flex flex-col space-y-16 mt-10">
     <project-details
       v-if="showProjectDetails"
       :project="project"
@@ -7,7 +7,10 @@
       class="z-50 absolute top-0 left-1/2 transform -translate-x-1/2"
     />
     <transition name="slide-fade-left" appear>
-      <div @click="showProjectDetailsAction('jjoin')" class="project-container">
+      <div
+        @click="showProjectDetailsAction('jjoin')"
+        class="project-container md:flex-row"
+      >
         <div class="logo-container">
           <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
         </div>
@@ -92,7 +95,7 @@ export default {
 <style>
 .project-container {
   @apply flex md:space-x-4 flex-col 
-  md:flex-row p-4 cursor-pointer;
+  p-4 cursor-pointer;
 }
 
 .logo-container {
