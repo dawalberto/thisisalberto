@@ -4,7 +4,7 @@
       <project-details
         v-if="showProjectDetails"
         :project="project"
-        @close-project-details="hiddeProjectDetailsAction"
+        @close-project-details="closeProjectDetailsAction"
         class="z-50 absolute top-0 left-1/2 transform -translate-x-1/2"
       />
       <transition name="slide-fade-left" appear>
@@ -68,6 +68,7 @@
 <script>
 import ProjectDetails from '@/components/ProjectDetails.vue'
 import { ref } from 'vue'
+import emitter from '@/services/emitter'
 
 export default {
   name: 'Projects',
@@ -82,15 +83,17 @@ export default {
       showProjectDetails.value = true
     }
 
-    const hiddeProjectDetailsAction = () => {
+    const closeProjectDetailsAction = () => {
       showProjectDetails.value = false
     }
+
+    emitter.on('close-project-details', closeProjectDetailsAction)
 
     return {
       project,
       showProjectDetailsAction,
       showProjectDetails,
-      hiddeProjectDetailsAction,
+      closeProjectDetailsAction,
     }
   },
 }

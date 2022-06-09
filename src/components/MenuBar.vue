@@ -14,12 +14,12 @@
         </div>
         <!-- Primary Navbar items -->
         <div class="flex items-center md:space-x-8">
-          <router-link
-            to="/projects"
-            class="underline-title underline-title-yellow text-4xl"
+          <span
+            @click="goProjects"
+            class="underline-title underline-title-yellow text-4xl cursor-pointer"
           >
             {{ projectsTitle }}
-          </router-link>
+          </span>
           <router-link
             to="/career"
             class="underline-title underline-title-yellow text-4xl"
@@ -46,11 +46,14 @@
 import { ref, computed } from 'vue'
 import { useWindowSize } from 'vue-window-size'
 import { useI18n } from 'vue3-i18n'
+import { useRouter } from 'vue-router'
+import emitter from '@/services/emitter'
 
 export default {
   name: 'MenuBar',
   setup() {
     let i18n = useI18n()
+    const router = useRouter()
     let windowWidth = ref(useWindowSize().width)
 
     const projectsTitle = computed(() => {
@@ -63,7 +66,12 @@ export default {
       return windowWidth.value >= 768 ? i18n.t('menu.contact') : '📞'
     })
 
-    return { projectsTitle, careerTitle, contactTitle }
+    const goProjects = () => {
+      emitter.emit('close-project-details')
+      router.push('/projects')
+    }
+
+    return { projectsTitle, careerTitle, contactTitle, goProjects }
   },
 }
 </script>
