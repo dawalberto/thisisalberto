@@ -1,16 +1,16 @@
 <template>
-  <transition name="slide-fade" appear>
-    <div class="md:static">
-      <div
-        class="
-          center-body
-          flex flex-col-reverse
-          md:flex-row
-          items-center
-          justify-center
-          content-center
-        "
-      >
+  <div class="md:static">
+    <div
+      class="
+        center-body
+        flex flex-col-reverse
+        md:flex-row
+        items-center
+        justify-center
+        content-center
+      "
+    >
+      <transition name="slide-fade" appear>
         <div class="w-100 md:w-2/4 flex flex-col items-center">
           <div
             class="
@@ -48,12 +48,12 @@
             </a>
           </div>
         </div>
-        <div class="w-100 md:w-5/12 mt-0">
-          <img class="w-100 my-img" src="@/assets/yoCabeza.png" alt="yo animacion" />
-        </div>
+      </transition>
+      <div class="w-100 md:w-5/12 mt-0">
+        <img class="w-100 my-img" src="@/assets/yoCabeza.png" alt="yo animacion" />
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script>
