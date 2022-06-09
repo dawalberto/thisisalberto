@@ -16,11 +16,11 @@
         >
           <a
             class="flex flex-wrap items-center space-x-4 cursor-pointer"
-            href="mailto:albertoinformatica97@gmail.com"
+            href="mailto:contact@thisisalberto.dev"
             target="_blank"
           >
             <svg-icon :icon="'message'" />
-            <p>albertoinformatica97@gmail.com</p>
+            <p>contact@thisisalberto.dev</p>
           </a>
           <a
             class="flex flex-wrap items-center space-x-4 cursor-pointer"
