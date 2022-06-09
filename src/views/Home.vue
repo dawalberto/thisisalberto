@@ -1,19 +1,21 @@
 <template>
-  <div>
+  <div class="md:static">
     <!-- background -->
     <div class="bar bar-right"></div>
     <div class="bar bar-left"></div>
-    <!-- content -->
-    <transition name="slide-fade" appear>
-      <div class="flex flex-col-reverse md:flex-row lg:space-x-14">
-        <div class="md:flex-none md:w-2/5">
-          <terminal-simulator class="md:mt-10" />
+    <div class="center-body">
+      <!-- content -->
+      <transition name="slide-fade" appear>
+        <div class="flex flex-col-reverse md:flex-row lg:space-x-14">
+          <div class="md:flex-none md:w-2/5">
+            <terminal-simulator />
+          </div>
+          <div class="md:flex-none md:w-3/5">
+            <img src="@/assets/thisisalberto.png" class="my-img" alt="me on the couch" />
+          </div>
         </div>
-        <div class="md:flex-none md:w-3/5">
-          <img src="@/assets/thisisalberto.png" class="my-img" alt="me on the couch" />
-        </div>
-      </div>
-    </transition>
+      </transition>
+    </div>
   </div>
 </template>
 

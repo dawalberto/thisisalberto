@@ -122,4 +122,8 @@ body {
   transform: translateX(40px);
   opacity: 0;
 }
+
+.center-body {
+  @apply md:absolute md:top-1/2 md:left-1/2 md:w-screen md:max-w-6xl md:transform md:-translate-y-1/2 md:-translate-x-1/2;
+}
 </style>

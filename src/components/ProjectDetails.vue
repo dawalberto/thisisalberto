@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white w-screen max-w-6xl mx-auto p-2 overflow-x-hidden pb-8">
-    <close-button @click="close" class="fixed left-2 top-2" />
-    <div class="mx-auto w-2/4 md:w-1/4 mt-24">
+    <close-button @click="close" class="fixed left-2 top-2 opacity-100 md:opacity-0" />
+    <div class="mx-auto w-2/4 md:w-1/4 mt-24 md:mt-0">
       <kinesis-container>
         <kinesis-element :strength="20" type="depth">
           <img
@@ -25,7 +25,16 @@
           'top-7 right-4 text-4xl': project == 'jjoin',
           'top-20 md:top-28 -right-6 md:right-0 text-4xl': project == 'clasicaguitarra',
         }"
-        class="absolute transform rotate-45 md:text-5xl text-center capitalize"
+        class="
+          absolute
+          transform
+          rotate-45
+          md:text-5xl
+          text-center
+          capitalize
+          opacity-100
+          md:opacity-0
+        "
       >
         {{ project }}
       </h1>
