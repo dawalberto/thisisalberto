@@ -170,7 +170,7 @@ const messages = {
                 Me llamo Alberto y soy Desarrollador Web!
                 Tengo ${currentAge} años y llevo más de seis en el mundo de la informática de los cuales cuatro he estado totalmente enfocado en lo que más me gusta, el desarrollo web. \n
                 Entre otras cosas me gusta porque te obliga a superarte cada día planteándote nuevos problemas y estudiando la mejor manera de resolverlos. \n
-                Como desarrollador web soy consciente de que los lenguajes y tecnologías son solo el medio y no el fin por lo que debemos de ser capaces de hallar una solución independientemente de estos .Pero a pesar de esto no puedo evitar sentir una gran debilidad por JavaScript y todo el ecosistema que ha ido creciendo a su alrededor(Node, Vue, Angular, etc)\n
+                Como desarrollador web soy consciente de que los lenguajes y tecnologías son solo el medio y no el fin por lo que debemos de ser capaces de hallar una solución independientemente de estos. Pero a pesar de esto no puedo evitar sentir una gran debilidad por JavaScript y todo el ecosistema que ha ido creciendo a su alrededor(Node, Vue, Angular, etc)\n
                 Pero no solo me gusta estar pegado al ordenador, soy un gran fan del deporte y me encanta pasar tiempo con los mios.`,
     },
     career: {
