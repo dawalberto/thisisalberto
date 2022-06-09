@@ -9,7 +9,7 @@
     <transition name="slide-fade-left" appear>
       <div
         @click="showProjectDetailsAction('jjoin')"
-        class="project-container md:flex-row"
+        class="project-container flex-col md:flex-row"
       >
         <div class="logo-container">
           <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
@@ -25,7 +25,7 @@
     <transition name="slide-fade-right" appear>
       <div
         @click="showProjectDetailsAction('clasicaguitarra')"
-        class="project-container md:flex-row-reverse"
+        class="project-container flex-col md:flex-row-reverse"
       >
         <div class="logo-container">
           <img
@@ -94,7 +94,7 @@ export default {
 
 <style>
 .project-container {
-  @apply flex md:space-x-4 flex-col 
+  @apply flex md:space-x-4 
   p-4 cursor-pointer;
 }
 
