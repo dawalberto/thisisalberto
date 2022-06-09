@@ -4,6 +4,12 @@
     <div :class="direction" class="cursor-pointer">
       <div class="relative inline-block text-center">
         <h1 class="flag">{{ title }}</h1>
+        <h2
+          class="institution"
+          :class="direction === 'direction-r' ? 'md:text-right' : 'md:text-left'"
+        >
+          {{ institution }}
+        </h2>
         <h2 class="time-wrapper">
           <span class="time">{{ period }}</span>
         </h2>
@@ -20,6 +26,7 @@ export default {
   props: {
     emoji: String,
     title: String,
+    institution: String,
     description: String,
     period: String,
     direction: String,
@@ -45,9 +52,13 @@ export default {
   text-left font-bold bg-white text-xl;
 }
 
+.institution {
+  @apply relative block bg-white text-sm pt-2 pb-0 px-3 z-20;
+}
+
 .time-wrapper {
   @apply inline bg-white 
-  text-yellow-500 text-xs;
+  text-yellow-500 text-xs px-3;
 }
 
 .direction-l .time-wrapper {
@@ -72,7 +83,8 @@ export default {
 }
 
 @media screen and (max-width: 900px) {
-  .flag {
+  .flag,
+  .institution {
     @apply z-20;
   }
 

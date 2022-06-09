@@ -8,6 +8,7 @@
           :key="careerItem.position"
           :emoji="careerItem.emoji"
           :title="careerItem.title"
+          :institution="careerItem.institution"
           :period="careerItem.period"
           :description="careerItem.description"
           :direction="careerItem.direction"
