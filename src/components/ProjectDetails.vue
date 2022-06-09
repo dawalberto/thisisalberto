@@ -78,7 +78,7 @@
               {{ $t('projectDetails.technologies') }}
             </h1>
           </div>
-          <div class="flex flex-row-reverse items-center mt-2">
+          <div class="flex flex-row items-center mt-2">
             <p class="md:p-10" v-html="$t(`projectDetails.${project}.technologies`)"></p>
             <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
               <img
