@@ -49,7 +49,7 @@ const messages = {
       aboutMe: `Hi 👋 \n
                 My name is Alberto and I'm a Web Developer!
                 I'm ${currentAge} years old and I'm more than six years in the IT world of which four of them I've been completely focused in the most I like, Web Development. \n
-                Among other things I like it because it pushes you to improve yourself every day with new problems and ways to solve them. \n
+                Among other things, I like it because it implies a constant evolution in terms of knowledge and skills. It seems to me that it is what enriches us as professionals and people. \n
                 As a Web Developer I know that the languages and technologies are only the tool and way and not the finish, that's because we should be able to find a solution regardless of them. But although I know this I can't help it feel a special love for JavaScript and the whole new ecosystem that it's growing around him(Node, Vue, Angular, etc) \n
                 But I don't only enjoy my time being on the computer, I'm a big fan of the sport and I really like to expend time with my friends and family.
       `,
@@ -171,7 +171,7 @@ const messages = {
       aboutMe: `Hi 👋 \n 
                 Me llamo Alberto y soy Desarrollador Web!
                 Tengo ${currentAge} años y llevo más de seis en el mundo de la informática de los cuales cuatro he estado totalmente enfocado en lo que más me gusta, el desarrollo web. \n
-                Entre otras cosas me gusta porque te obliga a superarte cada día planteándote nuevos problemas y estudiando la mejor manera de resolverlos. \n
+                Entre otras cosas me gusta porque  implica una constante evolución a nivel de conocimientos y habilidades. Me parece que es lo que nos enriquece como profesionales y personas. \n
                 Como desarrollador web soy consciente de que los lenguajes y tecnologías son solo el medio y no el fin por lo que debemos ser capaces de hallar una solución independientemente de estos. Pero a pesar de esto no puedo evitar sentir una gran debilidad por JavaScript y todo el ecosistema que ha ido creciendo a su alrededor(Node, Vue, Angular, etc)\n
                 Pero no solo me gusta estar pegado al ordenador, soy un gran fan del deporte y me encanta pasar tiempo con los mios.`,
     },
