@@ -21,6 +21,7 @@ const messages = {
       whatExactly: `What it's exactly`,
       technologies: 'Technologies',
       repository: 'Repository',
+      enjoy: 'Enjoy',
       otherProjects:
         'I consider that these are my most interesting projects because of the idea and technologies used to carry them out, but I also have',
       otherProjectsLink: 'other cool little projects',
@@ -142,6 +143,7 @@ const messages = {
       whatExactly: '¿Qué es exactamente?',
       technologies: 'Tecnologías que he usado',
       repository: 'Repositorio',
+      enjoy: 'Disfruta de',
       otherProjects:
         'Considero que estos son mis proyectos más interesantes por la idea y tecnologías usadas para llevarlos a cabo pero también tengo',
       otherProjectsLink: 'otros proyectitos chulos',

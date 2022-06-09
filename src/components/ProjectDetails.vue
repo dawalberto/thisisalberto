@@ -159,7 +159,7 @@
         "
       >
         <a target="_blank" :href="project === 'jjoin' ? linkJjoin : linkClasicaguitarra">
-          Disfruta de <span class="capitalize">{{ project }}</span>
+          {{ $t('projectDetails.enjoy') }} <span class="capitalize">{{ project }}</span>
         </a>
       </button>
     </div>
