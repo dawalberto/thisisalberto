@@ -1,6 +1,6 @@
 <template>
   <nav v-show="$route.name !== 'ProjectDetails'" class="bg-white z-40">
-    <div class="max-w-6xl mx-auto md:px-16 flex justify-between">
+    <div class="max-w-6xl mx-auto pl-4 md:px-16 flex justify-between">
       <div class="flex sm:space-x-9">
         <!-- Website Logo -->
         <div class="my-2">
