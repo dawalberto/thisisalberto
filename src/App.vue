@@ -124,6 +124,6 @@ body {
 }
 
 .center-body {
-  @apply md:absolute md:top-1/2 md:left-1/2 md:w-screen md:max-w-6xl md:transform md:-translate-y-1/2 md:-translate-x-1/2;
+  @apply 2xl:absolute 2xl:top-1/2 2xl:left-1/2 2xl:w-screen 2xl:max-w-6xl 2xl:transform 2xl:-translate-y-1/2 2xl:-translate-x-1/2;
 }
 </style>

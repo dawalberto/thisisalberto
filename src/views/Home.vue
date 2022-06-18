@@ -1,5 +1,5 @@
 <template>
-  <div class="md:static">
+  <div class="2xl:static">
     <!-- background -->
     <div class="bar bar-right"></div>
     <div class="bar bar-left"></div>

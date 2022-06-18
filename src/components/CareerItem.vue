@@ -48,7 +48,7 @@ export default {
 }
 
 .flag {
-  @apply relative inline md:static md:block py-2 px-3 
+  @apply relative inline 2xl:static md:block py-2 px-3 
   text-left font-bold bg-white text-xl;
 }
 

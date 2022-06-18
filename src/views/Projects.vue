@@ -1,5 +1,5 @@
 <template>
-  <div class="md:static">
+  <div class="2xl:static">
     <div class="center-body flex flex-col space-y-16">
       <project-details
         v-if="showProjectDetails"

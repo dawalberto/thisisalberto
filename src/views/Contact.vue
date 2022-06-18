@@ -1,5 +1,5 @@
 <template>
-  <div class="md:static">
+  <div class="2xl:static">
     <div
       class="
         center-body
