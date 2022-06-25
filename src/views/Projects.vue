@@ -52,7 +52,7 @@
           <p>
             {{ $t('projectDetails.otherProjects') }}
             <a
-              href="https://github.com/dawalberto?tab=repositories"
+              href="https://dawalberto.github.io/angular-github-projects/"
               target="_blank"
               class="text-yellow-500"
             >
