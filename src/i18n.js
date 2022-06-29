@@ -8,6 +8,8 @@ function calculate_age(date) {
 }
 
 const currentAge = calculate_age(new Date(1997, 12, 30))
+const yearsInITWorld = calculate_age(new Date(2015, 1, 1)) - 1
+const yearsInWebDevelopment = calculate_age(new Date(2017, 1, 1)) - 1
 
 const messages = {
   en: {
@@ -22,8 +24,7 @@ const messages = {
       technologies: 'Technologies',
       repository: 'Repository',
       enjoy: 'Enjoy',
-      otherProjects:
-        'I consider that these are my most interesting projects because of the idea and technologies used to carry them out, but I also have',
+      otherProjects: `I consider that these are my most interesting projects because of the idea and technologies used to carry them out, but I've also developed`,
       otherProjectsLink: 'other cool little projects',
       jjoin: {
         why: `Let supose that we have to join two excel sheets to get data from both and get a file with the records that match with the condition that we wish. How would you do that? \n
@@ -33,7 +34,7 @@ const messages = {
                       In the first screen you will select the files.
                       In the second screen you will create the condition to join the files.
                       And last you will choose wich fields of both sheets you want to record in the new file. Also you will choose if you want to save only one file with every match and/or to save as many files as matches with the data/fields that you want`,
-        technologies: `To develop this project I've used these languages and technologies: <span class="font-bold">HTML, CSS, JavaScript, Tailwindcss, Vue, Nuxt, Electron</span>.`,
+        technologies: `To develop this project I've used these languages and technologies: <span class="font-bold">HTML, CSS, JavaScript, Tailwindcss, Vue, Nuxt, Electron, Node</span>.`,
       },
       clasicaguitarra: {
         why: `Many classical guitarists have their own website where we can usually find their career and current concerts.
@@ -48,7 +49,7 @@ const messages = {
     home: {
       aboutMe: `Hi 👋 \n
                 My name is Alberto and I'm a Web Developer!
-                I'm ${currentAge} years old and I'm more than six years in the IT world of which four of them I've been completely focused in the most I like, Web Development. \n
+                I'm ${currentAge} years old and I'm more than ${yearsInITWorld} years in the IT world of which ${yearsInWebDevelopment} of them I've been completely focused in the most I like, Web Development. \n
                 Among other things, I like it because it implies a constant evolution in terms of knowledge and skills. It seems to me that it is what enriches us as professionals and people. \n
                 As a Web Developer I know that the languages and technologies are only the tool and way and not the finish, that's because we should be able to find a solution regardless of them. But although I know this I can't help it feel a special love for JavaScript and the whole new ecosystem that it's growing around him(Node, Vue, Angular, etc) \n
                 But I don't only enjoy my time being on the computer, I'm a big fan of the sport and I really like to expend time with my friends and family.
@@ -145,7 +146,7 @@ const messages = {
       repository: 'Repositorio',
       enjoy: 'Disfruta de',
       otherProjects:
-        'Considero que estos son mis proyectos más interesantes por la idea y tecnologías usadas para llevarlos a cabo pero también tengo',
+        'Considero que estos son mis proyectos más interesantes por la idea y tecnologías usadas para llevarlos a cabo pero también he desarrollado',
       otherProjectsLink: 'otros proyectitos chulos',
       jjoin: {
         why: `Imagina que tienes que unir dos hojas de excel para obtener datos de ambas y conseguir un único archivo con los registros que coincidan según la condición que tu desees ¿cómo lo harías? \n
@@ -155,7 +156,7 @@ const messages = {
                       En la primera pantalla podrás seleccionar los archivos que desees.
                       En la segunda pantalla crearás la condición por la cual quieres que se unan las hojas.
                       Por último elegirás que campos de cada hoja deseas grabar en el nuevo fichero y si deseas guardar un único archivo con todas las coincidencias y/o guardar un archivo con el contenido que desees por cada coincidencia.`,
-        technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: <span class="font-bold">HTML, CSS, JavaScript, Tailwindcss, Vue, Nuxt, Electron</span>.`,
+        technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: <span class="font-bold">HTML, CSS, JavaScript, Tailwindcss, Vue, Nuxt, Electron, Node</span>.`,
       },
       clasicaguitarra: {
         why: `Muchos guitarristas clásicos cuentan con su propia página web donde habitualmente podemos encontrar su trayectoria y conciertos actuales.
@@ -170,7 +171,7 @@ const messages = {
     home: {
       aboutMe: `Hi 👋 \n 
                 Me llamo Alberto y soy Desarrollador Web!
-                Tengo ${currentAge} años y llevo más de seis en el mundo de la informática de los cuales cuatro he estado totalmente enfocado en lo que más me gusta, el desarrollo web. \n
+                Tengo ${currentAge} años y llevo más de ${yearsInITWorld} en el mundo de la informática de los cuales ${yearsInWebDevelopment} he estado totalmente enfocado en lo que más me gusta, el desarrollo web. \n
                 Entre otras cosas me gusta porque  implica una constante evolución a nivel de conocimientos y habilidades. Me parece que es lo que nos enriquece como profesionales y personas. \n
                 Como desarrollador web soy consciente de que los lenguajes y tecnologías son solo el medio y no el fin por lo que debemos ser capaces de hallar una solución independientemente de estos. Pero a pesar de esto no puedo evitar sentir una gran debilidad por JavaScript y todo el ecosistema que ha ido creciendo a su alrededor(Node, Vue, Angular, etc)\n
                 Pero no solo me gusta estar pegado al ordenador, soy un gran fan del deporte y me encanta pasar tiempo con los mios.`,
