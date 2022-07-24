@@ -68,7 +68,7 @@ const messages = {
         job2: {
           institution: 'Codigo10 Soluciones Informaticas',
           title: 'Web Developer',
-          period: 'sept. 2019 - may. 2021 · 1 año 9 meses',
+          period: 'sept. 2019 - may. 2021 · 1 año 9 months',
           description:
             'During my stay at Código 10 I was lucky enough to be part of a small team of developers, due to the small size of the department, all the members touched all the fields, so I learned to defend myself well in the usual fields in which a developer is usually specialize: front, back and database. In Code 10 I learned to work as a team more than ever. It was a stage that gave me a lot both professionally and personally. Mainly I was developing functionalities for online stores and also for an ERP. Among other languages and technologies I was working with Java, HTML, CSS, JavaScript, Angular, MySQL and PHP',
           place: 'Alicante',
@@ -77,7 +77,7 @@ const messages = {
         job3: {
           institution: 'Labaqua',
           title: 'Web Developer',
-          period: 'jun. 2018 - mar. 2019 · 10 meses',
+          period: 'jun. 2018 - mar. 2019 · 10 months',
           description: `I was part of a program called "Dual Professional Training", which allows you to carry out twice as many internships as are carried out in
                         a normal course. This allowed me to complete 400 hours of internships in addition to the 400 that must be done on a mandatory basis. Thanks to this I learned many things before reaching the second year of the higher degree of Development of
                         Web Applications and I faced it much more prepared and with new points of view and knowledge.
@@ -90,7 +90,7 @@ const messages = {
         job4: {
           institution: 'Mobisoft Software',
           title: 'Computer Technician',
-          period: 'abr. 2017 - jun. 2017 · 3 meses',
+          period: 'abr. 2017 - jun. 2017 · 3 months',
           description: `Internships for the intermediate degree of Technician in Microcomputer Systems and Networks lasted 380 hours and although I am currently focused on in web development these internships helped me expand my knowledge in other areas totally different from web development, which has helped me on more than one occasion.
 
                         The Mobisoft company is a company that developed a software called Glop for hospitality, they have a desktop application that generally installed in POS terminals, they also have an Android version that communicates with the desktop application to make orders. It is designed to facilitate the work of sector employees, being able to manage products, place orders and a wide range of options that accommodate each client.
