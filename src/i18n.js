@@ -58,15 +58,23 @@ const messages = {
     career: {
       jobs: {
         job1: {
+          institution: 'NTT DATA',
+          title: 'Frontend Web Developer with React',
+          period: 'jul. 2022 - now',
+          description: 'Developing together with the frontend team with react',
+          place: 'Alicante',
+          position: 1,
+        },
+        job2: {
           institution: 'Codigo10 Soluciones Informaticas',
           title: 'Web Developer',
           period: 'sept. 2019 - may. 2021 · 1 año 9 meses',
           description:
             'During my stay at Código 10 I was lucky enough to be part of a small team of developers, due to the small size of the department, all the members touched all the fields, so I learned to defend myself well in the usual fields in which a developer is usually specialize: front, back and database. In Code 10 I learned to work as a team more than ever. It was a stage that gave me a lot both professionally and personally. Mainly I was developing functionalities for online stores and also for an ERP. Among other languages and technologies I was working with Java, HTML, CSS, JavaScript, Angular, MySQL and PHP',
           place: 'Alicante',
-          position: 1,
+          position: 2,
         },
-        job2: {
+        job3: {
           institution: 'Labaqua',
           title: 'Web Developer',
           period: 'jun. 2018 - mar. 2019 · 10 meses',
@@ -77,9 +85,9 @@ const messages = {
                         All of my efforts and focus during my time at the company were focused on modern JavaScript, Vue.js, and Quasar.
                         As a web developer, I was part of a project to develop a huge website for the company's labs that currently still in development. My stay there sparked a great interest in me for modern JavaScript and server-side JavaScript.`,
           place: 'Alicante',
-          position: 2,
+          position: 3,
         },
-        job3: {
+        job4: {
           institution: 'Mobisoft Software',
           title: 'Computer Technician',
           period: 'abr. 2017 - jun. 2017 · 3 meses',
@@ -89,7 +97,7 @@ const messages = {
 
                         My work in the company as a Technician in Microcomputer Systems and Networks consisted of the installation, configuration and installation of the POS as well as the necessary programs for the final client. I also fixed equipment at the hardware level on some occasions.`,
           place: 'Alicante',
-          position: 3,
+          position: 4,
         },
       },
       studies: {
@@ -99,16 +107,6 @@ const messages = {
           period: '2017 - 2019',
           place: 'Alicante',
           description: `In this course I learned everything necessary to be able to create a complete website from scratch to deployment, covering all aspects necessary to be able to become a full-stack web developer.`,
-          position: 4,
-        },
-        studies2: {
-          institution: 'CIP FP Batoi',
-          title: 'Technician in Microcomputer Systems and Networks',
-          period: '2015 - 2017',
-          place: 'Alcoy',
-          description: `Although my studies and efforts are basically focused on web development, I previously did a medium degree where I learned to defend myself better than I already knew in computer environments.
-
-                        I also got a lot of knowledge regarding the hardware part so unlike many developers I’ve don't always dedicated myself to writing code I have knowledge that covers more fields than just development, something that has come in handy on more than one occasion.`,
           position: 5,
         },
         studies3: {
@@ -128,6 +126,16 @@ const messages = {
           description:
             '65-hour face-to-face course to develop fundamental skills for integration into the world of work (trust, empathy, emotions, teamwork...)',
           position: 7,
+        },
+        studies2: {
+          institution: 'CIP FP Batoi',
+          title: 'Technician in Microcomputer Systems and Networks',
+          period: '2015 - 2017',
+          place: 'Alcoy',
+          description: `Although my studies and efforts are basically focused on web development, I previously did a medium degree where I learned to defend myself better than I already knew in computer environments.
+
+                        I also got a lot of knowledge regarding the hardware part so unlike many developers I’ve don't always dedicated myself to writing code I have knowledge that covers more fields than just development, something that has come in handy on more than one occasion.`,
+          position: 8,
         },
       },
     },
@@ -179,15 +187,23 @@ const messages = {
     career: {
       jobs: {
         job1: {
+          institution: 'NTT DATA',
+          title: 'Frontend Web Developer con React',
+          period: 'jul. 2022 - actualmente',
+          description: 'Desarrollando junto al equipo de frontend con React',
+          place: 'Alicante',
+          position: 1,
+        },
+        job2: {
           institution: 'Codigo10 Soluciones Informaticas',
           title: 'Desarrollador Web',
           period: 'sept. 2019 - may. 2021 · 1 año 9 meses',
           description:
             'Durante mi estancia en Código 10 tuve la suerte de formar parte de un pequeño equipo de desarrolladores, debido al reducido tamaño del departamento todos los integrantes tocábamos todos los campos por lo que aprendí a defenderme bien en los campos habituales en los que un desarrollador se suele especializar: front, back y base de datos. En Código 10 aprendí a trabajar en equipo más que nunca. Fue una etapa que me aportó muchísimo tanto profesional como personalmente. Principalmente estuve desarrollando funcionalidades para tiendas online y también para un ERP. Entre otros lenguajes y tecnologías estuve trabajando con Java, HTML, CSS, JavaScript, Angular, MySQL y PHP',
           place: 'Alicante',
-          position: 1,
+          position: 2,
         },
-        job2: {
+        job3: {
           institution: 'Labaqua',
           title: 'Desarrollador de Aplicaciones Web',
           period: 'jun. 2018 - mar. 2019 · 10 meses',
@@ -196,9 +212,9 @@ const messages = {
                         Todos mis esfuerzos y centro de atención durante mi estancia en la empresa se centraron en JavaScript moderno, Vue.js y Quasar. 
                         Como desarrollador web, formé parte de un proyecto para desarrollar una enorme web para los laboratorios de la empresa que actualmente sigue en desarrollo. Mi estancia allí despertó un gran interés en mi por JavaScript moderno y JavaScript en entorno servidor.`,
           place: 'Alicante',
-          position: 2,
+          position: 3,
         },
-        job3: {
+        job4: {
           institution: 'Mobisoft Software',
           title: 'Técnico informático',
           period: 'abr. 2017 - jun. 2017 · 3 meses',
@@ -209,7 +225,7 @@ const messages = {
                         Mi trabajo en la empresa como Técnico en Sistemas Microinformáticos y Redes consistió en la instalación, configuración e instalación de los TPVs así como los programas necesarios para el cliente final.
                         También arreglaba equipos a nivel hardware en algunas ocasiones.`,
           place: 'Alicante',
-          position: 3,
+          position: 4,
         },
       },
       studies: {
@@ -219,16 +235,6 @@ const messages = {
           period: '2017 - 2019',
           place: 'Alicante',
           description: `En este curso aprendí todo lo necesario para poder crear un sitio web completo desde cero hasta despliegue, cubriendo todos los aspectos necesarios como para poder convertirme en un desarrollador web full-stack.`,
-          position: 4,
-        },
-        studies2: {
-          institution: 'CIP FP Batoi',
-          title: 'Técnico en Sistemas Microinformáticos y Redes',
-          period: '2015 - 2017',
-          place: 'Alcoi',
-          description: `Aunque mis estudios y esfuerzos se centran básicamente en el desarrollo web, con anterioridad realicé un grado medio donde aprendí a defenderme mejor de lo que ya sabía en entornos informáticos. 
-
-                        Además obtuve bastantes conocimiento respecto a la parte hardware, por lo que a diferencia de muchos desarrolladores no siempre me he dedicado a escribir código, tengo unos conocimientos que abarcan más campos que únicamente el desarrollo, algo que me ha venido muy bien en más de una ocasión.`,
           position: 5,
         },
         studies3: {
@@ -248,6 +254,16 @@ const messages = {
           description:
             'Curso presencial de 65 horas para desarrollar las habilidades fundamentales para la integración en el mundo laboral(confianza, empatía, emociones, trabajo en equipo...)',
           position: 7,
+        },
+        studies2: {
+          institution: 'CIP FP Batoi',
+          title: 'Técnico en Sistemas Microinformáticos y Redes',
+          period: '2015 - 2017',
+          place: 'Alcoi',
+          description: `Aunque mis estudios y esfuerzos se centran básicamente en el desarrollo web, con anterioridad realicé un grado medio donde aprendí a defenderme mejor de lo que ya sabía en entornos informáticos. 
+
+                        Además obtuve bastantes conocimiento respecto a la parte hardware, por lo que a diferencia de muchos desarrolladores no siempre me he dedicado a escribir código, tengo unos conocimientos que abarcan más campos que únicamente el desarrollo, algo que me ha venido muy bien en más de una ocasión.`,
+          position: 8,
         },
       },
     },
