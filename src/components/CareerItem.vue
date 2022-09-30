@@ -14,12 +14,14 @@
           <span class="time">{{ period }}</span>
         </h2>
       </div>
-      <div class="desc">{{ description.substring(0, 200) }}...</div>
+      <div class="desc">{{ descriptionPreview }}</div>
     </div>
   </li>
 </template>
 
 <script>
+import { computed } from 'vue'
+
 export default {
   name: 'CareerItem',
   emits: ['open-full-descriptions'],
@@ -36,7 +38,13 @@ export default {
       emit('open-full-descriptions', { description: props.description })
     }
 
-    return { openFullDescription }
+    const descriptionPreview = computed(() => {
+      return props.description.length > 200
+        ? `${props.description.substring(0, 200)}...`
+        : props.description
+    })
+
+    return { openFullDescription, descriptionPreview }
   },
 }
 </script>
