@@ -23,7 +23,7 @@
           </div>
         </div>
       </transition>
-      <transition name="slide-fade-right" appear>
+      <!-- <transition name="slide-fade-right" appear>
         <div
           @click="showProjectDetailsAction('clasicaguitarra')"
           class="project-container flex-col md:flex-row-reverse"
@@ -46,7 +46,7 @@
             </p>
           </div>
         </div>
-      </transition>
+      </transition> -->
       <transition name="slide-fade" appear>
         <div class="flex md:space-x-4 flex-col md:flex-row">
           <p>
