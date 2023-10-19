@@ -58,23 +58,31 @@ const messages = {
     career: {
       jobs: {
         job1: {
-          institution: 'NTT DATA',
+          institution: 'Cipher',
           title: 'Frontend Web Developer with React',
-          period: 'jul. 2022 - now',
-          description: `I'm fortunate enough to be part of the frontend team and work on two big projects using one of my favorite libraries, React. Together with other cutting-edge technologies that complement each other well, such as React Hook Form, React Query, Orval, Chakra UI, and Cypress, these projects have become even more fascinating.`,
-          place: 'Alicante',
+          period: 'sept. 2023 - now',
+          description: `Development of web interfaces for the visualization and management of data associated with the field of cybersecurity.`,
+          place: 'Madrid',
           position: 1,
         },
         job2: {
-          institution: 'Codigo10 Soluciones Informaticas',
-          title: 'Web Developer',
-          period: 'sept. 2019 - may. 2021 · 1 año 9 months',
-          description:
-            'During my stay at Código 10 I was lucky enough to be part of a small team of developers, due to the small size of the department, all the members touched all the fields, so I learned to defend myself well in the usual fields in which a developer is usually specialize: front, back and database. In Code 10 I learned to work as a team more than ever. It was a stage that gave me a lot both professionally and personally. Mainly I was developing functionalities for online stores and also for an ERP. Among other languages and technologies I was working with Java, HTML, CSS, JavaScript, Angular, MySQL and PHP',
+          institution: 'NTT DATA',
+          title: 'Frontend Web Developer with React',
+          period: 'jul. 2022 - sept. 2023 · 1 year 3 months',
+          description: `I'm fortunate enough to be part of the frontend team and work on two big projects using one of my favorite libraries, React. Together with other cutting-edge technologies that complement each other well, such as React Hook Form, React Query, Orval, Chakra UI, and Cypress, these projects have become even more fascinating.`,
           place: 'Alicante',
           position: 2,
         },
         job3: {
+          institution: 'Codigo10 Soluciones Informaticas',
+          title: 'Web Developer',
+          period: 'sept. 2019 - may. 2021 · 1 year 9 months',
+          description:
+            'During my stay at Código 10 I was lucky enough to be part of a small team of developers, due to the small size of the department, all the members touched all the fields, so I learned to defend myself well in the usual fields in which a developer is usually specialize: front, back and database. In Code 10 I learned to work as a team more than ever. It was a stage that gave me a lot both professionally and personally. Mainly I was developing functionalities for online stores and also for an ERP. Among other languages and technologies I was working with Java, HTML, CSS, JavaScript, Angular, MySQL and PHP',
+          place: 'Alicante',
+          position: 3,
+        },
+        job4: {
           institution: 'Labaqua',
           title: 'Web Developer',
           period: 'jun. 2018 - mar. 2019 · 10 months',
@@ -85,9 +93,9 @@ const messages = {
                         All of my efforts and focus during my time at the company were focused on modern JavaScript, Vue.js, and Quasar.
                         As a web developer, I was part of a project to develop a huge website for the company's labs that currently still in development. My stay there sparked a great interest in me for modern JavaScript and server-side JavaScript.`,
           place: 'Alicante',
-          position: 3,
+          position: 4,
         },
-        job4: {
+        job5: {
           institution: 'Mobisoft Software',
           title: 'Computer Technician',
           period: 'abr. 2017 - jun. 2017 · 3 months',
@@ -97,7 +105,7 @@ const messages = {
 
                         My work in the company as a Technician in Microcomputer Systems and Networks consisted of the installation, configuration and installation of the POS as well as the necessary programs for the final client. I also fixed equipment at the hardware level on some occasions.`,
           place: 'Alicante',
-          position: 4,
+          position: 5,
         },
       },
       studies: {
@@ -187,23 +195,31 @@ const messages = {
     career: {
       jobs: {
         job1: {
-          institution: 'NTT DATA',
+          institution: 'Cipher',
           title: 'Frontend Web Developer con React',
-          period: 'jul. 2022 - actualmente',
-          description: `Tengo la suerte de formar parte del equipo de frontend y poder desarrollar dos grandes proyectos con una de las librerías que más me gustan, React. Que junto con otras tecnologías también punteras que se complementan muy bien(como son React Hook Form, React Query, Orval, Chakra UI y Cypress entre otras) hacen que estos proyectos sean incluso más interesantes.`,
-          place: 'Alicante',
+          period: 'sept. 2023 - actualmente',
+          description: `Desarrollo de interfaces web para la visualización y gestión de datos asociados al campo de la ciberseguridad.`,
+          place: 'Madrid',
           position: 1,
         },
         job2: {
+          institution: 'NTT DATA',
+          title: 'Frontend Web Developer con React',
+          period: 'jul. 2022 - sept. 2023 · 1 año 3 meses',
+          description: `Tuve la suerte de formar parte del equipo de frontend y poder desarrollar dos grandes proyectos con una de las librerías que más me gustan, React. Que junto con otras tecnologías también punteras que se complementan muy bien(como son React Hook Form, React Query, Orval, Chakra UI y Cypress entre otras) hacen que estos proyectos sean incluso más interesantes.`,
+          place: 'Alicante',
+          position: 2,
+        },
+        job3: {
           institution: 'Codigo10 Soluciones Informaticas',
           title: 'Desarrollador Web',
           period: 'sept. 2019 - may. 2021 · 1 año 9 meses',
           description:
             'Durante mi estancia en Código 10 tuve la suerte de formar parte de un pequeño equipo de desarrolladores, debido al reducido tamaño del departamento todos los integrantes tocábamos todos los campos por lo que aprendí a defenderme bien en los campos habituales en los que un desarrollador se suele especializar: front, back y base de datos. En Código 10 aprendí a trabajar en equipo más que nunca. Fue una etapa que me aportó muchísimo tanto profesional como personalmente. Principalmente estuve desarrollando funcionalidades para tiendas online y también para un ERP. Entre otros lenguajes y tecnologías estuve trabajando con Java, HTML, CSS, JavaScript, Angular, MySQL y PHP',
           place: 'Alicante',
-          position: 2,
+          position: 3,
         },
-        job3: {
+        job4: {
           institution: 'Labaqua',
           title: 'Desarrollador de Aplicaciones Web',
           period: 'jun. 2018 - mar. 2019 · 10 meses',
@@ -212,9 +228,9 @@ const messages = {
                         Todos mis esfuerzos y centro de atención durante mi estancia en la empresa se centraron en JavaScript moderno, Vue.js y Quasar. 
                         Como desarrollador web, formé parte de un proyecto para desarrollar una enorme web para los laboratorios de la empresa que actualmente sigue en desarrollo. Mi estancia allí despertó un gran interés en mi por JavaScript moderno y JavaScript en entorno servidor.`,
           place: 'Alicante',
-          position: 3,
+          position: 4,
         },
-        job4: {
+        job5: {
           institution: 'Mobisoft Software',
           title: 'Técnico informático',
           period: 'abr. 2017 - jun. 2017 · 3 meses',
@@ -225,7 +241,7 @@ const messages = {
                         Mi trabajo en la empresa como Técnico en Sistemas Microinformáticos y Redes consistió en la instalación, configuración e instalación de los TPVs así como los programas necesarios para el cliente final.
                         También arreglaba equipos a nivel hardware en algunas ocasiones.`,
           place: 'Alicante',
-          position: 4,
+          position: 5,
         },
       },
       studies: {
