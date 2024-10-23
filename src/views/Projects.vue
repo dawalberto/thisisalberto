@@ -9,6 +9,24 @@
       />
       <transition name="slide-fade-left" appear>
         <div
+          @click="showProjectDetailsAction('podcaster')"
+          class="project-container flex-col md:flex-row-reverse"
+        >
+          <div class="logo-container">
+            <img class="w-full" src="@/assets/podcasterLogo.png" alt="logo podcaster" />
+          </div>
+          <div class="self-center">
+            <h1
+              class="project-title md:text-right underline-title underline-title-yellow"
+            >
+              Podcaster
+            </h1>
+            <p>{{ $t('projectDetails.podcaster.why').substring(0, 240) }}...</p>
+          </div>
+        </div>
+      </transition>
+      <transition name="slide-fade-right" appear>
+        <div
           @click="showProjectDetailsAction('jjoin')"
           class="project-container flex-col md:flex-row"
         >
@@ -23,30 +41,6 @@
           </div>
         </div>
       </transition>
-      <!-- <transition name="slide-fade-right" appear>
-        <div
-          @click="showProjectDetailsAction('clasicaguitarra')"
-          class="project-container flex-col md:flex-row-reverse"
-        >
-          <div class="logo-container">
-            <img
-              class="w-full"
-              src="@/assets/clasicaguitarraLogo.png"
-              alt="logo clasicaguitarra"
-            />
-          </div>
-          <div class="self-center">
-            <h1
-              class="project-title md:text-right underline-title underline-title-yellow"
-            >
-              Clasicaguitarra
-            </h1>
-            <p>
-              {{ $t('projectDetails.clasicaguitarra.whatExactly').substring(0, 240) }}...
-            </p>
-          </div>
-        </div>
-      </transition> -->
       <transition name="slide-fade" appear>
         <div class="flex md:space-x-4 flex-col md:flex-row">
           <p>

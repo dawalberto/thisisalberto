@@ -5,16 +5,9 @@
       <kinesis-container>
         <kinesis-element :strength="20" type="depth">
           <img
-            v-if="project == 'jjoin'"
             class="w-full"
-            src="@/assets/jjoinLogo.png"
-            alt="logo jjoin"
-          />
-          <img
-            v-else-if="project == 'clasicaguitarra'"
-            class="w-full"
-            src="@/assets/clasicaguitarraLogo.png"
-            alt="logo clasicaguitarra"
+            :src="require(`@/assets/${this.project}Logo.png`)"
+            :alt="`${project} logo`"
           />
         </kinesis-element>
       </kinesis-container>
@@ -112,7 +105,7 @@
                 </a>
               </li>
             </ul>
-            <ul v-else class="md:pl-2">
+            <ul v-else-if="project === 'clasicaguitarra'" class="md:pl-2">
               <li>
                 <span class="font-semibold">👉 Front </span>
                 <a
@@ -131,6 +124,14 @@
                   class="text-yellow-500"
                 >
                   {{ repoBackClasicaguitarra }}
+                </a>
+              </li>
+            </ul>
+            <ul v-else-if="project === 'podcaster'" class="md:pl-2">
+              <li>
+                <span class="font-semibold">👉 </span>
+                <a :href="repoPodcaster" target="_blank" class="text-yellow-500">
+                  {{ repoPodcaster }}
                 </a>
               </li>
             </ul>
@@ -158,7 +159,7 @@
           hover:scale-105 hover:-rotate-3
         "
       >
-        <a target="_blank" :href="project === 'jjoin' ? linkJjoin : linkClasicaguitarra">
+        <a target="_blank" :href="linkProject">
           {{ $t('projectDetails.enjoy') }} <span class="capitalize">{{ project }}</span>
         </a>
       </button>
@@ -173,6 +174,7 @@
 <script>
 import { KinesisContainer, KinesisElement } from 'vue-kinesis'
 import CloseButton from '@/components/CloseButton.vue'
+import { computed } from 'vue'
 
 export default {
   name: 'ProjectDetails',
@@ -189,20 +191,35 @@ export default {
       emit('close-project-details')
     }
 
+    const linkProject = computed(() => {
+      switch (props.project) {
+        case 'jjoin':
+          return linkJjoin
+        case 'clasicaguitarra':
+          return linkClasicaguitarra
+        case 'podcaster':
+          return linkPodcaster
+        default:
+          return ''
+      }
+    })
+
     const repoFrontClasicaguitarra =
       'https://github.com/dawalberto/proyecto-final-frontend'
     const repoBackClasicaguitarra = 'https://github.com/dawalberto/proyecto-final-backend'
     const linkClasicaguitarra = 'https://clasicaguitarra.com/'
     const repoJjoin = 'https://github.com/dawalberto/Jjoin'
     const linkJjoin = 'https://github.com/dawalberto/Jjoin/releases'
+    const repoPodcaster = 'https://github.com/dawalberto/podcaster'
+    const linkPodcaster = 'https://dawalberto.github.io/podcaster/'
 
     return {
       close,
       repoFrontClasicaguitarra,
       repoBackClasicaguitarra,
-      linkClasicaguitarra,
+      repoPodcaster,
       repoJjoin,
-      linkJjoin,
+      linkProject,
     }
   },
 }

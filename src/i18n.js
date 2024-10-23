@@ -45,6 +45,15 @@ const messages = {
         In addition, you will be able to follow and see the trajectory of each guitarist and other interesting data such as the guitar with which he currently plays, his social networks or his website.`,
         technologies: `To carry out this project I have used the following technologies and languages: <span class="font-bold">HTML, CSS, JavaScript, Vue, Vuetify, Node, MongoDB, Heroku, Firebase, Cloudinary</span>.`,
       },
+      podcaster: {
+        why: 'Podcaster was created to make it easier for people to access the best podcasts recommended by Apple. With the vast number of podcasts available, it can be overwhelming, so this tool helps users discover quality content quickly and easily.',
+        whatExactly: `The website allows users to:\n
+                      ✨ List Podcasts: It displays a list of the top 100 podcasts, giving a quick overview of the highlighted content.
+                      ✨ Search: It features a search function so users can find specific podcasts based on their interests.
+                      ✨ Listen: It provides links or players to listen to episodes directly from the site, making the experience seamless without having to leave the page.`,
+        technologies: `To develop this project I used the following technologies and languages:\n
+                      <span class="font-bold">HTML, CSS, TypeScript, React, Next.js, Tailwind and Zustand</span>. I conducted unit and integration tests with <span class="font-bold">Jest</span> and end-to-end tests with <span class="font-bold">Cypress</span>.`,
+      },
     },
     home: {
       aboutMe: `Hi 👋 \n
@@ -182,6 +191,15 @@ const messages = {
                       Como visitante o amante de la guitarra clásica podrás suscribirte a cualquier guitarrista para estar al tanto de todos sus conciertos, además en la página de inicio siempre se visualizarán los próximos conciertos de todos los guitarristas registrados.
                       Además podrás seguir y ver la trayectoria de cada guitarrista y otros datos de interés como la guitarra con la que toca actualmente, sus redes sociales o su página web.`,
         technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: <span class="font-bold">HTML, CSS, JavaScript, Vue, Vuetify, Node, MongoDB, Heroku, Firebase, Cloudinary</span>.`,
+      },
+      podcaster: {
+        why: 'Podcaster se creó para facilitar el acceso a los mejores podcasts recomendados por Apple. Dado que la oferta de podcasts es vasta y puede resultar abrumadora, esta herramienta ayuda a los usuarios a descubrir contenido de calidad de manera sencilla y rápida.',
+        whatExactly: `La página web permite a los usuarios:\n
+                      - Listar Podcasts: Muestra una lista de los 100 mejores podcasts, proporcionando un vistazo general de los contenidos destacados.
+                      - Buscar: Ofrece una función de búsqueda para que los usuarios puedan encontrar podcasts específicos según sus intereses.
+                      - Escuchar: Proporciona enlaces o reproductores para escuchar episodios directamente desde la página, facilitando la experiencia sin necesidad de salir del sitio.`,
+        technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: \n
+                      <span class="font-bold">HTML, CSS, Typescript, React, Next, Tailwind, Zustand</span>. Tests unitarios y de integración con <span class="font-bold">Jest</span> y e2e con <span class="font-bold">Cypress</span>`,
       },
     },
     home: {
