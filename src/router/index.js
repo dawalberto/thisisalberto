@@ -1,18 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
 import Projects from '@/views/Projects.vue'
-import Career from '@/views/Career.vue'
-import Contact from '@/views/Contact.vue'
-// import Podcaster from '@/views/projects/Podcaster.vue'
-import Projects2 from '@/views/Projects2.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    // route level code-splitting
+    // this generates a separate chunk (home.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
   },
-  // TODO - Rebuilding projects, remove it and rename projects2 to projects when finish
+  // ! Rebuilding projects page, remove it and rename projects2 to projects when finish
   {
     path: '/projects',
     name: 'Projects',
@@ -21,14 +19,11 @@ const routes = [
   {
     path: '/projects2',
     name: 'Projects2',
-    component: Projects2,
+    component: () => import(/* webpackChunkName: "projects2" */ '@/views/Projects2.vue'),
     children: [
       {
         path: 'podcaster',
         name: 'Podcaster',
-        // route level code-splitting
-        // this generates a separate chunk (podcaster.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () =>
           import(/* webpackChunkName: "podcaster" */ '@/views/projects/Podcaster.vue'),
       },
@@ -37,12 +32,12 @@ const routes = [
   {
     path: '/career',
     name: 'Career',
-    component: Career,
+    component: () => import(/* webpackChunkName: "career" */ '@/views/Career.vue'),
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact,
+    component: () => import(/* webpackChunkName: "contact" */ '@/views/Contact.vue'),
   },
 ]
 
