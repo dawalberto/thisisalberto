@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col space-y-20 w-full">
+  <section class="flex flex-col space-y-20 w-full">
     <!-- question -->
     <div>
       <div class="flex justify-start">
@@ -8,7 +8,7 @@
         </h1>
       </div>
       <div class="flex flex-row items-center mt-2">
-        <p class="md:p-10" style="white-space: pre-line">
+        <p class="md:py-8 md:px-10" style="white-space: pre-line">
           {{ $t(`projectDetails.${project}.why`) }}
         </p>
         <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
@@ -24,7 +24,7 @@
         </h1>
       </div>
       <div class="flex flex-row-reverse items-center mt-2">
-        <p class="md:p-10" style="white-space: pre-line">
+        <p class="md:py-8 md:px-10" style="white-space: pre-line">
           {{ $t(`projectDetails.${project}.whatExactly`) }}
         </p>
         <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
@@ -40,7 +40,10 @@
         </h1>
       </div>
       <div class="flex flex-row items-center mt-2">
-        <p class="md:p-10" v-html="$t(`projectDetails.${project}.technologies`)"></p>
+        <p
+          class="md:py-8 md:px-10"
+          v-html="$t(`projectDetails.${project}.technologies`)"
+        ></p>
         <div class="w-3/12 md:w-1/6 flex-shrink-0 flex-grow-0">
           <img
             src="@/assets/absurd-tecnologias.png"
@@ -50,7 +53,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
