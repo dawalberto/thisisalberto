@@ -172,13 +172,12 @@
 </template>
 
 <script>
-import { KinesisContainer, KinesisElement } from 'vue-kinesis'
 import CloseButton from '@/components/CloseButton.vue'
 import { computed } from 'vue'
 
 export default {
   name: 'ProjectDetails',
-  components: { KinesisContainer, KinesisElement, CloseButton },
+  components: { CloseButton },
   emits: ['close-project-details'],
   props: {
     project: {

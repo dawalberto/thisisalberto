@@ -1,23 +1,23 @@
 <template>
-  <section class="w-full mt-20">
+  <section class="w-full mt-10">
     <div class="flex justify-start">
       <h1 class="text-2xl underline-title underline-title-yellow">
         {{ $t('projectDetails.repository') }}
       </h1>
     </div>
     <ul class="md:py-8 md:px-10">
-      <li class="flex items-center gap-4">
+      <li class="flex items-center gap-4 mt-2">
         <span class="font-semibold">{{
-          linkBack ? '🦊 Front' : `🦊 ${$t('projectDetails.code')}`
+          repoBack ? '🦊 Front' : `🦊 ${$t('projectDetails.code')}`
         }}</span>
-        <a :href="link" target="_blank" class="text-yellow-500">
-          {{ linkLabel }}
+        <a :href="repo" target="_blank" class="text-yellow-500">
+          {{ repoLabel }}
         </a>
       </li>
-      <li v-if="linkBack" class="flex items-center gap-4">
+      <li v-if="repoBack" class="flex items-center gap-4">
         <span class="font-semibold">🦊 Back</span>
-        <a :href="linkBack" target="_blank" class="text-yellow-500">
-          {{ linkBackLabel }}
+        <a :href="repoBack" target="_blank" class="text-yellow-500">
+          {{ repoBackLabel }}
         </a>
       </li>
     </ul>
@@ -32,19 +32,19 @@ const removeHttpsFromUrl = (url) => {
 export default {
   name: 'ProjectDetailsRepositories',
   props: {
-    link: {
+    repo: {
       type: String,
       required: true,
     },
-    linkBack: {
+    repoBack: {
       type: String,
       required: false,
     },
   },
   setup(props) {
-    const linkLabel = removeHttpsFromUrl(props.link)
-    const linkBackLabel = removeHttpsFromUrl(props.linkBack)
-    return { linkLabel, linkBackLabel }
+    const repoLabel = removeHttpsFromUrl(props.repo)
+    const repoBackLabel = removeHttpsFromUrl(props.repoBack)
+    return { repoLabel, repoBackLabel }
   },
 }
 </script>
