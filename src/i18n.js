@@ -197,9 +197,9 @@ const messages = {
       podcaster: {
         why: 'Podcaster se creó para facilitar el acceso a los mejores podcasts recomendados por Apple. Dado que la oferta de podcasts es vasta y puede resultar abrumadora, esta herramienta ayuda a los usuarios a descubrir contenido de calidad de manera sencilla y rápida.',
         whatExactly: `La página web permite a los usuarios:\n
-                      - Listar Podcasts: Muestra una lista de los 100 mejores podcasts, proporcionando un vistazo general de los contenidos destacados.
-                      - Buscar: Ofrece una función de búsqueda para que los usuarios puedan encontrar podcasts específicos según sus intereses.
-                      - Escuchar: Proporciona enlaces o reproductores para escuchar episodios directamente desde la página, facilitando la experiencia sin necesidad de salir del sitio.`,
+                      ✨ Listar Podcasts: Muestra una lista de los 100 mejores podcasts, proporcionando un vistazo general de los contenidos destacados.
+                      ✨ Buscar: Ofrece una función de búsqueda para que los usuarios puedan encontrar podcasts específicos según sus intereses.
+                      ✨ Escuchar: Proporciona enlaces o reproductores para escuchar episodios directamente desde la página, facilitando la experiencia sin necesidad de salir del sitio.`,
         technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: \n
                       <span class="font-bold">HTML, CSS, Typescript, React, Next, Tailwind, Zustand</span>. Tests unitarios y de integración con <span class="font-bold">Jest</span> y e2e con <span class="font-bold">Cypress</span>`,
       },

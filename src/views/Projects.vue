@@ -1,12 +1,12 @@
 <template>
   <div class="2xl:static">
     <div class="center-body flex flex-col space-y-16">
-      <project-details
+      <!-- <project-details
         v-if="showProjectDetails"
         :project="project"
         @close-project-details="closeProjectDetailsAction"
         class="z-50 absolute top-0 left-1/2 transform -translate-x-1/2"
-      />
+      /> -->
       <transition name="slide-fade-left" appear>
         <div
           @click="showProjectDetailsAction('podcaster')"
@@ -60,13 +60,11 @@
 </template>
 
 <script>
-import ProjectDetails from '@/components/ProjectDetails.vue'
 import { ref } from 'vue'
 import emitter from '@/services/emitter'
 
 export default {
   name: 'Projects',
-  components: { ProjectDetails },
   setup() {
     let showProjectDetails = ref(false)
     let project = ref('')

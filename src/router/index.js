@@ -17,17 +17,18 @@ const routes = [
     component: Projects,
   },
   {
-    path: '/projects2',
+    path: '/projects2/:project',
     name: 'Projects2',
-    component: () => import(/* webpackChunkName: "projects2" */ '@/views/Projects2.vue'),
-    children: [
-      {
-        path: 'podcaster',
-        name: 'Podcaster',
-        component: () =>
-          import(/* webpackChunkName: "podcaster" */ '@/views/projects/Podcaster.vue'),
-      },
-    ],
+    component: () => import(/* webpackChunkName: "projects2" */ '@/views/Project.vue'),
+    // component: () => import(/* webpackChunkName: "projects2" */ '@/views/Projects2.vue'),
+    // children: [
+    //   {
+    //     path: 'podcaster',
+    //     name: 'Podcaster',
+    //     component: () =>
+    //       import(/* webpackChunkName: "podcaster" */ '@/views/projects/Podcaster.vue'),
+    //   },
+    // ],
   },
   {
     path: '/career',

@@ -32,18 +32,18 @@ const removeHttpsFromUrl = (url) => {
 export default {
   name: 'ProjectDetailsRepositories',
   props: {
-    repo: {
+    linkRepository: {
       type: String,
       required: true,
     },
-    repoBack: {
+    linkRepositoryBack: {
       type: String,
       required: false,
     },
   },
   setup(props) {
-    const repoLabel = removeHttpsFromUrl(props.repo)
-    const repoBackLabel = removeHttpsFromUrl(props.repoBack)
+    const repoLabel = removeHttpsFromUrl(props.linkRepository)
+    const repoBackLabel = removeHttpsFromUrl(props.linkRepositoryBack)
     return { repoLabel, repoBackLabel }
   },
 }
