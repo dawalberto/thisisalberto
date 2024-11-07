@@ -13,30 +13,30 @@
     "deploy": "sh deploy.sh"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "embla-carousel-autoplay": "^8.3.0",
-    "embla-carousel-vue": "^8.3.0",
-    "mitt": "^3.0.0",
-    "vue": "^3.0.0",
-    "vue-i18n": "^9.2.0-beta.22",
-    "vue-router": "^4.0.0-0",
-    "vue-window-size": "^1.1.2",
-    "vue3-i18n": "^1.1.4"
+    "core-js": "3.6.5",
+    "embla-carousel-autoplay": "8.3.0",
+    "embla-carousel-vue": "8.3.0",
+    "mitt": "3.0.0",
+    "vue": "3.0.0",
+    "vue-i18n": "9.2.0-beta.22",
+    "vue-router": "4.0.0-0",
+    "vue-window-size": "1.1.2",
+    "vue3-i18n": "1.1.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "autoprefixer": "^9.8.8",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.0.0",
-    "postcss": "^7.0.39",
-    "prettier": "^2.2.1",
+    "@vue/compiler-sfc": "3.0.0",
+    "@vue/eslint-config-prettier": "6.0.0",
+    "autoprefixer": "9.8.8",
+    "babel-eslint": "10.1.0",
+    "eslint": "6.7.2",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-vue": "7.0.0",
+    "postcss": "7.0.39",
+    "prettier": "2.2.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }

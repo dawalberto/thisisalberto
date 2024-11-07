@@ -2,11 +2,12 @@
   <div ref="emblaNode" class="embla">
     <div class="embla__container w-full">
       <div v-for="slideSrc in slidesSrcs" :key="slideSrc" class="embla__slide">
-        <img :src="slideSrc" loading="lazy" />
+        <img
+          :src="slideSrc"
+          loading="lazy"
+          style="filter: drop-shadow(0 0 7px rgba(0, 0, 0, 0.4))"
+        />
       </div>
-      <!-- <div class="embla__slide">
-        <img src="@/assets/carousel/podcaster/desktop.png" loading="lazy" />
-      </div> -->
     </div>
   </div>
 </template>
@@ -62,7 +63,7 @@ export default {
 .embla__slide {
   flex: 0 0 auto;
   max-width: 105%;
-  width: 105%;
+  width: 100%;
   height: auto;
   display: flex;
   justify-content: center;

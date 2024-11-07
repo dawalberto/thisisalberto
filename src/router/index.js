@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Projects from '@/views/Projects.vue'
+import ProjectsList from '@/views/ProjectsList.vue'
 
 const routes = [
   {
@@ -10,35 +10,25 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
   },
-  // ! Rebuilding projects page, remove it and rename projects2 to projects when finish
   {
     path: '/projects',
     name: 'Projects',
-    component: Projects,
+    component: ProjectsList,
   },
   {
-    path: '/projects2/:project',
-    name: 'Projects2',
-    component: () => import(/* webpackChunkName: "projects2" */ '@/views/Project.vue'),
-    // component: () => import(/* webpackChunkName: "projects2" */ '@/views/Projects2.vue'),
-    // children: [
-    //   {
-    //     path: 'podcaster',
-    //     name: 'Podcaster',
-    //     component: () =>
-    //       import(/* webpackChunkName: "podcaster" */ '@/views/projects/Podcaster.vue'),
-    //   },
-    // ],
+    path: '/projects/:project',
+    name: 'Project',
+    component: () => import('@/views/Project.vue'),
   },
   {
     path: '/career',
     name: 'Career',
-    component: () => import(/* webpackChunkName: "career" */ '@/views/Career.vue'),
+    component: () => import('@/views/Career.vue'),
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: () => import(/* webpackChunkName: "contact" */ '@/views/Contact.vue'),
+    component: () => import('@/views/Contact.vue'),
   },
 ]
 

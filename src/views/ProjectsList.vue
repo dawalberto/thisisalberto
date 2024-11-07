@@ -1,15 +1,9 @@
 <template>
   <div class="2xl:static">
     <div class="center-body flex flex-col space-y-16">
-      <!-- <project-details
-        v-if="showProjectDetails"
-        :project="project"
-        @close-project-details="closeProjectDetailsAction"
-        class="z-50 absolute top-0 left-1/2 transform -translate-x-1/2"
-      /> -->
       <transition name="slide-fade-left" appear>
-        <div
-          @click="showProjectDetailsAction('podcaster')"
+        <router-link
+          to="/projects/podcaster"
           class="project-container flex-col md:flex-row-reverse"
         >
           <div class="logo-container">
@@ -23,13 +17,10 @@
             </h1>
             <p>{{ $t('projectDetails.podcaster.why').substring(0, 240) }}...</p>
           </div>
-        </div>
+        </router-link>
       </transition>
       <transition name="slide-fade-right" appear>
-        <div
-          @click="showProjectDetailsAction('jjoin')"
-          class="project-container flex-col md:flex-row"
-        >
+        <router-link to="/projects/jjoin" class="project-container flex-col md:flex-row">
           <div class="logo-container">
             <img class="w-full" src="@/assets/jjoinLogo.png" alt="logo jjoin" />
           </div>
@@ -39,7 +30,7 @@
             </h1>
             <p>{{ $t('projectDetails.jjoin.whatExactly').substring(0, 240) }}...</p>
           </div>
-        </div>
+        </router-link>
       </transition>
       <transition name="slide-fade" appear>
         <div class="flex md:space-x-4 flex-col md:flex-row">
@@ -61,7 +52,6 @@
 
 <script>
 import { ref } from 'vue'
-import emitter from '@/services/emitter'
 
 export default {
   name: 'Projects',
@@ -69,23 +59,9 @@ export default {
     let showProjectDetails = ref(false)
     let project = ref('')
 
-    const showProjectDetailsAction = (projectSelected) => {
-      project.value = projectSelected
-      window.scrollTo(0, 0)
-      showProjectDetails.value = true
-    }
-
-    const closeProjectDetailsAction = () => {
-      showProjectDetails.value = false
-    }
-
-    emitter.on('close-project-details', closeProjectDetailsAction)
-
     return {
       project,
-      showProjectDetailsAction,
       showProjectDetails,
-      closeProjectDetailsAction,
     }
   },
 }

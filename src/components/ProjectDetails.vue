@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-white w-screen max-w-6xl mx-auto p-6 overflow-x-hidden pb-8">
+  <div class="bg-white w-screen max-w-6xl mx-auto p-6 overflow-x-hidden pb-4">
     <!-- TODO - Rethink this title -->
-    <h1 class="text-2xl md:text-5xl my-8 text-center capitalize">✨ {{ project }} ✨</h1>
+    <h1 class="text-2xl md:text-5xl my-2 text-center">&lt;{{ project }} /&gt;</h1>
     <project-details-questions :project="project" />
     <project-details-carousel :slidesSrcs="slidesSrcs" />
     <project-details-repositories :linkRepository="linkRepository" />
@@ -64,19 +64,17 @@ export default {
     },
   },
   setup() {
-    return {
-      // project: 'podcaster',
-      // linkProject: 'https://dawalberto.github.io/podcaster',
-      // linkRepository: 'https://github.com/dawalberto/podcaster',
-      // slidesSrcs: [
-      //   require('@/assets/carousel/podcaster/desktop.png'),
-      //   require('@/assets/carousel/podcaster/desktop-2.png'),
-      //   require('@/assets/carousel/podcaster/desktop-3.png'),
-      //   require('@/assets/carousel/podcaster/mobile.png'),
-      // ],
-    }
+    return {}
   },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.button-project-details {
+  background-color: #f6ce7d;
+  @apply text-4xl md:text-6xl py-6 px-12 font-bold;
+  -webkit-box-shadow: 10px 10px 0px 0px rgba(50, 85, 127, 1);
+  -moz-box-shadow: 10px 10px 0px 0px rgba(50, 85, 127, 1);
+  box-shadow: 10px 10px 0px 0px rgba(50, 85, 127, 1);
+}
+</style>
