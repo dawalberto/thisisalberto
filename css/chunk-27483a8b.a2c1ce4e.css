@@ -1,0 +1,1 @@
+@keyframes bob{0%{transform:translate(0)}50%{transform:translateY(-.402777775rem)}to{transform:translate(0)}}.my-img{animation-name:bob;animation-duration:3.6s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
