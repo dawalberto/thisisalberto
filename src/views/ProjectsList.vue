@@ -32,38 +32,14 @@
           </div>
         </router-link>
       </transition>
-      <transition name="slide-fade" appear>
-        <div class="flex md:space-x-4 flex-col md:flex-row">
-          <p>
-            {{ $t('projectDetails.otherProjects') }}
-            <a
-              href="https://dawalberto.github.io/angular-github-projects/"
-              target="_blank"
-              class="text-yellow-500"
-            >
-              {{ $t('projectDetails.otherProjectsLink') }}
-            </a>
-          </p>
-        </div>
-      </transition>
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
-
 export default {
   name: 'Projects',
-  setup() {
-    let showProjectDetails = ref(false)
-    let project = ref('')
-
-    return {
-      project,
-      showProjectDetails,
-    }
-  },
+  setup() {},
 }
 </script>
 

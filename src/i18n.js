@@ -28,10 +28,10 @@ const messages = {
       otherProjectsLink: 'other cool little projects',
       code: 'Code',
       jjoin: {
-        why: `Let supose that we have to join two excel sheets to get data from both and get a file with the records that match with the condition that we wish. How would you do that? \n
+        why: `Let supose that we have to join two excel sheets to get data from both and get a file with the records that match with the condition that we wish. How would you do that?
         Nowadays Excel himself has a option to do that but it's not easy to use and let alone intuitive`,
         whatExactly: `Jjoin is a desktop app developed with web technologies.
-                      Consists in three intuitive screens that will guide you through the joining process of the excel sheets. \n
+                      Consists in three intuitive screens that will guide you through the joining process of the excel sheets.
                       In the first screen you will select the files.
                       In the second screen you will create the condition to join the files.
                       And last you will choose wich fields of both sheets you want to record in the new file. Also you will choose if you want to save only one file with every match and/or to save as many files as matches with the data/fields that you want`,
@@ -48,11 +48,11 @@ const messages = {
       },
       podcaster: {
         why: 'Podcaster was created to make it easier for people to access the best podcasts recommended by Apple. With the vast number of podcasts available, it can be overwhelming, so this tool helps users discover quality content quickly and easily.',
-        whatExactly: `The website allows users to:\n
+        whatExactly: `The website allows users to:
                       ✨ List Podcasts: It displays a list of the top 100 podcasts, giving a quick overview of the highlighted content.
                       ✨ Search: It features a search function so users can find specific podcasts based on their interests.
                       ✨ Listen: It provides links or players to listen to episodes directly from the site, making the experience seamless without having to leave the page.`,
-        technologies: `To develop this project I used the following technologies and languages:\n
+        technologies: `To develop this project I used the following technologies and languages:<br/>
                       <span class="font-bold">HTML, CSS, TypeScript, React, Next.js, Tailwind and Zustand</span>. I conducted unit and integration tests with <span class="font-bold">Jest</span> and end-to-end tests with <span class="font-bold">Cypress</span>.`,
       },
     },
@@ -176,10 +176,10 @@ const messages = {
       otherProjectsLink: 'otros proyectitos chulos',
       code: 'Código',
       jjoin: {
-        why: `Imagina que tienes que unir dos hojas de excel para obtener datos de ambas y conseguir un único archivo con los registros que coincidan según la condición que tu desees ¿cómo lo harías? \n
+        why: `Imagina que tienes que unir dos hojas de excel para obtener datos de ambas y conseguir un único archivo con los registros que coincidan según la condición que tu desees ¿cómo lo harías?
               Actualmente el propio Excel cuenta con opciones para conseguir tal objetivo, pero no es precisamente fácil ni mucho menos intuitivo, sobre todo para un internauta corriente.`,
         whatExactly: `Jjoin es un programa de escritorio desarrollado con tecnologías web.
-                      Consta de tres pantallas intuitivas las cuales te irán guiando a través del proceso de unión de las hojas excel. \n
+                      Consta de tres pantallas intuitivas las cuales te irán guiando a través del proceso de unión de las hojas excel.
                       En la primera pantalla podrás seleccionar los archivos que desees.
                       En la segunda pantalla crearás la condición por la cual quieres que se unan las hojas.
                       Por último elegirás que campos de cada hoja deseas grabar en el nuevo fichero y si deseas guardar un único archivo con todas las coincidencias y/o guardar un archivo con el contenido que desees por cada coincidencia.`,
@@ -196,11 +196,11 @@ const messages = {
       },
       podcaster: {
         why: 'Podcaster se creó para facilitar el acceso a los mejores podcasts recomendados por Apple. Dado que la oferta de podcasts es vasta y puede resultar abrumadora, esta herramienta ayuda a los usuarios a descubrir contenido de calidad de manera sencilla y rápida.',
-        whatExactly: `La página web permite a los usuarios:\n
+        whatExactly: `La página web permite a los usuarios:
                       ✨ Listar Podcasts: Muestra una lista de los 100 mejores podcasts, proporcionando un vistazo general de los contenidos destacados.
                       ✨ Buscar: Ofrece una función de búsqueda para que los usuarios puedan encontrar podcasts específicos según sus intereses.
                       ✨ Escuchar: Proporciona enlaces o reproductores para escuchar episodios directamente desde la página, facilitando la experiencia sin necesidad de salir del sitio.`,
-        technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes: \n
+        technologies: `Para llevar a cabo este proyecto he usado las siguientes tecnologías y lenguajes:<br/>
                       <span class="font-bold">HTML, CSS, Typescript, React, Next, Tailwind, Zustand</span>. Tests unitarios y de integración con <span class="font-bold">Jest</span> y e2e con <span class="font-bold">Cypress</span>`,
       },
     },

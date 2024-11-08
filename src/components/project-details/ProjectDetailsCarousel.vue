@@ -1,11 +1,11 @@
 <template>
-  <div ref="emblaNode" class="embla">
+  <div ref="emblaNode" class="embla my-16 md:my-0">
     <div class="embla__container w-full">
       <div v-for="slideSrc in slidesSrcs" :key="slideSrc" class="embla__slide">
         <img
           :src="slideSrc"
           loading="lazy"
-          style="filter: drop-shadow(0 0 7px rgba(0, 0, 0, 0.4))"
+          style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3))"
         />
       </div>
     </div>

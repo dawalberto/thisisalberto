@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-white w-screen max-w-6xl mx-auto p-6 overflow-x-hidden pb-4">
+  <div class="bg-white w-screen max-w-6xl px-3 mx-auto overflow-x-hidden">
     <!-- TODO - Rethink this title -->
-    <h1 class="text-2xl md:text-5xl my-2 text-center">&lt;{{ project }} /&gt;</h1>
+    <h1 class="text-3xl md:text-5xl mb-2 text-center">&lt;{{ project }} /&gt;</h1>
     <project-details-questions :project="project" />
     <project-details-carousel :slidesSrcs="slidesSrcs" />
     <project-details-repositories :linkRepository="linkRepository" />
@@ -33,6 +33,7 @@
 import ProjectDetailsQuestions from '@/components/project-details/ProjectDetailsQuestions.vue'
 import ProjectDetailsRepositories from '@/components/project-details/ProjectDetailsRepositories.vue'
 import ProjectDetailsCarousel from '@/components/project-details/ProjectDetailsCarousel.vue'
+import { onMounted } from 'vue'
 
 export default {
   name: 'ProjectDetails',
@@ -64,6 +65,9 @@ export default {
     },
   },
   setup() {
+    onMounted(() => {
+      window.scrollTo(0, 0)
+    })
     return {}
   },
 }
