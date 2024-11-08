@@ -16,8 +16,8 @@
         />
       </ul>
       <div v-show="showFullDescription" class="career-details">
-        <close-button @click="closeFullDescription" class="absolute -top-3 -left-2" />
-        <close-button @click="closeFullDescription" class="absolute -bottom-3 -right-2" />
+        <close-button @click="closeFullDescription" class="absolute -top-2 -left-2" />
+        <close-button @click="closeFullDescription" class="absolute -bottom-2 -right-2" />
         <p>
           {{ fullDescription }}
         </p>

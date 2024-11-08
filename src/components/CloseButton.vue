@@ -10,7 +10,7 @@
       items-center
     "
   >
-    <span class="self-center mx-auto opacity-0 hover:opacity-100 duration-150"> X </span>
+    <span class="self-center mx-auto text-xs">X</span>
   </button>
 </template>
 
@@ -18,4 +18,8 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+.terminal-button-red {
+  background-color: #fd5959;
+}
+</style>
