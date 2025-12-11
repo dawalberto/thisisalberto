@@ -13,7 +13,7 @@ export const ui = {
     'home.about': 'About me',
     'home.viewWork': 'View my work →',
     'home.contact': 'Contact me',
-    'home.techStack': 'Technologies I Love',
+    'home.techStack': 'Technologies that I use most currently',
     'home.title': 'Alberto García Sola - Web Developer',
     'home.hero.title': 'Alberto García Sola',
     'home.hero.subtitle': 'Building digital experiences with modern technologies.',
@@ -45,10 +45,10 @@ export const ui = {
     'contact.hero.title.highlight': 'Connect',
     'contact.hero.subtitle':
       'Feel free to reach out for collaborations, opportunities, or just to say hi!',
-    'contact.cta.title': "Let's Build Something Great Together",
+    'contact.cta.title': "Let's build something great together",
     'contact.cta.description':
       "Whether you're looking for a developer, have a project idea, or just want to connect - I'd love to hear from you!",
-    'contact.cta.button': 'Send Me an Email',
+    'contact.cta.button': 'Send me an email',
   },
   es: {
     'nav.projects': 'Proyectos',
@@ -57,7 +57,7 @@ export const ui = {
     'home.about': 'Sobre mí',
     'home.viewWork': 'Ver mi trabajo',
     'home.contact': 'Contactar',
-    'home.techStack': 'Tecnologías que me apasionan',
+    'home.techStack': 'Tecnologías que más uso actualmente',
     'home.title': 'Alberto García Sola - Desarrollador Web',
     'home.hero.title': 'Alberto García Sola',
     'home.hero.subtitle': 'Creando experiencias digitales con tecnologías modernas.',
@@ -88,9 +88,9 @@ export const ui = {
     'contact.hero.title.highlight': 'Conectar',
     'contact.hero.subtitle':
       'Siéntete libre de contactarme para colaboraciones, oportunidades o simplemente para saludar.',
-    'contact.cta.title': 'Construyamos Algo Genial Juntos',
+    'contact.cta.title': 'Construyamos algo genial juntos',
     'contact.cta.description':
       'Ya sea que busques un desarrollador, tengas una idea de proyecto o simplemente quieras conectar, ¡me encantaría saber de ti!',
-    'contact.cta.button': 'Envíame un Email',
+    'contact.cta.button': 'Envíame un email',
   },
 } as const
