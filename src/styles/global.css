@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
 @theme {
@@ -8,8 +8,8 @@
 
   --color-primary: #1a1a1a;
   --color-secondary: #6b7280;
-  --color-accent: #FFD93D;
-  --color-accent-dark: #E6B82F;
+  --color-accent: #ffd93d;
+  --color-accent-dark: #e6b82f;
 
   --radius-lg: 0.125rem;
   --radius-xl: 0.25rem;
@@ -18,9 +18,23 @@
   --animate-float: float 3s ease-in-out infinite;
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
+}
+
+/* Custom utilities */
+@utility bg-accent {
+  background-color: var(--color-accent);
+}
+
+@utility text-accent {
+  color: var(--color-accent);
 }
 
 /* Selection styling */
@@ -38,6 +52,3 @@
 .hover-paused:hover {
   animation-play-state: paused;
 }
-
-
-

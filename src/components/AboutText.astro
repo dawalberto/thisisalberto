@@ -1,5 +1,5 @@
 ---
-import { calculateYears, numberToWords, birthDate, itStartDate, webDevStartDate } from '../utils/date';
+import { birthDate, calculateYears, itStartDate, numberToWords, webDevStartDate } from '../utils/date';
 
 interface Props {
     lang: 'en' | 'es';
@@ -18,20 +18,20 @@ const webDevYearsText = numberToWords(webDevYears, lang);
 
 {lang === 'en' ? (
     <p>
-        Hi 👋<br/><br/>
-        My name is Alberto and I'm a Web Developer!<br/><br/>
-        I'm {ageText} years old and I'm more than {itYearsText} years in the IT world of which {webDevYearsText} of them I've been completely focused in the most I like, Web Development.<br/><br/>
-        Among other things, I like it because it implies a constant evolution in terms of knowledge and skills. It seems to me that it is what enriches us as professionals and people.<br/><br/>
-        As a Web Developer I know that the languages and technologies are only the tool and way and not the finish, that's because we should be able to find a solution regardless of them. But although I know this I can't help it feel a special love for JavaScript and the whole new ecosystem that it's growing around him(Node, React, Vue, Angular, etc)<br/><br/>
-        But I don't only enjoy my time being on the computer, I'm a big fan of the sport and I really like to expend time with my friends and family.
+        Hello =)<br/><br/>
+        My name is Alberto and I’m a Web Developer<br/><br/>
+        I’m {ageText} years old and I’ve spent more than {itYearsText} in the world of technology. I began my journey as a full-stack developer and, over time, gradually moved toward frontend work, specializing in crafting clear, efficient, useful and well-thought-out interfaces. I’ve been fully immersed in web development for {webDevYearsText} years now, which is where I truly enjoy myself.<br/><br/>
+        What drew me in from the beginning is the constant evolution: there’s always something new to learn, something to improve, and some paradigm waiting to be challenged. As someone once said, “Technology doesn’t wait, it just moves forward.” I adapt well to context changes, so I tend to move forward with it without losing the pace.<br/><br/>
+        As a web developer, I see languages and frameworks as tools, not the final destination. The key is finding the solution, whether it comes through JavaScript, React, or whatever becomes the trend tomorrow. Still, I admit I have a soft spot for the entire JS ecosystem, which has grown into a kind of jungle… the good kind.<br/><br/>
+        When I’m not at the editor, I’m probably juggling (literally), trying not to fall off an extreme unicycle, climbing a wall, or spending time with my people. Even though I’m from a small town in Alicante, I’ve lived in Edinburgh and spent a month traveling through India with nothing but a backpack. Maybe that’s why adaptability feels like it comes built-in.
     </p>
 ) : (
     <p>
-        Hola 👋<br/><br/>
-        Me llamo Alberto y soy Desarrollador Web!<br/><br/>
-        Tengo {ageText} años y llevo más de {itYearsText} en el mundo de la informática de los cuales {webDevYearsText} he estado totalmente enfocado en lo que más me gusta, el desarrollo web.<br/><br/>
-        Entre otras cosas me gusta porque implica una constante evolución a nivel de conocimientos y habilidades. Me parece que es lo que nos enriquece como profesionales y personas.<br/><br/>
-        Como desarrollador web soy consciente de que los lenguajes y tecnologías son solo el medio y no el fin por lo que debemos ser capaces de hallar una solución independientemente de estos. Pero a pesar de esto no puedo evitar sentir una gran debilidad por JavaScript y todo el ecosistema que ha ido creciendo a su alrededor(Node, React, Vue, Angular, etc)<br/><br/>
-        Pero no solo me gusta estar pegado al ordenador, soy un gran fan del deporte y me encanta pasar tiempo con los mios.
+        Hola =)<br/><br/>
+        Me llamo Alberto y soy Desarrollador Web<br/><br/>
+        Tengo {ageText} años y llevo más de {itYearsText} en el mundo de la tecnología. Empecé mi camino como desarrollador fullstack y, con el tiempo, me fui orientando cada vez más hacia el frontend, especializándome en crear interfaces claras, óptimas, útiles y bien pensadas. Llevo {webDevYearsText} años metido de lleno en el desarrollo web, que es donde realmente disfruto.<br/><br/>
+        Lo que más me atrajo desde el principio es la evolución constante: siempre hay algo nuevo que aprender, algo que mejorar y algún paradigma que desmontar. Como alguien dijo alguna vez: “La tecnología no espera, solo avanza”. Y yo me adapto bien a los cambios de contexto, así que suelo avanzar con ella sin perder el ritmo.<br/><br/>
+        Como desarrollador web tengo claro que los lenguajes y frameworks son herramientas, no el destino. La clave es encontrar la solución, venga en JavaScript, en React o en lo que toque mañana. Aun así, confieso que tengo una debilidad especial por todo el ecosistema JS, que ha crecido como una jungla… de las buenas.<br/><br/>
+        Cuando no estoy frente al editor, probablemente esté haciendo malabares (literalmente), intentando no caerme del monociclo extremo, escalando alguna pared o disfrutando con los míos. Aunque soy de un pequeño pueblo de Alicante, he vivido en Edimburgo y viajé un mes por India con solo una mochila. Supongo que por eso la adaptación viene de serie.
     </p>
 )}

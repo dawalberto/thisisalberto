@@ -1,9 +1,9 @@
 export const languages = {
   en: 'English',
   es: 'Español',
-};
+}
 
-export const defaultLang = 'en';
+export const defaultLang = 'en'
 
 export const ui = {
   en: {
@@ -20,7 +20,8 @@ export const ui = {
     'home.cta.role_prefix': '',
     'home.cta.role_highlight': 'Frontend',
     'home.cta.role_suffix': ' Developer',
-    'home.cta.description': 'Building modern, accessible, and performant web experiences with passion and precision.',
+    'home.cta.description':
+      'Building modern, accessible, and performant web experiences with passion and precision.',
     'footer.made': 'Made with 💛 by Alberto García Sola',
     'projects.title': 'Selected Works',
     'projects.title.prefix': 'Selected',
@@ -42,9 +43,11 @@ export const ui = {
     'contact.form.send': 'Send Message',
     'contact.hero.title.prefix': "Let's",
     'contact.hero.title.highlight': 'Connect',
-    'contact.hero.subtitle': 'Feel free to reach out for collaborations, opportunities, or just to say hi!',
+    'contact.hero.subtitle':
+      'Feel free to reach out for collaborations, opportunities, or just to say hi!',
     'contact.cta.title': "Let's Build Something Great Together",
-    'contact.cta.description': "Whether you're looking for a developer, have a project idea, or just want to connect - I'd love to hear from you!",
+    'contact.cta.description':
+      "Whether you're looking for a developer, have a project idea, or just want to connect - I'd love to hear from you!",
     'contact.cta.button': 'Send Me an Email',
   },
   es: {
@@ -60,6 +63,7 @@ export const ui = {
     'home.hero.subtitle': 'Creando experiencias digitales con tecnologías modernas.',
     'home.cta.role_prefix': 'Desarrollador ',
     'home.cta.role_highlight': 'Frontend',
+    'home.cta.role_suffix': ' ',
     'footer.made': 'Hecho con 💛 por Alberto García Sola',
     'projects.title': 'Trabajos Seleccionados',
     'projects.title.prefix': 'Selección de',
@@ -80,9 +84,11 @@ export const ui = {
     'contact.form.send': 'Enviar Mensaje',
     'contact.hero.title.prefix': 'Vamos a',
     'contact.hero.title.highlight': 'Conectar',
-    'contact.hero.subtitle': 'Siéntete libre de contactarme para colaboraciones, oportunidades o simplemente para saludar.',
+    'contact.hero.subtitle':
+      'Siéntete libre de contactarme para colaboraciones, oportunidades o simplemente para saludar.',
     'contact.cta.title': 'Construyamos Algo Genial Juntos',
-    'contact.cta.description': 'Ya sea que busques un desarrollador, tengas una idea de proyecto o simplemente quieras conectar, ¡me encantaría saber de ti!',
+    'contact.cta.description':
+      'Ya sea que busques un desarrollador, tengas una idea de proyecto o simplemente quieras conectar, ¡me encantaría saber de ti!',
     'contact.cta.button': 'Envíame un Email',
   },
-} as const;
+} as const
