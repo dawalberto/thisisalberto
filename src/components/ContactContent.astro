@@ -58,7 +58,7 @@ const contacts = [
           {contacts.map((contact) => (
             <a
               href={contact.href}
-              target={contact.icon !== 'message' ? '_blank' : undefined}
+              target="_blank"
               rel={contact.icon !== 'message' ? 'noopener noreferrer' : undefined}
               class="group flex items-center gap-6 p-6 bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] hover:bg-accent hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] transition-all duration-200 rounded-xl"
             >
@@ -84,7 +84,7 @@ const contacts = [
                 <h3 class="font-heading font-bold text-xl mb-1 text-slate-900">
                   {contact.label}
                 </h3>
-                <p class="text-slate-600 font-medium break-all">
+                <p class="text-slate-600 font-medium break-all text-pretty">
                   {contact.value}
                 </p>
               </div>
@@ -137,6 +137,7 @@ const contacts = [
           <a
             href="mailto:contact@thisisalberto.dev"
             class="inline-block bg-accent text-slate-900 font-bold text-lg px-8 py-4 rounded-xl border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] transition-all duration-200"
+            target="_blank"
           >
             {t('contact.cta.button')}
           </a>
@@ -172,34 +173,36 @@ const contacts = [
 </style>
 
 <script>
-  const canvas = document.getElementById('static-avatar') as HTMLCanvasElement;
-  const animatedImg = document.getElementById('animated-avatar') as HTMLImageElement;
-  const container = document.getElementById('avatar-container');
-  
-  if (canvas && animatedImg && container) {
-    const ctx = canvas.getContext('2d');
+  document.addEventListener('astro:page-load', () => {
+    const canvas = document.getElementById('static-avatar') as HTMLCanvasElement;
+    const animatedImg = document.getElementById('animated-avatar') as HTMLImageElement;
+    const container = document.getElementById('avatar-container');
     
-    // Dibujar el primer frame en el canvas
-    animatedImg.onload = () => {
-      if (ctx) {
+    if (canvas && animatedImg && container) {
+      const ctx = canvas.getContext('2d');
+      
+      // Dibujar el primer frame en el canvas
+      animatedImg.onload = () => {
+        if (ctx) {
+          ctx.drawImage(animatedImg, 0, 0, canvas.width, canvas.height);
+        }
+      };
+      
+      // Si la imagen ya está cargada
+      if (animatedImg.complete && ctx) {
         ctx.drawImage(animatedImg, 0, 0, canvas.width, canvas.height);
       }
-    };
-    
-    // Si la imagen ya está cargada
-    if (animatedImg.complete && ctx) {
-      ctx.drawImage(animatedImg, 0, 0, canvas.width, canvas.height);
+      
+      // Al hacer hover, mostrar la imagen animada
+      container.addEventListener('mouseenter', () => {
+        canvas.classList.add('hidden');
+        animatedImg.classList.remove('hidden');
+      });
+      
+      container.addEventListener('mouseleave', () => {
+        canvas.classList.remove('hidden');
+        animatedImg.classList.add('hidden');
+      });
     }
-    
-    // Al hacer hover, mostrar la imagen animada
-    container.addEventListener('mouseenter', () => {
-      canvas.classList.add('hidden');
-      animatedImg.classList.remove('hidden');
-    });
-    
-    container.addEventListener('mouseleave', () => {
-      canvas.classList.remove('hidden');
-      animatedImg.classList.add('hidden');
-    });
-  }
+  });
 </script>

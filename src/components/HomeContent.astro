@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Terminal from './Terminal.astro';
 import AboutText from './AboutText.astro';
 import { Image } from 'astro:assets';
-import profileImage from '../assets/yellow.png';
+import profileImage from '../assets/thisisalberto-square.png';
 import { useTranslations } from '../i18n/utils';
 
 interface Props {
@@ -21,7 +21,7 @@ const projectsUrl = lang === 'en' ? '/projects' : '/es/projects';
         <div class="max-w-4xl mx-auto px-4 flex flex-col items-center text-center animate-fade-in-down">
             <div id="profile-card" class="relative mb-12 group cursor-pointer">
                 <div class="absolute inset-0 bg-accent rounded-sm rotate-6 translate-x-2 translate-y-2 border-2 border-slate-900 [@media(hover:hover)]:group-hover:rotate-3 group-[.is-active]:rotate-3 transition-transform duration-300 -z-10"></div>
-                <div class="bg-white border-2 p-4 border-slate-900 rounded-sm shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
+                <div class="bg-white border-2 border-slate-900 rounded-sm shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
                     <div class="relative size-60 overflow-hidden rounded-t-sm">
                         <div class="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out [@media(hover:hover)]:group-hover:-translate-y-full group-[.is-active]:-translate-y-full">
                             <div class="text-6xl animate-float">🦊</div>
