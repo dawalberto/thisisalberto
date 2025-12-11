@@ -64,6 +64,8 @@ export const ui = {
     'home.cta.role_prefix': 'Desarrollador ',
     'home.cta.role_highlight': 'Frontend',
     'home.cta.role_suffix': ' ',
+    'home.cta.description':
+      'Construyendo experiencias web modernas, accesibles y eficientes con pasión y precisión.',
     'footer.made': 'Hecho con 💛 por Alberto García Sola',
     'projects.title': 'Trabajos Seleccionados',
     'projects.title.prefix': 'Selección de',
