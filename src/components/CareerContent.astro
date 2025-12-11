@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TimelineItem from './TimelineItem.astro';
+import Skills from './Skills.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const career = await getCollection('career', ({ id }) => id.startsWith(`${lang}/`));
+
+const jobs = career.filter(item => item.data.type === 'job').sort((a, b) => a.data.order - b.data.order);
+const studies = career.filter(item => item.data.type === 'study').sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title={t('career.pageTitle')} lang={lang}>
+    <div class="grid gap-12 animate-fade-in-up max-w-3xl mx-auto">
+        <section>
+            <h2 class="text-xl font-bold font-mono uppercase tracking-widest text-slate-500 mb-8">
+                {t('career.experience')}
+            </h2>
+            <div class="ml-2 space-y-8">
+                {jobs.map(job => (
+                    <TimelineItem item={job.data} />
+                ))}
+            </div>
+        </section>
+        <section>
+            <h2 class="text-xl font-bold font-mono uppercase tracking-widest text-slate-500 mb-8">
+                {t('career.education')}
+            </h2>
+            <div class="ml-2 space-y-8">
+                {studies.map(study => (
+                    <TimelineItem item={study.data} />
+                ))}
+            </div>
+        </section>
+    </div>
+
+    <Skills />
+</Layout>
+
+<style>
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-down {
+        animation: fadeInDown 0.8s ease-out;
+    }
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>

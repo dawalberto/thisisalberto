@@ -1,0 +1,53 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+import switchSoundUrl from '../assets/light-switch.mp3';
+
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
+
+let targetUrl = currentPath;
+
+if (lang === 'es') {
+    targetUrl = currentPath.replace(/^\/es/, '') || '/';
+} else {
+    targetUrl = `/es${currentPath === '/' ? '' : currentPath}`;
+}
+---
+<a 
+    href={targetUrl}
+    class="language-toggle flex items-center gap-1 text-xs font-bold border-2 border-slate-900 px-2 py-1 rounded bg-white shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] font-heading focus:translate-x-px focus:translate-y-px focus:shadow-[1px_1px_0px_0px_rgba(26,26,26,1)] transition-all cursor-pointer select-none no-underline"
+    data-sound-url={switchSoundUrl}
+    aria-label="Toggle language"
+>
+    <span class={lang === 'en' ? 'text-slate-900' : 'text-slate-400'}>EN</span>
+    <span class="text-slate-300">/</span>
+    <span class={lang === 'es' ? 'text-slate-900' : 'text-slate-400'}>ES</span>
+</a>
+
+<script>
+    function setupLanguageToggle() {
+        const toggles = document.querySelectorAll('.language-toggle');
+        
+        toggles.forEach(toggle => {
+            // Remove old listeners to prevent duplicates if re-running
+            const newToggle = toggle.cloneNode(true);
+            toggle.parentNode?.replaceChild(newToggle, toggle);
+            
+            newToggle.addEventListener('click', (e) => {
+                // Optional: Play sound logic here if it was in the original script
+                const soundUrl = (newToggle as HTMLElement).dataset.soundUrl;
+                if (soundUrl) {
+                    const audio = new Audio(soundUrl);
+                    audio.volume = 0.5;
+                    audio.play().catch(() => {}); // Ignore auto-play errors
+                }
+            });
+        });
+    }
+
+    // Run on initial load
+    setupLanguageToggle();
+
+    // Run on view transitions navigation
+    document.addEventListener('astro:page-load', setupLanguageToggle);
+</script>

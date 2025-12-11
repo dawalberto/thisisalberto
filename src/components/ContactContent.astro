@@ -1,0 +1,165 @@
+---
+import headImage from '../assets/yoCabeza.png';
+import { useTranslations } from '../i18n/utils';
+import Layout from '../layouts/Layout.astro';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const contacts = [
+  {
+    icon: 'message',
+    label: 'Email',
+    value: 'contact@thisisalberto.dev',
+    href: 'mailto:contact@thisisalberto.dev',
+    color: 'accent',
+  },
+  {
+    icon: 'linkedin',
+    label: 'LinkedIn',
+    value: '/alberto-garcia-sola',
+    href: 'https://www.linkedin.com/in/alberto-garcia-sola',
+    color: 'accent',
+  },
+  {
+    icon: 'github',
+    label: 'GitHub',
+    value: '/dawalberto',
+    href: 'https://github.com/dawalberto',
+    color: 'accent',
+  },
+];
+---
+
+<Layout title={t('contact.pageTitle')} lang={lang}>
+  <section class="pb-12 md:pb-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Header -->
+      <div class="text-center mb-16 animate-fade-in-down">
+        <h1 class="font-heading font-bold text-5xl md:text-6xl lg:text-7xl mb-6 text-slate-900">
+          {t('contact.hero.title.prefix')} <span class="relative inline-block">
+            {t('contact.hero.title.highlight')}
+            <span class="absolute bottom-2 left-0 w-full h-3 bg-accent -z-10 -rotate-2"></span>
+          </span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto">
+          {t('contact.hero.subtitle')}
+        </p>
+      </div>
+
+      <!-- Contact Grid -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+        <!-- Contact Info -->
+        <div class="space-y-6 animate-fade-in-up">
+          {contacts.map((contact) => (
+            <a
+              href={contact.href}
+              target={contact.icon !== 'message' ? '_blank' : undefined}
+              rel={contact.icon !== 'message' ? 'noopener noreferrer' : undefined}
+              class="group flex items-center gap-6 p-6 bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] hover:bg-accent hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] transition-all duration-200 rounded-xl"
+            >
+              <div class="w-16 h-16 bg-accent border-2 border-slate-900 flex items-center justify-center shrink-0 rounded-lg group-hover:bg-slate-900 transition-colors duration-200">
+                <svg
+                  class="w-8 h-8 text-slate-900 group-hover:text-accent transition-colors duration-200"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {contact.icon === 'message' && (
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  )}
+                  {contact.icon === 'linkedin' && (
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                  )}
+                  {contact.icon === 'github' && (
+                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                  )}
+                </svg>
+              </div>
+
+              <div class="flex-1">
+                <h3 class="font-heading font-bold text-xl mb-1 text-slate-900">
+                  {contact.label}
+                </h3>
+                <p class="text-slate-600 font-medium break-all">
+                  {contact.value}
+                </p>
+              </div>
+
+              <svg
+                class="w-6 h-6 text-slate-900 group-hover:translate-x-2 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          ))}
+        </div>
+
+        <!-- Animated Image -->
+        <div class="animate-fade-in-up flex justify-center lg:justify-end">
+          <div class="relative group">
+            <div class="absolute inset-0 bg-accent -rotate-6 translate-x-4 translate-y-4 -z-10 rounded-2xl border-2 border-slate-900 transition-transform group-hover:rotate-0 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+            <div class="bg-white p-4 border-2 border-slate-900 rounded-2xl shadow-sm animate-float hover-paused">
+              <img
+                src={headImage.src}
+                alt="Alberto García Sola"
+                width={headImage.width}
+                height={headImage.height}
+                class="w-full h-auto max-w-sm rounded-xl bg-slate-50"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional CTA -->
+      <div class="mt-20 text-center animate-fade-in-up">
+        <div class="bg-white border-2 border-slate-900 shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] rounded-2xl p-8 md:p-12 max-w-3xl mx-auto">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4 text-slate-900">
+            {t('contact.cta.title')}
+          </h2>
+          <p class="text-lg text-slate-600 mb-8">
+            {t('contact.cta.description')}
+          </p>
+          <a
+            href="mailto:contact@thisisalberto.dev"
+            class="inline-block bg-accent text-slate-900 font-bold text-lg px-8 py-4 rounded-xl border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] transition-all duration-200"
+          >
+            {t('contact.cta.button')}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+    .animate-fade-in-down {
+        animation: fadeInDown 0.8s ease-out;
+    }
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+        animation-fill-mode: both;
+    }
+    .animate-fade-in-up:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    .animate-fade-in-up:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>

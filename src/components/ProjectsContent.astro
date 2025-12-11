@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from './ProjectCard.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const projects = (await getCollection('projects', ({ id }) => id.startsWith(`${lang}/`)))
+    .sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title={t('projects.pageTitle')} lang={lang}>
+    <div class="container mx-auto px-4 pb-12 md:pb-20">
+        <h1 class="text-3xl md:text-5xl font-bold font-heading text-slate-900 mb-16 animate-fade-in-down uppercase tracking-tighter">
+            {t('projects.title.prefix')} 
+            <span class="relative inline-block">
+                {t('projects.title.highlight')}
+                <span class="absolute bottom-2 left-0 w-full h-3 bg-accent -z-10 -rotate-2"></span>
+            </span>
+        </h1>
+        <div class="flex flex-col animate-fade-in-up">
+            {projects.map((project, index) => (
+                <ProjectCard project={project} lang={lang} index={index} />
+            ))}
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .animate-fade-in-down {
+        animation: fadeInDown 0.6s ease-out;
+    }
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+    }
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>

@@ -1,0 +1,158 @@
+---
+import { getIcon } from '../utils/icons';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const skills = [
+    'HTML', 'CSS', 'JavaScript', 'TypeScript', 'Java', 'PHP', 'MySQL',
+    'React', 'Next.js', 'Vue', 'Quasar', 'Angular',
+    'Redux', 'Zustand', 'React Query', 'Orval', 'React Hook Form',
+    'Tailwind', 'Chakra UI', 'Storybook',
+    'Node', 'SpringBoot', 'MongoDB',
+    'Vite', 'Webpack',
+    'Jest', 'Vitest', 'Cypress',
+    'Git', 'GitHub', 'Azure',
+    'GitHub Copilot', 'Figma', 'Jira', 'Trello'
+];
+
+const mostUsed = [
+    'HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Zustand', 
+    'React Query', 'React Hook Form', 'Vite', 'Vitest', 
+    'Git', 'GitHub', 'GitHub Copilot'
+];
+
+const currentWork = [
+    'HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'React Query', 'Zustand',
+    'Vite', 'Vitest', 'Cypress', 'GitHub', 'GitHub Copilot', 'Jira'
+];
+---
+<section class="mt-16 pt-16 border-t-2 border-slate-900">
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+        <h2 class="text-3xl font-bold font-heading text-slate-900">{t('career.techStack')}</h2>
+        
+        <div class="flex flex-col sm:flex-row gap-4 text-sm font-medium text-slate-600">
+            <button id="filter-most-used" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border-2 border-transparent hover:bg-slate-100 transition-colors cursor-pointer group" aria-pressed="false">
+                <span class="w-3 h-3 rounded-full bg-accent border border-slate-900 group-aria-pressed:scale-125 transition-transform"></span>
+                <span class="group-aria-pressed:font-bold transition-all">{t('career.legend.mostUsed')}</span>
+            </button>
+            <button id="filter-current-work" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border-2 border-transparent hover:bg-slate-100 transition-colors cursor-pointer group" aria-pressed="false">
+                <span class="w-3 h-3 rounded-full bg-slate-900 group-aria-pressed:scale-125 transition-transform"></span>
+                <span class="group-aria-pressed:font-bold transition-all">{t('career.legend.currentWork')}</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="skills-wrapper">
+        <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {skills.map(skill => {
+                const isMostUsed = mostUsed.includes(skill);
+                const isCurrentWork = currentWork.includes(skill);
+                const icon = getIcon(skill);
+                let svgContent = icon?.svg;
+                
+                // Make React Hook Form icon thicker
+                if (skill === 'React Hook Form' && svgContent) {
+                    svgContent = svgContent.replace('<svg', '<svg stroke="currentColor" stroke-width="0.5"');
+                }
+
+                return (
+                    <div 
+                        class="skill-item relative flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-slate-900 shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] transition-all duration-300 ease-in-out transform origin-center group"
+                        data-most-used={isMostUsed}
+                        data-current-work={isCurrentWork}
+                    >
+                        {(isMostUsed || isCurrentWork) && (
+                            <div class="absolute top-2 right-2 flex gap-1">
+                                {isMostUsed && <span class="w-2 h-2 rounded-full bg-accent border border-slate-900" title={t('career.legend.mostUsed')}></span>}
+                                {isCurrentWork && <span class="w-2 h-2 rounded-full bg-slate-900" title={t('career.legend.currentWork')}></span>}
+                            </div>
+                        )}
+                        {icon && <div class="w-6 h-6 transition-transform text-slate-900 [&>svg]:fill-current" set:html={svgContent} />}
+                        <span class="font-bold text-slate-900">{skill}</span>
+                    </div>
+                );
+            })}
+        </div>
+    </div>
+</section>
+
+<script>
+    const filterMostUsed = document.getElementById('filter-most-used');
+    const filterCurrentWork = document.getElementById('filter-current-work');
+    const skillsWrapper = document.getElementById('skills-wrapper');
+    const skillsGrid = document.getElementById('skills-grid');
+    const skillItems = document.querySelectorAll('.skill-item');
+
+    let filters = {
+        mostUsed: false,
+        currentWork: false
+    };
+
+    // Set initial minimum height to prevent layout shift
+    if (skillsWrapper && skillsGrid) {
+        skillsWrapper.style.minHeight = `${skillsGrid.offsetHeight}px`;
+    }
+
+    function updateFilters() {
+        // Update button states
+        filterMostUsed?.setAttribute('aria-pressed', filters.mostUsed.toString());
+        filterCurrentWork?.setAttribute('aria-pressed', filters.currentWork.toString());
+        
+        if (filterMostUsed) {
+            filterMostUsed.classList.toggle('border-slate-200', filters.mostUsed);
+            filterMostUsed.classList.toggle('bg-slate-50', filters.mostUsed);
+        }
+        if (filterCurrentWork) {
+            filterCurrentWork.classList.toggle('border-slate-200', filters.currentWork);
+            filterCurrentWork.classList.toggle('bg-slate-50', filters.currentWork);
+        }
+
+        // Filter items
+        skillItems.forEach(item => {
+            const isMostUsed = item.getAttribute('data-most-used') === 'true';
+            const isCurrentWork = item.getAttribute('data-current-work') === 'true';
+            
+            let shouldShow = true;
+
+            if (filters.mostUsed && filters.currentWork) {
+                shouldShow = (filters.mostUsed && isMostUsed) || (filters.currentWork && isCurrentWork);
+            } else if (filters.mostUsed) {
+                shouldShow = isMostUsed;
+            } else if (filters.currentWork) {
+                shouldShow = isCurrentWork;
+            }
+
+            if (shouldShow) {
+                if (item.classList.contains('hidden')) {
+                    item.classList.remove('hidden');
+                    item.classList.add('flex');
+                    // Trigger reflow
+                    void item.offsetWidth;
+                    item.classList.remove('opacity-0', 'scale-90');
+                }
+            } else {
+                if (!item.classList.contains('hidden')) {
+                    item.classList.add('opacity-0', 'scale-90');
+                    setTimeout(() => {
+                        if (item.classList.contains('opacity-0')) {
+                            item.classList.remove('flex');
+                            item.classList.add('hidden');
+                        }
+                    }, 300);
+                }
+            }
+        });
+    }
+
+    filterMostUsed?.addEventListener('click', () => {
+        filters.mostUsed = !filters.mostUsed;
+        updateFilters();
+    });
+
+    filterCurrentWork?.addEventListener('click', () => {
+        filters.currentWork = !filters.currentWork;
+        updateFilters();
+    });
+</script>
