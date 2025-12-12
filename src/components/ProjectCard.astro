@@ -22,7 +22,7 @@ const detailsId = `details-${index}`;
         <div class="md:col-span-5 flex flex-col justify-between">
             <div>
                 <span class="font-mono text-xl font-bold text-slate-400 mb-4 block">/{indexString}</span>
-                <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-slate-900 uppercase leading-none mb-6 group-hover:text-accent-dark transition-colors">
+                <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-slate-900 uppercase leading-none mb-6 group-hover:text-accent group-hover:[-webkit-text-stroke:1.5px_var(--color-slate-900)] transition-colors">
                     {project.data.title}
                 </h3>
             </div>
@@ -63,7 +63,7 @@ const detailsId = `details-${index}`;
 
             <button 
                 type="button"
-                class="flex items-center gap-2 cursor-pointer text-sm font-bold font-mono text-slate-900 hover:text-accent-dark transition-colors select-none list-none uppercase tracking-wider mt-auto w-fit group/btn"
+                class="flex items-center gap-2 cursor-pointer text-sm font-bold font-mono text-slate-900 hover:text-accent transition-colors select-none list-none uppercase tracking-wider mt-auto w-fit group/btn"
                 aria-expanded="false"
                 aria-controls={detailsId}
                 data-toggle-details
@@ -89,7 +89,7 @@ const detailsId = `details-${index}`;
 
     <!-- Full Width Details Content -->
     <div id={detailsId} class="hidden mt-12 border-t-2 border-slate-200 pt-8 animate-fade-in">
-        <div class="prose prose-slate max-w-none prose-headings:font-heading prose-headings:uppercase prose-headings:font-bold prose-p:font-mono prose-p:text-sm prose-img:rounded-sm prose-img:border-2 prose-img:border-slate-900">
+        <div class="prose prose-slate max-w-none prose-headings:font-heading prose-headings:uppercase prose-headings:font-bold prose-p:text-lg prose-p:text-slate-700 prose-p:font-medium prose-img:rounded-sm prose-img:border-2 prose-img:border-slate-900">
             <Content />
         </div>
     </div>
