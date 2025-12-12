@@ -87,7 +87,9 @@ const keywords = lang === 'es'
 
     <section class="max-w-3xl mx-auto px-4">
         <div class="paper-texture border-2 border-slate-900 shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] rounded-3xl py-6 sm:py-8 md:py-12 px-4 sm:px-6 md:px-10">
-            <h2 class="text-2xl sm:text-3xl font-bold font-heading text-center mb-6 sm:mb-8 text-slate-900">{t('home.about')}</h2>
+            <div class="text-center mb-6 sm:mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 typewriter-title">{t('home.about')}</h2>
+            </div>
             <div class="prose prose-lg prose-slate mx-auto text-slate-700">
                 <AboutText lang={lang} />
             </div>
@@ -146,6 +148,32 @@ const keywords = lang === 'es'
             ),
             url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
         background-blend-mode: multiply;
+    }
+
+    .typewriter-title {
+        font-family: 'Courier Prime', 'Courier New', monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+    }
+
+    .typewriter-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 3px;
+        background: repeating-linear-gradient(
+            90deg,
+            #1a1a1a 0px,
+            #1a1a1a 4px,
+            transparent 4px,
+            transparent 8px
+        );
     }
 </style>
 
