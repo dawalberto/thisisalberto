@@ -33,11 +33,11 @@ const currentWork = [
         <h2 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900">{t('career.techStack')}</h2>
         
         <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs sm:text-sm font-medium text-slate-600">
-            <button id="filter-most-used" class="flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm border-2 border-transparent hover:bg-slate-100 transition-colors cursor-pointer group" aria-pressed="false">
+            <button id="filter-most-used" class="flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-3xl border-2 border-transparent hover:bg-slate-100 transition-colors cursor-pointer group" aria-pressed="false">
                 <span class="size-2.5 sm:size-3 flex-none rounded-full bg-accent border border-slate-900 group-aria-pressed:scale-125 transition-transform"></span>
                 <span class="group-aria-pressed:font-bold transition-all">{t('career.legend.mostUsed')}</span>
             </button>
-            <button id="filter-current-work" class="flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm border-2 border-transparent hover:bg-slate-100 transition-colors cursor-pointer group" aria-pressed="false">
+            <button id="filter-current-work" class="flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-3xl border-2 border-transparent hover:bg-slate-100 transition-colors cursor-pointer group" aria-pressed="false">
                 <span class="size-2.5 sm:size-3 flex-none rounded-full bg-slate-900 group-aria-pressed:scale-125 transition-transform"></span>
                 <span class="group-aria-pressed:font-bold transition-all">{t('career.legend.currentWork')}</span>
             </button>
@@ -59,7 +59,7 @@ const currentWork = [
 
                 return (
                     <div 
-                        class="skill-item relative flex items-center gap-2 sm:gap-3 p-2.5 sm:p-3 md:p-4 bg-white rounded-sm border-2 border-slate-900 shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] transition-all duration-300 ease-in-out transform origin-center group"
+                        class="skill-item relative flex items-center gap-2 sm:gap-3 p-2.5 sm:p-3 md:p-4 bg-white rounded-3xl border-2 border-slate-900 shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] transition-all duration-300 ease-in-out transform origin-center group"
                         data-most-used={isMostUsed}
                         data-current-work={isCurrentWork}
                     >

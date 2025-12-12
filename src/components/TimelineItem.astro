@@ -35,7 +35,7 @@ const logoSrc = logoMap[item.institution];
     
     <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2 gap-2">
         <div class="flex items-center gap-2 sm:gap-3">
-            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-white border-2 flex-none border-slate-900 rounded-sm flex items-center justify-center overflow-hidden shadow-[2px_2px_0px_0px_rgba(26,26,26,1)]">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-white border-2 flex-none border-slate-900 rounded-3xl flex items-center justify-center overflow-hidden shadow-[2px_2px_0px_0px_rgba(26,26,26,1)]">
                 {logoSrc ? (
                     <img 
                         src={logoSrc} 
@@ -62,7 +62,7 @@ const logoSrc = logoMap[item.institution];
             {item.technologies.map(tech => {
                 const icon = getIcon(tech);
                 return (
-                    <span class="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-white text-slate-900 text-[10px] sm:text-xs font-bold rounded-md flex items-center gap-1 border-2 border-slate-900 shadow-[1px_1px_0px_0px_rgba(26,26,26,1)]">
+                    <span class="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-white text-slate-900 text-[10px] sm:text-xs font-bold rounded-3xl flex items-center gap-1 border-2 border-slate-900 shadow-[1px_1px_0px_0px_rgba(26,26,26,1)]">
                         {icon && <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-900 [&>svg]:fill-current" set:html={icon.svg} />}
                         {tech}
                     </span>
