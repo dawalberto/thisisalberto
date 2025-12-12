@@ -24,12 +24,12 @@ const projectsUrl = lang === 'en' ? '/projects' : '/es/projects';
                 <div class="absolute inset-0 bg-accent rounded-sm rotate-6 translate-x-2 translate-y-2 border-2 border-slate-900 [@media(hover:hover)]:group-hover:rotate-3 group-[.is-active]:rotate-3 transition-transform duration-300 -z-10"></div>
                 <div class="bg-white border-2 border-slate-900 rounded-sm shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
                     <div class="relative size-72 overflow-hidden rounded-t-sm">
-                        <div class="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out [@media(hover:hover)]:group-hover:-translate-y-full group-[.is-active]:-translate-y-full">
+                        <div class="absolute inset-0 flex items-center justify-center bg-[#F9F9FA] transition-transform duration-500 ease-in-out group-[.is-active]:-translate-y-full">
                             <div class="animate-float">
                                 <Image src={foxImage} alt="Fox" class="w-20 h-auto" />
                             </div>
                         </div>
-                        <div class="absolute inset-0 transition-transform duration-500 ease-in-out translate-y-full [@media(hover:hover)]:group-hover:translate-y-0 group-[.is-active]:translate-y-0">
+                        <div class="absolute inset-0 transition-transform duration-500 ease-in-out translate-y-full group-[.is-active]:translate-y-0">
                             <video id="wave-video" src={pixelArtWaveVideo} muted playsinline class="size-72 object-cover block"></video>
                         </div>
                     </div>
@@ -115,10 +115,19 @@ const projectsUrl = lang === 'en' ? '/projects' : '/es/projects';
 <script>
     function toggleProfile(e: Event) {
         const target = e.currentTarget as HTMLElement;
-        target.classList.toggle('is-active');
         
-        // Play video when toggled active (for mobile/click interaction)
         if (target.classList.contains('is-active')) {
+            target.classList.remove('is-active');
+        } else {
+            target.classList.add('is-active');
+            playVideo();
+        }
+    }
+
+    function activateProfile() {
+        const card = document.getElementById('profile-card');
+        if (card && !card.classList.contains('is-active')) {
+            card.classList.add('is-active');
             playVideo();
         }
     }
@@ -137,8 +146,11 @@ const projectsUrl = lang === 'en' ? '/projects' : '/es/projects';
             card.removeEventListener('click', toggleProfile);
             card.addEventListener('click', toggleProfile);
             
-            card.removeEventListener('mouseenter', playVideo);
-            card.addEventListener('mouseenter', playVideo);
+            // Only add mouseenter if the device supports hover to avoid double-trigger on mobile
+            if (window.matchMedia('(hover: hover)').matches) {
+                card.removeEventListener('mouseenter', activateProfile);
+                card.addEventListener('mouseenter', activateProfile);
+            }
         }
     }
 
