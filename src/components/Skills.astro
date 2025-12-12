@@ -129,7 +129,7 @@ const currentWork = [
                     item.classList.remove('hidden');
                     item.classList.add('flex');
                     // Trigger reflow
-                    void item.offsetWidth;
+                    void (item as HTMLElement).offsetWidth;
                     item.classList.remove('opacity-0', 'scale-90');
                 }
             } else {

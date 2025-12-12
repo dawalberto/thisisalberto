@@ -72,6 +72,7 @@ export const ui = {
     'projects.title.highlight': 'Trabajos Personales',
     'projects.pageTitle': 'Trabajos Seleccionados - Alberto García Sola',
     'career.title': 'Carrera',
+    'career.pageTitle': 'Carrera - Alberto García Sola',
     'career.experience': 'Experiencia',
     'career.education': 'Educación',
     'career.techStack': 'Tecnologías con las que he trabajado',

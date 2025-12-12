@@ -1,0 +1,90 @@
+---
+interface Props {
+  type?: 'Person' | 'WebPage' | 'WebSite';
+  lang?: 'en' | 'es';
+}
+
+const { type = 'WebPage', lang = 'en' } = Astro.props;
+const currentURL = new URL(Astro.url.pathname, Astro.site);
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alberto García Sola",
+  "url": "https://thisisalberto.com",
+  "jobTitle": lang === 'es' ? "Desarrollador Web Frontend" : "Frontend Web Developer",
+  "description": lang === 'es' 
+    ? "Desarrollador web frontend especializado en React, TypeScript y tecnologías modernas"
+    : "Frontend web developer specialized in React, TypeScript, and modern technologies",
+  "email": "contact@thisisalberto.com",
+  "sameAs": [
+    "https://github.com/dawalberto",
+    "https://www.linkedin.com/in/albertogarciasola/",
+    "https://twitter.com/thisisalbertoo"
+  ],
+  "knowsAbout": [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Astro",
+    "Frontend Development",
+    "Web Development",
+    "Node.js",
+    "Vue.js"
+  ]
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Alberto García Sola",
+  "url": "https://thisisalberto.com",
+  "description": lang === 'es' 
+    ? "Portfolio personal de Alberto García Sola - Desarrollador Web Frontend"
+    : "Personal portfolio of Alberto García Sola - Frontend Web Developer",
+  "inLanguage": [lang === 'es' ? "es-ES" : "en-US"],
+  "author": {
+    "@type": "Person",
+    "name": "Alberto García Sola"
+  }
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": currentURL.toString(),
+  "name": lang === 'es' ? "Portfolio de Alberto García Sola" : "Alberto García Sola's Portfolio",
+  "description": lang === 'es' 
+    ? "Portfolio de Alberto García Sola - Desarrollador Web Frontend"
+    : "Alberto García Sola's Portfolio - Frontend Web Developer",
+  "inLanguage": lang === 'es' ? "es-ES" : "en-US",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://thisisalberto.com"
+  },
+  "about": {
+    "@type": "Person",
+    "name": "Alberto García Sola"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Alberto García Sola"
+  }
+};
+
+let schema;
+switch (type) {
+  case 'Person':
+    schema = personSchema;
+    break;
+  case 'WebSite':
+    schema = webSiteSchema;
+    break;
+  case 'WebPage':
+  default:
+    schema = webPageSchema;
+    break;
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />

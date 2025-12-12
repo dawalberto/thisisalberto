@@ -2,6 +2,7 @@
 import flyingPixelVideo from '../assets/flying-pixel.mp4';
 import { useTranslations } from '../i18n/utils';
 import Layout from '../layouts/Layout.astro';
+import SEOSchema from './SEOSchema.astro';
 
 interface Props {
   lang: 'en' | 'es';
@@ -9,6 +10,14 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const description = lang === 'es'
+    ? 'Contacta con Alberto García Sola. Abierto a colaboraciones, proyectos y oportunidades laborales como desarrollador web frontend.'
+    : 'Contact Alberto García Sola. Open to collaborations, projects, and job opportunities as a frontend web developer.';
+
+const keywords = lang === 'es'
+    ? 'contacto, email, LinkedIn, GitHub, colaboración, contratar desarrollador, frontend developer'
+    : 'contact, email, LinkedIn, GitHub, collaboration, hire developer, frontend developer';
 
 const contacts = [
   {
@@ -35,7 +44,13 @@ const contacts = [
 ];
 ---
 
-<Layout title={t('contact.pageTitle')} lang={lang}>
+<Layout 
+    title={t('contact.pageTitle')} 
+    description={description}
+    keywords={keywords}
+    lang={lang}
+>
+    <SEOSchema type="WebPage" lang={lang} slot="schema" />
   <section class="pb-8 sm:pb-12 md:pb-20">
     <div class="max-w-4xl mx-auto px-4">
       <!-- Header -->

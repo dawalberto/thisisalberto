@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { useTranslations } from '../i18n/utils';
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from './ProjectCard.astro';
+import SEOSchema from './SEOSchema.astro';
 
 interface Props {
   lang: 'en' | 'es';
@@ -12,9 +13,23 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const projects = (await getCollection('projects', ({ id }) => id.startsWith(`${lang}/`)))
     .sort((a, b) => a.data.order - b.data.order);
+
+const description = lang === 'es'
+    ? 'Descubre los proyectos personales de Alberto García Sola. Aplicaciones web desarrolladas con React, TypeScript, Astro y tecnologías modernas.'
+    : 'Discover Alberto García Sola\'s personal projects. Web applications built with React, TypeScript, Astro, and modern technologies.';
+
+const keywords = lang === 'es'
+    ? 'proyectos web, portfolio proyectos, React projects, TypeScript, desarrollo web, aplicaciones web'
+    : 'web projects, portfolio projects, React projects, TypeScript, web development, web applications';
 ---
 
-<Layout title={t('projects.pageTitle')} lang={lang}>
+<Layout 
+    title={t('projects.pageTitle')} 
+    description={description}
+    keywords={keywords}
+    lang={lang}
+>
+    <SEOSchema type="WebPage" lang={lang} slot="schema" />
     <div class="container mx-auto px-3 sm:px-4 pb-8 sm:pb-12 md:pb-20">
         <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-slate-900 mb-8 sm:mb-12 md:mb-16 animate-fade-in-down uppercase tracking-tighter leading-tight">
             {t('projects.title.prefix')} 
