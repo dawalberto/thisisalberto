@@ -16,6 +16,7 @@ Actualmente el propio Excel cuenta con opciones para conseguir tal objetivo, per
 
 Jjoin es un programa de escritorio desarrollado con tecnologías web.
 Consta de tres pantallas intuitivas las cuales te irán guiando a través del proceso de unión de las hojas excel.
-En la primera pantalla podrás seleccionar los archivos que desees.
-En la segunda pantalla crearás la condición por la cual quieres que se unan las hojas.
-Por último elegirás que campos de cada hoja deseas grabar en el nuevo fichero y si deseas guardar un único archivo con todas las coincidencias y/o guardar un archivo con el contenido que desees por cada coincidencia.
+
+- En la primera pantalla podrás seleccionar los archivos que desees.
+- En la segunda pantalla crearás la condición por la cual quieres que se unan las hojas.
+- Por último elegirás que campos de cada hoja deseas grabar en el nuevo fichero y si deseas guardar un único archivo con todas las coincidencias y/o guardar un archivo con el contenido que desees por cada coincidencia.

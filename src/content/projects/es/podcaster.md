@@ -15,6 +15,7 @@ Podcaster se creó para facilitar el acceso a los mejores podcasts recomendados 
 ## ¿Qué es exactamente?
 
 La página web permite a los usuarios:
-✨ Listar Podcasts: Muestra una lista de los 100 mejores podcasts, proporcionando un vistazo general de los contenidos destacados.
-✨ Buscar: Ofrece una función de búsqueda para que los usuarios puedan encontrar podcasts específicos según sus intereses.
-✨ Escuchar: Proporciona enlaces o reproductores para escuchar episodios directamente desde la página, facilitando la experiencia sin necesidad de salir del sitio.
+
+- Listar Podcasts: Muestra una lista de los 100 mejores podcasts, proporcionando un vistazo general de los contenidos destacados.
+- Buscar: Ofrece una función de búsqueda para que los usuarios puedan encontrar podcasts específicos según sus intereses.
+- Escuchar: Proporciona enlaces o reproductores para escuchar episodios directamente desde la página, facilitando la experiencia sin necesidad de salir del sitio.
