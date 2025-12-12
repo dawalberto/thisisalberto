@@ -1,5 +1,5 @@
 ---
-import headImage from '../assets/yoCabeza.png';
+import flyingPixelVideo from '../assets/flying-pixel.mp4';
 import { useTranslations } from '../i18n/utils';
 import Layout from '../layouts/Layout.astro';
 
@@ -105,21 +105,15 @@ const contacts = [
         <div class="animate-fade-in-up flex justify-center lg:justify-end">
           <div class="relative group">
             <div class="absolute inset-0 bg-accent -rotate-6 translate-x-4 translate-y-4 -z-10 rounded-2xl border-2 border-slate-900 transition-transform group-hover:rotate-0 group-hover:translate-x-2 group-hover:translate-y-2"></div>
-            <div id="avatar-container" class="bg-white px-4 pt-8 border-2 border-slate-900 rounded-2xl shadow-sm animate-float hover-paused">
-              <canvas 
-                id="static-avatar" 
+            <div id="avatar-container" class="bg-white border-2 border-slate-900 rounded-2xl shadow-sm animate-float hover-paused">
+              <video
+                src={flyingPixelVideo}
+                autoplay
+                loop
+                muted
+                playsinline
                 class="w-full h-auto max-w-sm rounded-xl block"
-                width={headImage.width}
-                height={headImage.height}
-              ></canvas>
-              <img
-                id="animated-avatar"
-                src={headImage.src}
-                alt="Alberto García Sola"
-                width={headImage.width}
-                height={headImage.height}
-                class="w-full h-auto max-w-sm rounded-xl hidden"
-              />
+              ></video>
             </div>
           </div>
         </div>
@@ -172,37 +166,4 @@ const contacts = [
     }
 </style>
 
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const canvas = document.getElementById('static-avatar') as HTMLCanvasElement;
-    const animatedImg = document.getElementById('animated-avatar') as HTMLImageElement;
-    const container = document.getElementById('avatar-container');
-    
-    if (canvas && animatedImg && container) {
-      const ctx = canvas.getContext('2d');
-      
-      // Dibujar el primer frame en el canvas
-      animatedImg.onload = () => {
-        if (ctx) {
-          ctx.drawImage(animatedImg, 0, 0, canvas.width, canvas.height);
-        }
-      };
-      
-      // Si la imagen ya está cargada
-      if (animatedImg.complete && ctx) {
-        ctx.drawImage(animatedImg, 0, 0, canvas.width, canvas.height);
-      }
-      
-      // Al hacer hover, mostrar la imagen animada
-      container.addEventListener('mouseenter', () => {
-        canvas.classList.add('hidden');
-        animatedImg.classList.remove('hidden');
-      });
-      
-      container.addEventListener('mouseleave', () => {
-        canvas.classList.remove('hidden');
-        animatedImg.classList.add('hidden');
-      });
-    }
-  });
-</script>
+
