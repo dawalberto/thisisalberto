@@ -17,7 +17,7 @@ const webDevYearsText = numberToWords(webDevYears, lang);
 ---
 
 {lang === 'en' ? (
-    <p>
+    <p style="margin-block: 1lh;" class="text-pretty">
         Hello =)<br/><br/>
         My name is Alberto and I’m a Web Developer<br/><br/>
         I’m {ageText} years old and I’ve spent more than {itYearsText} in the world of technology. I began my journey as a full-stack developer and, over time, gradually moved toward frontend work, specializing in crafting clear, efficient, useful and well-thought-out interfaces. I’ve been fully immersed in web development for {webDevYearsText} years now, which is where I truly enjoy myself.<br/><br/>
@@ -26,7 +26,7 @@ const webDevYearsText = numberToWords(webDevYears, lang);
         When I’m not at the editor, I’m probably juggling (literally), trying not to fall off an unicycle, climbing a wall, or spending time with my people. Even though I’m from a small town in Alicante, I currently live in Seville, I’ve lived in Edinburgh and spent a month traveling through India with nothing but a backpack. Maybe that’s why adaptability feels like it comes built-in.
     </p>
 ) : (
-    <p>
+    <p style="margin-block: 1lh;" class="text-pretty">
         Hola =)<br/><br/>
         Me llamo Alberto y soy Desarrollador Web<br/><br/>
         Tengo {ageText} años y llevo más de {itYearsText} en el mundo de la tecnología. Empecé mi camino como desarrollador fullstack y, con el tiempo, me fui orientando cada vez más hacia el frontend, especializándome en crear interfaces claras, óptimas, útiles y bien pensadas. Llevo {webDevYearsText} años metido de lleno en el desarrollo web, que es donde realmente disfruto.<br/><br/>
