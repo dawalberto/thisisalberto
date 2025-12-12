@@ -1,3 +1,10 @@
+---
+import { calculateYears, webDevStartDate } from '../utils/date';
+
+
+const webDevYears = calculateYears(webDevStartDate);
+---
+
 <div class="bg-slate-900 border-2 border-slate-900 rounded-xl overflow-hidden max-w-2xl mx-auto my-12 font-mono text-sm sm:text-base">
     <div class="bg-slate-800 px-4 py-3 flex items-center gap-2 border-b border-slate-700">
         <div class="w-3 h-3 rounded-full bg-red-500 border border-slate-900"></div>
@@ -14,12 +21,10 @@
             Frontend Developer
         </div>
         <div class="mb-4">
-            <span class="text-green-400">➜</span> <span class="text-blue-400">~</span> <span class="text-accent">cat</span> <span class="text-slate-400">skills.txt</span>
+            <span class="text-green-400">➜</span> <span class="text-blue-400">~</span> <span class="text-accent">cat</span> <span class="text-slate-400">years-developing.txt</span>
         </div>
         <div class="mb-4 text-white">
-            > HTML / CSS / JavaScript<br/>
-            > TypeScript / React<br/>
-            > Node.js 
+            > {webDevYears}
         </div>
         <div class="mb-4">
             <span class="text-green-400">➜</span> <span class="text-blue-400">~</span> <span class="text-accent">open</span> <span class="text-slate-400">about.txt</span>
