@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Terminal from './Terminal.astro';
 import AboutText from './AboutText.astro';
 import { Image } from 'astro:assets';
-import profileImage from '../assets/thisisalberto-pixelart.png';
+import pixelArtWaveVideo from '../assets/thisisalberto-pixelart-wave.mp4';
 import { useTranslations } from '../i18n/utils';
 
 interface Props {
@@ -27,7 +27,7 @@ const projectsUrl = lang === 'en' ? '/projects' : '/es/projects';
                             <div class="text-6xl animate-float">🦊</div>
                         </div>
                         <div class="absolute inset-0 transition-transform duration-500 ease-in-out translate-y-full [@media(hover:hover)]:group-hover:translate-y-0 group-[.is-active]:translate-y-0">
-                            <Image src={profileImage} alt="Alberto García Sola" class="size-60 object-cover" />
+                            <video id="wave-video" src={pixelArtWaveVideo} muted playsinline class="size-60 object-cover block"></video>
                         </div>
                     </div>
                 </div>
@@ -113,6 +113,19 @@ const projectsUrl = lang === 'en' ? '/projects' : '/es/projects';
     function toggleProfile(e: Event) {
         const target = e.currentTarget as HTMLElement;
         target.classList.toggle('is-active');
+        
+        // Play video when toggled active (for mobile/click interaction)
+        if (target.classList.contains('is-active')) {
+            playVideo();
+        }
+    }
+
+    function playVideo() {
+        const video = document.getElementById('wave-video') as HTMLVideoElement;
+        if (video) {
+            video.currentTime = 0;
+            video.play();
+        }
     }
 
     function setupProfileCard() {
@@ -120,6 +133,9 @@ const projectsUrl = lang === 'en' ? '/projects' : '/es/projects';
         if (card) {
             card.removeEventListener('click', toggleProfile);
             card.addEventListener('click', toggleProfile);
+            
+            card.removeEventListener('mouseenter', playVideo);
+            card.addEventListener('mouseenter', playVideo);
         }
     }
 
