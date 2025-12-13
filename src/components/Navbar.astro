@@ -1,0 +1,179 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import LanguagePicker from './LanguagePicker.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const homeUrl = lang === 'en' ? '/' : '/es';
+const projectsUrl = lang === 'en' ? '/projects' : '/es/projects';
+const careerUrl = lang === 'en' ? '/career' : '/es/career';
+const contactUrl = lang === 'en' ? '/contact' : '/es/contact';
+---
+<nav class="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-md border-b-2 border-slate-900">
+    <div class="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 h-16 sm:h-18 md:h-20 flex items-center justify-between">
+        <div class="group z-50 relative">
+            <a href={homeUrl} class="text-lg sm:text-xl md:text-2xl font-bold font-heading tracking-tight text-slate-900">
+                thisisalberto<span class="inline-block -translate-y-0.5 sm:-translate-y-1.5"><span id="logo-suffix" class="origin-[0.2em_70%] rotate-12 group-hover:rotate-0 inline-block transition-all duration-200 text-accent [-webkit-text-stroke:1px_var(--color-slate-900)]">.dev</span></span>
+            </a>
+        </div>
+        
+        {/* Desktop Menu */}
+        <div class="hidden sm:flex items-center gap-4 md:gap-6 lg:gap-8">
+            <a href={projectsUrl} class="text-sm md:text-base font-bold font-heading text-slate-900 relative group">
+                {t('nav.projects')}
+                <span class="absolute -bottom-1 left-0 w-0 h-1 bg-accent transition-all duration-300 group-hover:w-full -rotate-1"></span>
+            </a>
+            <a href={careerUrl} class="text-sm md:text-base font-bold font-heading text-slate-900 relative group">
+                {t('nav.career')}
+                <span class="absolute -bottom-1 left-0 w-0 h-1 bg-accent transition-all duration-300 group-hover:w-full -rotate-1"></span>
+            </a>
+            <a href={contactUrl} class="text-sm md:text-base font-bold font-heading text-slate-900 relative group">
+                {t('nav.contact')}
+                <span class="absolute -bottom-1 left-0 w-0 h-1 bg-accent transition-all duration-300 group-hover:w-full -rotate-1"></span>
+            </a>
+            <LanguagePicker />
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button id="mobile-menu-btn" class="sm:hidden z-50 relative size-10 border-2 border-slate-900 rounded-3xl bg-white shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] active:translate-x-px active:translate-y-px active:shadow-none transition-all" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out opacity-100 rotate-0 scale-100" id="menu-icon-open">
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-in-out opacity-0 -rotate-90 scale-50" id="menu-icon-close">
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+            </svg>
+        </button>
+    </div>
+</nav>
+
+{/* Mobile Menu Overlay - Moved outside nav to avoid backdrop-filter containing block issue */}
+<div id="mobile-menu" class="fixed inset-0 bg-white/90 backdrop-blur-md z-40 flex flex-col items-end justify-start pt-24 px-6 gap-8 opacity-0 pointer-events-none transition-opacity duration-300 sm:hidden">
+    <a href={projectsUrl} class="text-3xl font-bold font-heading text-slate-900 relative group mobile-link">
+        {t('nav.projects')}
+        <span class="absolute -bottom-1 left-0 w-full h-2.5 bg-accent -rotate-2 -z-10"></span>
+    </a>
+    <a href={careerUrl} class="text-3xl font-bold font-heading text-slate-900 relative group mobile-link">
+        {t('nav.career')}
+        <span class="absolute -bottom-1 left-0 w-full h-2.5 bg-accent -rotate-2 -z-10"></span>
+    </a>
+    <a href={contactUrl} class="text-3xl font-bold font-heading text-slate-900 relative group mobile-link">
+        {t('nav.contact')}
+        <span class="absolute -bottom-1 left-0 w-full h-2.5 bg-accent -rotate-2 -z-10"></span>
+    </a>
+    <div class="scale-110 mt-2 origin-left">
+        <LanguagePicker />
+    </div>
+</div>
+
+<script>
+    function setupMobileMenu() {
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        if (!btn || !menu) return;
+
+        // Clone button to remove old listeners
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode?.replaceChild(newBtn, btn);
+
+        // Get icons from the new button instance
+        const openIcon = newBtn.querySelector('#menu-icon-open');
+        const closeIcon = newBtn.querySelector('#menu-icon-close');
+
+        if (!openIcon || !closeIcon) return;
+
+        newBtn.addEventListener('click', () => {
+            const isOpen = !menu.classList.contains('opacity-0');
+            
+            if (isOpen) {
+                // Close
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                
+                // Animate icons
+                openIcon.classList.remove('opacity-0', 'rotate-90', 'scale-50');
+                openIcon.classList.add('opacity-100', 'rotate-0', 'scale-100');
+                
+                closeIcon.classList.remove('opacity-100', 'rotate-0', 'scale-100');
+                closeIcon.classList.add('opacity-0', '-rotate-90', 'scale-50');
+                
+                document.body.style.overflow = '';
+            } else {
+                // Open
+                menu.classList.remove('opacity-0', 'pointer-events-none');
+                
+                // Animate icons
+                openIcon.classList.remove('opacity-100', 'rotate-0', 'scale-100');
+                openIcon.classList.add('opacity-0', 'rotate-90', 'scale-50');
+                
+                closeIcon.classList.remove('opacity-0', '-rotate-90', 'scale-50');
+                closeIcon.classList.add('opacity-100', 'rotate-0', 'scale-100');
+                
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Close menu when clicking a link
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                
+                // Reset icons
+                openIcon.classList.remove('opacity-0', 'rotate-90', 'scale-50');
+                openIcon.classList.add('opacity-100', 'rotate-0', 'scale-100');
+                
+                closeIcon.classList.remove('opacity-100', 'rotate-0', 'scale-100');
+                closeIcon.classList.add('opacity-0', '-rotate-90', 'scale-50');
+                
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    setupMobileMenu();
+    document.addEventListener('astro:page-load', setupMobileMenu);
+
+    function setupLogoAnimation() {
+        const logoSuffix = document.getElementById('logo-suffix');
+        if (!logoSuffix) return;
+
+        let hasScrolled = false;
+
+        const handleScroll = () => {
+            if (window.scrollY > 300) {
+                hasScrolled = true;
+            }
+
+            // Trigger earlier before reaching the absolute top
+            if (window.scrollY < 200 && hasScrolled) {
+                hasScrolled = false;
+                
+                // Animate 12 -> 372 (360 + 12)
+                logoSuffix.style.transition = 'transform 0.6s ease-in-out';
+                logoSuffix.style.transform = 'rotate(-372deg)';
+                
+                setTimeout(() => {
+                    // Reset without transition to avoid spinning back
+                    logoSuffix.style.transition = 'none';
+                    logoSuffix.style.transform = 'rotate(-12deg)';
+                    
+                    // Restore transition after a small delay so hover works again
+                    // We need to clear the inline transform so the class takes over
+                    setTimeout(() => {
+                        logoSuffix.style.transition = '';
+                        logoSuffix.style.transform = '';
+                    }, 50);
+                }, 600);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+    }
+
+    setupLogoAnimation();
+    document.addEventListener('astro:page-load', setupLogoAnimation);
+</script>

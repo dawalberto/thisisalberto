@@ -1,0 +1,36 @@
+---
+import { calculateYears, webDevStartDate } from '../utils/date';
+
+
+const webDevYears = calculateYears(webDevStartDate);
+---
+
+<div class="bg-slate-900 border-2 border-slate-900 rounded overflow-hidden max-w-2xl mx-auto my-8 sm:my-12 font-mono text-xs sm:text-sm md:text-base">
+    <div class="bg-slate-800 px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-1.5 sm:gap-2 border-b border-slate-700">
+        <div style="border-radius: 100%;" class="size-2.5 sm:size-3 bg-red-500 border border-slate-900"></div>
+        <div style="border-radius: 100%;" class="size-2.5 sm:size-3 bg-accent border border-slate-900"></div>
+        <div style="border-radius: 100%;" class="size-2.5 sm:size-3 bg-green-500 border border-slate-900"></div>
+        <div class="ml-2 sm:ml-4 text-[10px] sm:text-xs text-slate-400 hidden xs:block">alberto — -zsh — 80x24</div>
+    </div>
+    <div class="p-4 sm:p-5 md:p-6 text-slate-300 leading-relaxed">
+        <div class="mb-4">
+            <span class="text-green-400">➜</span> <span class="text-blue-400">~</span> <span class="text-accent">whoami</span>
+        </div>
+        <div class="mb-4 text-white">
+            Alberto García Sola<br/>
+            Frontend Developer
+        </div>
+        <div class="mb-4">
+            <span class="text-green-400">➜</span> <span class="text-blue-400">~</span> <span class="text-accent">cat</span> <span class="text-slate-400">years-developing.txt</span>
+        </div>
+        <div class="mb-4 text-white">
+            > {webDevYears}
+        </div>
+        <div class="mb-4">
+            <span class="text-green-400">➜</span> <span class="text-blue-400">~</span> <span class="text-accent">open</span> <span class="text-slate-400">about.txt</span>
+        </div>
+        <div>
+            <span class="text-green-400">➜</span> <span class="text-blue-400">~</span> <span class="animate-pulse bg-slate-500 text-slate-900 px-1 ml-1.5"> </span>
+        </div>
+    </div>
+</div>

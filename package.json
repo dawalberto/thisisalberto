@@ -1,42 +1,26 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "engines": {
-    "node": "16.20.0",
-    "npm": "8.19.4"
-  },
+  "name": "thisisalberto",
+  "type": "module",
+  "version": "2.0.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "deploy": "sh deploy.sh"
+    "dev": "astro dev",
+    "dev:host": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "core-js": "3.6.5",
-    "embla-carousel-autoplay": "8.3.0",
-    "embla-carousel-vue": "8.3.0",
-    "mitt": "3.0.0",
-    "vue": "3.0.0",
-    "vue-i18n": "9.2.0-beta.22",
-    "vue-router": "4.0.0-0",
-    "vue-window-size": "1.1.2",
-    "vue3-i18n": "1.1.4"
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/sitemap": "^3.6.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.16.5",
+    "sharp": "^0.33.5",
+    "simple-icons": "^16.1.0",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "3.0.0",
-    "@vue/eslint-config-prettier": "6.0.0",
-    "autoprefixer": "9.8.8",
-    "babel-eslint": "10.1.0",
-    "eslint": "6.7.2",
-    "eslint-plugin-prettier": "3.3.1",
-    "eslint-plugin-vue": "7.0.0",
-    "postcss": "7.0.39",
-    "prettier": "2.2.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+    "@tailwindcss/typography": "^0.5.19"
   }
 }
