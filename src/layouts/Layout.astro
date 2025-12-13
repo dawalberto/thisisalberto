@@ -2,6 +2,7 @@
 import { ClientRouter } from 'astro:transitions';
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
 import { getLangFromUrl } from '../i18n/utils';
 import '../styles/global.css';
 
@@ -35,7 +36,7 @@ const keywords = propKeywords || (lang === 'es'
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
 
-const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-LELLMXG5XK';
 ---
 
 <!doctype html>
@@ -108,5 +109,6 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 			<slot />
 		</main>
         <Footer />
+        <ScrollToTop />
 	</body>
 </html>
