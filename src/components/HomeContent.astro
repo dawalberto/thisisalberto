@@ -41,7 +41,7 @@ const keywords = lang === 'es'
                 <div class="bg-white border-2 border-slate-900 rounded-3xl shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
                     <div class="relative size-48 sm:size-64 md:size-72 overflow-hidden rounded-3xl">
                         <div class="absolute inset-0 flex items-center justify-center bg-[linear-gradient(175deg,#ffd93d_0%,#ffd93d_55%,#F9F9FA_50%)] transition-transform duration-500 ease-in-out group-[.is-active]:-translate-y-full">
-                            <div class="animate-float">
+                            <div class="animate-scale-pulse">
                                 <Image src={foxImage} alt="Fox" class="w-32 sm:w-40 drop-shadow-lg h-auto" />
                             </div>
                         </div>
@@ -128,6 +128,18 @@ const keywords = lang === 'es'
         to {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    .animate-scale-pulse {
+        animation: scalePulse 2s ease-in-out infinite;
+    }
+    @keyframes scalePulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.92);
         }
     }
 
