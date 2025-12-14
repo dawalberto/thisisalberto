@@ -119,7 +119,7 @@ const detailsId = `details-${index}`;
                 const button = e.currentTarget as HTMLButtonElement;
                 const targetId = button.getAttribute('aria-controls');
                 const target = document.getElementById(targetId!);
-                const borderText = button.querySelector('[data-border-text]') as HTMLElement;
+                const borderText = button.querySelector('[data-border-text]');
                 
                 if (target) {
                     const isExpanded = button.getAttribute('aria-expanded') === 'true';
@@ -127,12 +127,16 @@ const detailsId = `details-${index}`;
                     target.classList.toggle('hidden');
                     
                     // Toggle accent color on button text and border
-                    if (!isExpanded) {
-                        borderText.style.color = 'var(--color-accent)';
-                        borderText.style.borderColor = 'var(--color-accent)';
-                    } else {
-                        borderText.style.color = '';
-                        borderText.style.borderColor = '';
+                    if (borderText) {
+                        if (!isExpanded) {
+                            button.classList.add('text-accent');
+                            borderText.classList.add('border-accent');
+                            borderText.classList.remove('border-slate-900');
+                        } else {
+                            button.classList.remove('text-accent');
+                            borderText.classList.remove('border-accent');
+                            borderText.classList.add('border-slate-900');
+                        }
                     }
                 }
             });
