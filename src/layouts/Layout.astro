@@ -96,8 +96,8 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-LELLMXG5XK';
 		<!-- Google Analytics -->
 		{gaId && (
 			<>
-				<script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-				<script type="text/partytown" define:vars={{ gaId }}>
+				<script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+				<script is:inline define:vars={{ gaId }}>
 					window.dataLayer = window.dataLayer || [];
 					function gtag(){dataLayer.push(arguments);}
 					gtag('js', new Date());
