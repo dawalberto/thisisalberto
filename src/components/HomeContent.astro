@@ -39,9 +39,15 @@ const keywords = lang === 'es'
             <div id="profile-card" class="relative mb-8 sm:mb-12 group cursor-pointer">
                 <div class="absolute inset-0 bg-accent rounded-3xl rotate-6 translate-x-2 translate-y-2 border-2 border-slate-900 [@media(hover:hover)]:group-hover:rotate-3 group-[.is-active]:rotate-3 transition-transform duration-300 -z-10"></div>
                 <div class="bg-white border-2 border-slate-900 rounded-3xl shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
+                    <!-- Animated cursor hint -->
+                    <div class="cursor-hint [@media(hover:hover)]:group-hover:opacity-0 group-[.is-active]:opacity-0 transition-opacity duration-300">
+                        <svg class="cursor-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#1a1a1a" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <div class="relative size-48 sm:size-64 md:size-72 overflow-hidden rounded-3xl">
                         <div class="absolute inset-0 flex items-center justify-center bg-[linear-gradient(175deg,#ffd93d_0%,#ffd93d_55%,#F9F9FA_50%)] transition-transform duration-500 ease-in-out group-[.is-active]:-translate-y-full">
-                            <div class="animate-scale-pulse">
+                            <div class="animate-float">
                                 <Image src={foxImage} alt="Fox" class="w-32 sm:w-40 drop-shadow-lg h-auto" />
                             </div>
                         </div>
@@ -143,6 +149,60 @@ const keywords = lang === 'es'
         }
     }
 
+    .cursor-hint {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    .cursor-hint.hidden-permanently {
+        display: none !important;
+    }
+
+    .cursor-icon {
+        position: absolute;
+        opacity: 0;
+        animation: cursorMove 8s ease-in-out 3s infinite;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    @keyframes cursorMove {
+        0% {
+            left: 90%;
+            top: 50%;
+            opacity: 0;
+            transform: scale(0.8) translateY(-50%);
+        }
+        5.6% {
+            opacity: 1;
+            transform: scale(1) translateY(-50%);
+        }
+        16.9% {
+            left: 50%;
+            top: 50%;
+            transform: scale(1) translate(-50%, -50%);
+        }
+        18.75% {
+            transform: scale(0.9) translate(-50%, -50%);
+        }
+        20.6% {
+            transform: scale(1) translate(-50%, -50%);
+        }
+        26.25% {
+            opacity: 1;
+        }
+        37.5%, 100% {
+            left: 50%;
+            top: 50%;
+            opacity: 0;
+            transform: scale(0.8) translate(-50%, -50%);
+        }
+    }
+
     .paper-texture {
         background-color: #faf9f6;
         background-image: 
@@ -226,6 +286,7 @@ const keywords = lang === 'es'
         } else {
             target.classList.add('is-active');
             playVideo();
+            hideCursorHintPermanently();
         }
     }
 
@@ -234,6 +295,7 @@ const keywords = lang === 'es'
         if (card && !card.classList.contains('is-active')) {
             card.classList.add('is-active');
             playVideo();
+            hideCursorHintPermanently();
         }
     }
 
@@ -242,6 +304,23 @@ const keywords = lang === 'es'
         if (video) {
             video.currentTime = 0;
             video.play();
+        }
+    }
+
+    function hideCursorHintPermanently() {
+        localStorage.setItem('profile-card-clicked', 'true');
+        const cursorHint = document.querySelector('.cursor-hint');
+        if (cursorHint) {
+            cursorHint.classList.add('hidden-permanently');
+        }
+    }
+
+    function checkIfAlreadyClicked() {
+        if (localStorage.getItem('profile-card-clicked') === 'true') {
+            const cursorHint = document.querySelector('.cursor-hint');
+            if (cursorHint) {
+                cursorHint.classList.add('hidden-permanently');
+            }
         }
     }
 
@@ -257,6 +336,9 @@ const keywords = lang === 'es'
                 card.addEventListener('mouseenter', activateProfile);
             }
         }
+        
+        // Check if user has already clicked before
+        checkIfAlreadyClicked();
     }
 
     setupProfileCard();
