@@ -2,7 +2,7 @@
 title: 'Jjoin'
 description: 'Una aplicación de escritorio construida con tecnologías web para simplificar la unión de hojas de Excel. Guía a los usuarios a través de un proceso intuitivo de 3 pasos para seleccionar archivos, definir condiciones de unión y exportar registros coincidentes.'
 tags: ['Vue', 'Electron', 'Tailwind']
-image: '../../../assets/jjoinLogo.png'
+image: '../../../assets/jjoin-logo.png'
 repo: 'https://github.com/dawalberto/Jjoin'
 order: 2
 ---

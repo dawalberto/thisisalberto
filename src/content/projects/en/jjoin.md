@@ -2,7 +2,7 @@
 title: 'Jjoin'
 description: 'A desktop application built with web technologies to simplify merging Excel sheets. It guides users through an intuitive 3-step process to select files, define join conditions, and export matched records.'
 tags: ['Vue', 'Electron', 'Tailwind']
-image: '../../../assets/jjoinLogo.png'
+image: '../../../assets/jjoin-logo.png'
 repo: 'https://github.com/dawalberto/Jjoin'
 order: 2
 ---

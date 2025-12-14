@@ -2,7 +2,7 @@
 title: 'Podcaster'
 description: 'Una aplicación web para descubrir y escuchar los 100 mejores podcasts recomendados por Apple. Cuenta con una interfaz limpia para listar, buscar y reproducir episodios directamente en el navegador.'
 tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Cypress', 'Jest']
-image: '../../../assets/podcasterLogo.png'
+image: '../../../assets/podcaster-logo.png'
 repo: 'https://github.com/dawalberto/podcaster'
 demo: 'https://dawalberto.github.io/podcaster'
 order: 1
