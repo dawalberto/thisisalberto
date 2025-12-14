@@ -40,9 +40,9 @@ const keywords = lang === 'es'
                 <div class="absolute inset-0 bg-accent rounded-3xl rotate-6 translate-x-2 translate-y-2 border-2 border-slate-900 [@media(hover:hover)]:group-hover:rotate-3 group-[.is-active]:rotate-3 transition-transform duration-300 -z-10"></div>
                 <div class="bg-white border-2 border-slate-900 rounded-3xl shadow-[4px_4px_0px_0px_rgba(26,26,26,1)]">
                     <div class="relative size-48 sm:size-64 md:size-72 overflow-hidden rounded-3xl">
-                        <div class="absolute inset-0 flex items-center justify-center bg-[linear-gradient(to_bottom,#ffd93d_0%,#ffd93d_55%,#F9F9FA_60%)] transition-transform duration-500 ease-in-out group-[.is-active]:-translate-y-full">
+                        <div class="absolute inset-0 flex items-center justify-center bg-[linear-gradient(175deg,#ffd93d_0%,#ffd93d_55%,#F9F9FA_50%)] transition-transform duration-500 ease-in-out group-[.is-active]:-translate-y-full">
                             <div class="animate-float">
-                                <Image src={foxImage} alt="Fox" class="w-20 h-auto" />
+                                <Image src={foxImage} alt="Fox" class="w-32 sm:w-40 drop-shadow-lg h-auto" />
                             </div>
                         </div>
                         <div class="absolute inset-0 transition-transform duration-500 ease-in-out translate-y-full group-[.is-active]:translate-y-0">
@@ -105,7 +105,7 @@ const keywords = lang === 'es'
             </h2>
             <div class="flex flex-wrap gap-3 sm:gap-4 justify-center mb-6 sm:mb-8">
                 {
-                    ['TypeScript', 'React', 'Tailwind CSS'].map((tech) => (
+                    ['TypeScript', 'React', 'Tailwind', 'AI'].map((tech) => (
                         <span class="inline-block px-4 py-2 sm:px-6 sm:py-3 bg-slate-900 text-white border-2 border-slate-900 rounded-3xl font-bold text-sm sm:text-base">
                             {tech}
                         </span>
