@@ -17,15 +17,15 @@ const { item } = Astro.props;
 
 // Mapeo de instituciones a archivos de imagen
 const logoMap: Record<string, string> = {
-    'KAIROS Digital Solutions': '/src/assets/experience/kairosds.jpeg',
-    'NTT DATA': '/src/assets/experience/nttdata.jpeg',
-    'Cipher': '/src/assets/experience/cipher.jpeg',
-    'Codigo10 Soluciones Informaticas': '/src/assets/experience/codigo-10.jpeg',
-    'Mobisoft Software': '/src/assets/experience/mobisoft.jpeg',
-    'Labaqua': '/src/assets/experience/labaqua.jpeg',
-    'IES Mare Nostrum': '/src/assets/education/ies-mare-nostrum.jpeg',
-    'CIP FP Batoi': '/src/assets/education/cip-fp-batoi.png',
-    'Cámara de comercio': '/src/assets/education/camara-comercio-alicante.png',
+    'KAIROS Digital Solutions': '/experience/kairosds.jpeg',
+    'NTT DATA': '/experience/nttdata.jpeg',
+    'Cipher': '/experience/cipher.jpeg',
+    'Codigo10 Soluciones Informaticas': '/experience/codigo-10.jpeg',
+    'Mobisoft Software': '/experience/mobisoft.jpeg',
+    'Labaqua': '/experience/labaqua.jpeg',
+    'IES Mare Nostrum': '/education/ies-mare-nostrum.jpeg',
+    'CIP FP Batoi': '/education/cip-fp-batoi.png',
+    'Cámara de comercio': '/education/camara-comercio-alicante.png',
 };
 
 const logoSrc = logoMap[item.institution];
