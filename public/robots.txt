@@ -3,7 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://thisisalberto.com/sitemap-index.xml
-
-# Crawl delay (optional, helps prevent server overload)
-Crawl-delay: 1
+Sitemap: https://thisisalberto.dev/sitemap-index.xml
