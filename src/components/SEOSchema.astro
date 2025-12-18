@@ -7,16 +7,22 @@ interface Props {
 const { type = 'WebPage', lang = 'en' } = Astro.props;
 const currentURL = new URL(Astro.url.pathname, Astro.site);
 
+const siteURL = Astro.site ?? new URL(currentURL.origin);
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'hello@thisisalberto.dev';
+
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": new URL('#person', siteURL).toString(),
   "name": "Alberto García Sola",
-  "url": "https://thisisalberto.com",
+  "alternateName": ["Alberto Garcia Sola"],
+  "url": siteURL.toString(),
   "jobTitle": lang === 'es' ? "Desarrollador Web Frontend" : "Frontend Web Developer",
   "description": lang === 'es' 
     ? "Desarrollador web frontend especializado en React, TypeScript y tecnologías modernas"
     : "Frontend web developer specialized in React, TypeScript, and modern technologies",
-  "email": "hello@thisisalberto.com",
+  "email": contactEmail,
+  "image": new URL('/og-image.png', siteURL).toString(),
   "sameAs": [
     "https://github.com/dawalberto",
     "https://www.linkedin.com/in/albertogarciasola/",
@@ -37,7 +43,7 @@ const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Alberto García Sola",
-  "url": "https://thisisalberto.com",
+  "url": siteURL.toString(),
   "description": lang === 'es' 
     ? "Portfolio personal de Alberto García Sola - Desarrollador Web Frontend"
     : "Personal portfolio of Alberto García Sola - Frontend Web Developer",
@@ -59,14 +65,16 @@ const webPageSchema = {
   "inLanguage": lang === 'es' ? "es-ES" : "en-US",
   "isPartOf": {
     "@type": "WebSite",
-    "url": "https://thisisalberto.com"
+    "url": siteURL.toString()
   },
   "about": {
     "@type": "Person",
+    "@id": new URL('#person', siteURL).toString(),
     "name": "Alberto García Sola"
   },
   "author": {
     "@type": "Person",
+    "@id": new URL('#person', siteURL).toString(),
     "name": "Alberto García Sola"
   }
 };
