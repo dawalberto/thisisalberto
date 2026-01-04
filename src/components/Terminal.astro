@@ -24,7 +24,7 @@ const webDevYears = calculateYears(webDevStartDate);
             <span class="text-green-400">➜</span> <span class="text-blue-400">~</span> <span class="text-accent">cat</span> <span class="text-slate-400">years-developing.txt</span>
         </div>
         <div class="mb-4 text-white">
-            > {webDevYears}
+            > <span data-dynamic="years-number" data-start-ms={webDevStartDate.getTime()}>{webDevYears}</span>
         </div>
         <div class="mb-4">
             <span class="text-green-400">➜</span> <span class="text-blue-400">~</span> <span class="text-accent">open</span> <span class="text-slate-400">about.txt</span>

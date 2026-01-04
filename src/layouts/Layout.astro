@@ -115,5 +115,48 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-LELLMXG5XK';
 		</main>
         <Footer />
         <ScrollToTop />
+		<script>
+			import { calculateYears, numberToWords } from '../utils/date';
+
+			function updateDynamicNumbers() {
+				const nodes = document.querySelectorAll('[data-dynamic]');
+				for (const node of nodes) {
+					if (!(node instanceof HTMLElement)) continue;
+					const kind = node.dataset.dynamic;
+					if (!kind) continue;
+
+					switch (kind) {
+						case 'year': {
+							node.textContent = String(new Date().getFullYear());
+							break;
+						}
+						case 'years-number':
+						case 'years-words': {
+							const startMsRaw = node.dataset.startMs;
+							const startMs = startMsRaw ? Number(startMsRaw) : NaN;
+							if (!Number.isFinite(startMs)) break;
+
+							const years = calculateYears(new Date(startMs));
+							if (kind === 'years-number') {
+								node.textContent = String(years);
+								break;
+							}
+
+							const lang = node.dataset.lang === 'es' ? 'es' : 'en';
+							node.textContent = numberToWords(years, lang);
+							break;
+						}
+						default:
+							break;
+					}
+				}
+			}
+
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', updateDynamicNumbers);
+			} else {
+				updateDynamicNumbers();
+			}
+		</script>
 	</body>
 </html>
