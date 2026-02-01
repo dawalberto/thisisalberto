@@ -2,7 +2,7 @@
   "institution": "NTT DATA",
   "title": "Frontend Web Developer with React",
   "period": "jul. 2022 - sept. 2023 · 1 year 3 months",
-  "description": "I'm fortunate enough to be part of the frontend team and work on two big projects using one of my favorite libraries, React. Together with other cutting-edge technologies that complement each other well, such as React Hook Form, React Query, Orval, Chakra UI, and Cypress, these projects have become even more fascinating.",
+  "description": "I was part of multiple teams developing two high-impact internal platforms used daily by thousands of users: one for ticket and incident management, and another for automation creation.\nI designed modular interfaces and interactive dashboards, ensuring usability, performance, and scalability.\nI implemented complex data flows and dynamic forms with a strong focus on maintainability.\nTech Stack: Typescript, React, Chakra UI, React Hook Form, Orval, Vitest.",
   "place": "Alicante",
   "mode": "Remote",
   "position": 2,

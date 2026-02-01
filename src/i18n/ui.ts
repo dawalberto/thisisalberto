@@ -56,7 +56,7 @@ export const ui = {
     'nav.career': 'Carrera',
     'nav.contact': 'Contacto',
     'home.about': 'Sobre mí',
-    'home.viewWork': 'Ver mi trabajo',
+    'home.viewWork': 'Ver mi trabajo →',
     'home.contact': 'Contactar',
     'home.techStack': 'Tecnologías que más uso actualmente',
     'home.title': 'Alberto García Sola - Desarrollador Web',

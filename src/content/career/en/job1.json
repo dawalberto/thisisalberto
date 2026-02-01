@@ -2,7 +2,7 @@
   "institution": "Cipher",
   "title": "Frontend Web Developer with React",
   "period": "sept. 2023 - apr. 2025 · 1 yr 8 mos",
-  "description": "Development of web interfaces for the visualization and management of data associated with the field of cybersecurity.",
+  "description": "Involved from day one in the development of xMDR, contributing to the frontend design and implementation from project inception through production, delivering a complex data-driven interface for daily SOC operations.\nI built reusable components, alert visualization flows, and high-performance dashboards, ensuring scalability and maintainability.\nIn parallel, we developed an internal component library.\nI worked closely with backend, product, and security teams to translate complex requirements into a robust, clear, and efficient user experience.\nTech Stack: Typescript, HTML, Tailwind CSS, React, Nextjs, ReactQuery, Zustand, Zod, Storybook, Vitest, Azure Devops, Copilot.",
   "place": "Madrid",
   "mode": "Remote",
   "position": 1,
