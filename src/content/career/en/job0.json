@@ -1,8 +1,8 @@
 {
   "institution": "KAIROS Digital Solutions",
-  "title": "Cross-functional Frontend Developer",
+  "title": "Cross-functional Frontend Web Developer",
   "period": "apr. 2025 - now",
-  "description": "As a cross-team frontend developer, I’m not assigned to a single team; instead, I move between many of them, wherever I’m needed most. Sometimes I work purely as a developer, and other times I also help guide the frontend team. I mainly build solutions for Inditex. Main technologies: TypeScript, CSS, React, React Query, Vitest, Cypress, GitHub Actions, Copilot.",
+  "description": "As a cross-functional frontend developer, I moved across teams based on need, acting both as a hands-on developer and as a frontend technical guide.\nI primarily built solutions for warehouse operations at Inditex, including inventory management, inbound and outbound logistics, and operational analytics.\nTech Stack: Typescript, HTML, CSS, React, ReactQuery, Zustand, Vitest, Cypress, Github Actions, Copilot.",
   "place": "Madrid",
   "mode": "Remote",
   "position": 0,
