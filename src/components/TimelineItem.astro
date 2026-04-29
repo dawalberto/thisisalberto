@@ -39,9 +39,13 @@ const description = item.description.replace(/\n\s+/g, '\n').trim();
         <div class="flex items-center gap-2 sm:gap-3">
             <div class="w-8 h-8 sm:w-10 sm:h-10 bg-white border-2 flex-none border-slate-900 rounded-3xl flex items-center justify-center overflow-hidden shadow-[2px_2px_0px_0px_rgba(26,26,26,1)]">
                 {logoSrc ? (
-                    <img 
-                        src={logoSrc} 
-                        alt={item.institution} 
+                    <img
+                        src={logoSrc}
+                        alt={`${item.institution} ${item.type === 'job' ? 'logo' : 'logo'}`}
+                        loading="lazy"
+                        decoding="async"
+                        width="40"
+                        height="40"
                         class="w-full h-full object-cover"
                     />
                 ) : (

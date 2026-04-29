@@ -18,22 +18,23 @@ const t = useTranslations(lang);
 const projectsUrl = lang === 'en' ? '/projects' : '/es/projects';
 
 const description = lang === 'es'
-    ? 'Portfolio de Alberto García Sola - Desarrollador Web Frontend especializado en React, TypeScript e IA. Descubre mi experiencia, proyectos y habilidades en desarrollo web moderno.'
-    : 'Alberto García Sola - Frontend Web Developer specialized in React, TypeScript and AI. Explore my experience, projects, and skills in modern web development.';
+    ? 'Alberto García Sola — Desarrollador Web Frontend en España con experiencia en NTT DATA, Cipher, Kairos e Inditex. Especializado en React, TypeScript, Next.js, Astro e IA on-device. Descubre mi trayectoria, proyectos y stack tecnológico.'
+    : 'Alberto García Sola — Frontend Web Developer based in Spain with experience at NTT DATA, Cipher, Kairos and Inditex. Specialized in React, TypeScript, Next.js, Astro and on-device AI. Discover my career, projects and tech stack.';
 
 const keywords = lang === 'es'
-    ? 'Alberto García Sola, desarrollador web, frontend developer, React, TypeScript, Astro, JavaScript, portfolio, web developer España'
-    : 'Alberto García Sola, web developer, frontend developer, React, TypeScript, Astro, JavaScript, portfolio, web developer Spain';
+    ? 'Alberto García Sola, desarrollador web frontend, frontend developer España, React, TypeScript, Next.js, Astro, JavaScript, portfolio, Sevilla, Alicante, NTT DATA, Cipher, Kairos, Inditex, contratar desarrollador frontend'
+    : 'Alberto García Sola, frontend web developer, frontend developer Spain, React developer, TypeScript developer, Next.js, Astro, JavaScript, portfolio, Seville, Alicante, NTT DATA, Cipher, Kairos, Inditex, hire frontend developer';
 ---
 
-<Layout 
-    title={t('home.title')} 
+<Layout
+    title={t('home.title')}
     description={description}
     keywords={keywords}
-    lang={lang} 
+    lang={lang}
     fullWidth={true}
+    type="profile"
 >
-    <SEOSchema type="Person" lang={lang} slot="schema" />
+    <SEOSchema type="ProfilePage" lang={lang} slot="schema" />
     <section class="w-full pt-24 sm:pt-32 pb-8 sm:pb-12">
         <div class="max-w-4xl mx-auto px-4 flex flex-col items-center text-center animate-fade-in-down">
             <div id="profile-card" class="relative mb-8 sm:mb-12 group cursor-pointer">
@@ -48,11 +49,11 @@ const keywords = lang === 'es'
                     <div class="relative size-48 sm:size-64 md:size-72 overflow-hidden rounded-3xl">
                         <div class="absolute inset-0 flex items-center justify-center bg-[linear-gradient(175deg,#ffd93d_0%,#ffd93d_55%,#F9F9FA_50%)] transition-transform duration-500 ease-in-out group-[.is-active]:-translate-y-full">
                             <div class="animate-float">
-                                <Image src={foxImage} alt="Fox" class="w-32 sm:w-40 drop-shadow-lg h-auto" />
+                                <Image src={foxImage} alt={lang === 'es' ? 'Avatar de Alberto García Sola en pixel art' : "Alberto García Sola's pixel art avatar"} loading="eager" class="w-32 sm:w-40 drop-shadow-lg h-auto" />
                             </div>
                         </div>
                         <div class="absolute inset-0 transition-transform duration-500 ease-in-out translate-y-full group-[.is-active]:translate-y-0">
-                            <video id="wave-video" src={pixelArtWaveVideo} muted playsinline class="size-48 sm:size-64 md:size-72 object-cover block"></video>
+                            <video id="wave-video" src={pixelArtWaveVideo} muted playsinline preload="metadata" aria-label={lang === 'es' ? 'Animación de Alberto saludando' : 'Animation of Alberto waving'} class="size-48 sm:size-64 md:size-72 object-cover block"></video>
                         </div>
                     </div>
                 </div>
@@ -68,16 +69,16 @@ const keywords = lang === 'es'
         </div>
     </section>
 
-    <section class="bg-accent w-full py-10 sm:py-16 border-y-2 border-slate-900">
+    <section class="bg-accent w-full py-10 sm:py-16 border-y-2 border-slate-900" aria-label={lang === 'es' ? 'Rol profesional' : 'Professional role'}>
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h1 class="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 text-slate-900 leading-tight">
+            <h2 class="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 text-slate-900 leading-tight">
                 {t('home.cta.role_prefix')}
                 <span class="relative inline-block z-10">
                     {t('home.cta.role_highlight')}
                     <span class="absolute bottom-1 sm:bottom-2 left-0 w-full h-2 sm:h-3 bg-white -z-10 -rotate-2"></span>
                 </span>
                 {t('home.cta.role_suffix')}
-            </h1>
+            </h2>
             <p class="text-lg sm:text-xl md:text-2xl text-slate-900 max-w-2xl mx-auto font-medium mb-6 sm:mb-8">
                 {t('home.cta.description')}
             </p>
