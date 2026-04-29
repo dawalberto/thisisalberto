@@ -1,97 +1,192 @@
 ---
-interface Props {
-  type?: 'Person' | 'WebPage' | 'WebSite';
-  lang?: 'en' | 'es';
+interface BreadcrumbItem {
+  name: string;
+  url: string;
 }
 
-const { type = 'WebPage', lang = 'en' } = Astro.props;
+interface Props {
+  type?: 'Person' | 'WebPage' | 'WebSite' | 'ProfilePage' | 'CollectionPage' | 'ContactPage';
+  lang?: 'en' | 'es';
+  breadcrumbs?: BreadcrumbItem[];
+  pageName?: string;
+  pageDescription?: string;
+}
+
+const { type = 'WebPage', lang = 'en', breadcrumbs, pageName, pageDescription } = Astro.props;
 const currentURL = new URL(Astro.url.pathname, Astro.site);
 
 const siteURL = Astro.site ?? new URL(currentURL.origin);
 const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'hello@thisisalberto.dev';
 
+const personId = new URL('#person', siteURL).toString();
+const websiteId = new URL('#website', siteURL).toString();
+
+const employers = [
+  { name: 'Kairos Digital Solutions', url: 'https://www.kairosds.com/', current: true },
+  { name: 'Inditex', url: 'https://www.inditex.com/', current: false, note: 'Client via Kairos' },
+  { name: 'Cipher', url: 'https://www.cipher.com/', current: false },
+  { name: 'NTT DATA', url: 'https://es.nttdata.com/', current: false },
+  { name: 'Codigo10 Soluciones Informáticas', url: 'https://www.codigo10.es/', current: false },
+];
+
+const alumniOf = [
+  { name: 'IES Mare Nostrum', type: 'EducationalOrganization', address: 'Alicante, Spain' },
+  { name: 'CIP FP Batoi', type: 'EducationalOrganization', address: 'Alcoy, Spain' },
+  { name: 'Cámara de Comercio de Alicante', type: 'EducationalOrganization', address: 'Alicante, Spain' },
+];
+
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": new URL('#person', siteURL).toString(),
+  "@id": personId,
   "name": "Alberto García Sola",
-  "alternateName": ["Alberto Garcia Sola"],
+  "givenName": "Alberto",
+  "familyName": "García Sola",
+  "alternateName": ["Alberto Garcia Sola", "thisisalberto", "dawalberto"],
   "url": siteURL.toString(),
+  "mainEntityOfPage": siteURL.toString(),
   "jobTitle": lang === 'es' ? "Desarrollador Web Frontend" : "Frontend Web Developer",
-  "description": lang === 'es' 
-    ? "Desarrollador web frontend especializado en React, TypeScript y tecnologías modernas"
-    : "Frontend web developer specialized in React, TypeScript, and modern technologies",
-  "email": contactEmail,
+  "description": lang === 'es'
+    ? "Desarrollador web frontend con base en España, especializado en React, TypeScript, Next.js y Astro."
+    : "Frontend web developer based in Spain, specialized in React, TypeScript, Next.js and Astro.",
+  "email": `mailto:${contactEmail}`,
   "image": new URL('/og-image.png', siteURL).toString(),
+  "gender": "Male",
+  "nationality": { "@type": "Country", "name": "Spain" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Seville",
+    "addressRegion": "Andalusia",
+    "addressCountry": "ES"
+  },
+  "knowsLanguage": [
+    { "@type": "Language", "name": "Spanish", "alternateName": "es" },
+    { "@type": "Language", "name": "English", "alternateName": "en" }
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": lang === 'es' ? "Desarrollador Web Frontend" : "Frontend Web Developer",
+    "occupationLocation": { "@type": "Country", "name": "Spain" },
+    "skills": "React, TypeScript, JavaScript, Next.js, Astro, Vue, Tailwind CSS, Zustand, React Query, Vitest, Cypress, Storybook, Node.js"
+  },
+  "worksFor": employers.filter(e => e.current).map(e => ({
+    "@type": "Organization",
+    "name": e.name,
+    "url": e.url
+  })),
+  "affiliation": employers.map(e => ({
+    "@type": "Organization",
+    "name": e.name,
+    "url": e.url
+  })),
+  "alumniOf": alumniOf.map(a => ({
+    "@type": a.type,
+    "name": a.name,
+    "address": a.address
+  })),
   "sameAs": [
     "https://github.com/dawalberto",
-    "https://www.linkedin.com/in/albertogarciasola/",
+    "https://www.linkedin.com/in/alberto-garcia-sola",
+    "https://www.linkedin.com/in/albertogarciasola/"
   ],
   "knowsAbout": [
+    "Frontend Development",
+    "Web Development",
     "React",
     "TypeScript",
     "JavaScript",
+    "Next.js",
     "Astro",
-    "Frontend Development",
-    "Web Development",
+    "Vue.js",
+    "Tailwind CSS",
+    "Zustand",
+    "React Query",
+    "Vitest",
+    "Cypress",
+    "Storybook",
     "Node.js",
-    "Vue.js"
+    "Web Performance",
+    "Accessibility",
+    "Component Libraries",
+    "Design Systems"
   ]
 };
 
 const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Alberto García Sola",
+  "@id": websiteId,
+  "name": "Alberto García Sola — thisisalberto.dev",
+  "alternateName": "thisisalberto",
   "url": siteURL.toString(),
-  "description": lang === 'es' 
-    ? "Portfolio personal de Alberto García Sola - Desarrollador Web Frontend"
-    : "Personal portfolio of Alberto García Sola - Frontend Web Developer",
-  "inLanguage": [lang === 'es' ? "es-ES" : "en-US"],
-  "author": {
-    "@type": "Person",
-    "name": "Alberto García Sola"
-  }
+  "description": lang === 'es'
+    ? "Portfolio personal de Alberto García Sola — Desarrollador Web Frontend especializado en React, TypeScript y Astro."
+    : "Personal portfolio of Alberto García Sola — Frontend Web Developer specialized in React, TypeScript and Astro.",
+  "inLanguage": ["en-US", "es-ES"],
+  "publisher": { "@id": personId },
+  "author": { "@id": personId },
+  "copyrightHolder": { "@id": personId },
+  "copyrightYear": 2021
 };
 
-const webPageSchema = {
+const baseWebPage: Record<string, unknown> = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": type === 'WebPage' ? 'WebPage' : type,
   "url": currentURL.toString(),
-  "name": lang === 'es' ? "Portfolio de Alberto García Sola" : "Alberto García Sola's Portfolio",
-  "description": lang === 'es' 
-    ? "Portfolio de Alberto García Sola - Desarrollador Web Frontend"
-    : "Alberto García Sola's Portfolio - Frontend Web Developer",
+  "name": pageName || (lang === 'es' ? "Portfolio de Alberto García Sola" : "Alberto García Sola's Portfolio"),
+  "description": pageDescription || (lang === 'es'
+    ? "Portfolio de Alberto García Sola — Desarrollador Web Frontend"
+    : "Alberto García Sola's Portfolio — Frontend Web Developer"),
   "inLanguage": lang === 'es' ? "es-ES" : "en-US",
-  "isPartOf": {
-    "@type": "WebSite",
-    "url": siteURL.toString()
-  },
-  "about": {
-    "@type": "Person",
-    "@id": new URL('#person', siteURL).toString(),
-    "name": "Alberto García Sola"
-  },
-  "author": {
-    "@type": "Person",
-    "@id": new URL('#person', siteURL).toString(),
-    "name": "Alberto García Sola"
-  }
+  "isPartOf": { "@id": websiteId },
+  "about": { "@id": personId },
+  "author": { "@id": personId },
+  "primaryImageOfPage": new URL('/og-image.png', siteURL).toString()
 };
 
-let schema;
+if (type === 'ProfilePage' || type === 'Person') {
+  baseWebPage.mainEntity = { "@id": personId };
+}
+
+const webPageSchema = baseWebPage;
+
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((item, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": item.name,
+    "item": new URL(item.url, siteURL).toString()
+  }))
+} : null;
+
+let primarySchema;
 switch (type) {
   case 'Person':
-    schema = personSchema;
+    primarySchema = personSchema;
     break;
   case 'WebSite':
-    schema = webSiteSchema;
+    primarySchema = webSiteSchema;
     break;
   case 'WebPage':
+  case 'ProfilePage':
+  case 'CollectionPage':
+  case 'ContactPage':
   default:
-    schema = webPageSchema;
+    primarySchema = webPageSchema;
     break;
 }
+
+const graph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    personSchema,
+    webSiteSchema,
+    ...(type === 'Person' ? [] : [primarySchema]),
+    ...(breadcrumbSchema ? [breadcrumbSchema] : [])
+  ]
+};
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+<script type="application/ld+json" set:html={JSON.stringify(graph)} is:inline />

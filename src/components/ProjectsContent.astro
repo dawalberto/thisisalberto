@@ -15,21 +15,50 @@ const projects = (await getCollection('projects', ({ id }) => id.startsWith(`${l
     .sort((a, b) => a.data.order - b.data.order);
 
 const description = lang === 'es'
-    ? 'Descubre los proyectos personales de Alberto García Sola. Aplicaciones web desarrolladas con React, TypeScript, Astro y tecnologías modernas.'
-    : 'Discover Alberto García Sola\'s personal projects. Web applications built with React, TypeScript, Astro, and modern technologies.';
+    ? 'Proyectos personales de Alberto García Sola: MacroCalc (calculadora nutricional con IA on-device en WebGPU), Jjoin (Electron + Vue) y Podcaster (React + TypeScript). Aplicaciones web reales con código abierto.'
+    : "Personal projects by Alberto García Sola: MacroCalc (nutrition calculator with on-device AI on WebGPU), Jjoin (Electron + Vue) and Podcaster (React + TypeScript). Real-world open source web apps.";
 
 const keywords = lang === 'es'
-    ? 'proyectos web, portfolio proyectos, React projects, TypeScript, desarrollo web, aplicaciones web'
-    : 'web projects, portfolio projects, React projects, TypeScript, web development, web applications';
+    ? 'proyectos web, portfolio proyectos, React projects, TypeScript, Astro, Electron, Vue, MacroCalc, Jjoin, Podcaster, IA on-device, WebGPU, Transformers.js, desarrollo web, aplicaciones web open source'
+    : 'web projects, portfolio projects, React projects, TypeScript, Astro, Electron, Vue, MacroCalc, Jjoin, Podcaster, on-device AI, WebGPU, Transformers.js, web development, open source web applications';
+
+const projectsBaseUrl = lang === 'en' ? '/' : '/es/';
+const breadcrumbs = [
+    { name: lang === 'es' ? 'Inicio' : 'Home', url: projectsBaseUrl },
+    { name: lang === 'es' ? 'Proyectos' : 'Projects', url: lang === 'en' ? '/projects' : '/es/projects' },
+];
+
+const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": lang === 'es' ? 'Proyectos de Alberto García Sola' : "Alberto García Sola's Projects",
+    "numberOfItems": projects.length,
+    "itemListElement": projects.map((project, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "item": {
+            "@type": "SoftwareApplication",
+            "name": project.data.title,
+            "description": project.data.description,
+            "applicationCategory": "WebApplication",
+            "operatingSystem": "Web",
+            "url": project.data.demo || project.data.repo,
+            "codeRepository": project.data.repo,
+            "keywords": project.data.tags?.join(', '),
+            "author": { "@type": "Person", "name": "Alberto García Sola" }
+        }
+    }))
+};
 ---
 
-<Layout 
-    title={t('projects.pageTitle')} 
+<Layout
+    title={t('projects.pageTitle')}
     description={description}
     keywords={keywords}
     lang={lang}
 >
-    <SEOSchema type="WebPage" lang={lang} slot="schema" />
+    <SEOSchema type="CollectionPage" lang={lang} breadcrumbs={breadcrumbs} pageName={t('projects.pageTitle')} pageDescription={description} slot="schema" />
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} is:inline slot="schema" />
     <div class="container mx-auto px-3 sm:px-4 pb-8 sm:pb-12 md:pb-20">
         <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-slate-900 mb-8 sm:mb-12 md:mb-16 animate-fade-in-down uppercase tracking-tighter leading-tight">
             {t('projects.title.prefix')} 

@@ -1,6 +1,21 @@
-# Allow all bots to crawl the site
+# thisisalberto.dev — robots.txt
+# Allow all well-behaved bots to crawl the entire site.
 User-agent: *
 Allow: /
+Disallow: /api/
 
-# Sitemap location
+# Modern AI crawlers — explicit allow (signal of intent)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
 Sitemap: https://thisisalberto.dev/sitemap-index.xml

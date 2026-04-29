@@ -25,10 +25,12 @@ const detailsId = `details-${index}`;
                 <div class="flex items-center gap-3 mb-4 sm:mb-6">
                     {project.data.image && (
                         <div class="md:hidden relative w-16 h-16 flex-none bg-slate-100 border-2 border-slate-900 overflow-hidden rounded-2xl shadow-[2px_2px_0px_0px_rgba(26,26,26,1)]">
-                            <Image 
-                                src={project.data.image} 
-                                alt={project.data.title} 
-                                class="w-full h-full object-cover grayscale" 
+                            <Image
+                                src={project.data.image}
+                                alt={`${project.data.title} — ${project.data.description}`}
+                                loading="lazy"
+                                decoding="async"
+                                class="w-full h-full object-cover grayscale"
                             />
                         </div>
                     )}
@@ -87,10 +89,12 @@ const detailsId = `details-${index}`;
         <div class="hidden md:block md:col-span-2">
             {project.data.image && (
                 <div class="relative aspect-square bg-slate-100 border-2 border-slate-900 overflow-hidden rounded-3xl group-hover:shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] transition-all duration-300">
-                    <Image 
-                        src={project.data.image} 
-                        alt={project.data.title} 
-                        class="w-full h-full p-1 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 rounded-3xl" 
+                    <Image
+                        src={project.data.image}
+                        alt={`${project.data.title} — ${project.data.description}`}
+                        loading="lazy"
+                        decoding="async"
+                        class="w-full h-full p-1 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 rounded-3xl"
                     />
                     <div class="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-multiply rounded-3xl"></div>
                 </div>

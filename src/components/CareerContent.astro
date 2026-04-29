@@ -18,21 +18,27 @@ const jobs = career.filter(item => item.data.type === 'job').sort((a, b) => a.da
 const studies = career.filter(item => item.data.type === 'study').sort((a, b) => a.data.order - b.data.order);
 
 const description = lang === 'es'
-    ? 'Experiencia profesional y educación de Alberto García Sola. Trayectoria como desarrollador web frontend con React, TypeScript y JavaScript.'
-    : 'Professional experience and education of Alberto García Sola. Career path as a frontend web developer with React, TypeScript, and JavaScript.';
+    ? 'Trayectoria profesional de Alberto García Sola: Kairos Digital Solutions (Inditex), Cipher (xMDR), NTT DATA, Codigo10. Más de 7 años en tecnología, con foco en frontend (React, TypeScript, Next.js).'
+    : "Alberto García Sola's career path: Kairos Digital Solutions (Inditex), Cipher (xMDR), NTT DATA, Codigo10. 7+ years in tech with frontend focus (React, TypeScript, Next.js).";
 
 const keywords = lang === 'es'
-    ? 'experiencia laboral, carrera profesional, frontend developer, React developer, educación, CV, curriculum'
-    : 'work experience, professional career, frontend developer, React developer, education, CV, resume';
+    ? 'experiencia laboral, carrera profesional, frontend developer, React developer, TypeScript, Next.js, CV, curriculum, Kairos, Inditex, Cipher, NTT DATA, Codigo10'
+    : 'work experience, professional career, frontend developer, React developer, TypeScript, Next.js, CV, resume, Kairos, Inditex, Cipher, NTT DATA, Codigo10';
+
+const careerBaseUrl = lang === 'en' ? '/' : '/es/';
+const breadcrumbs = [
+    { name: lang === 'es' ? 'Inicio' : 'Home', url: careerBaseUrl },
+    { name: lang === 'es' ? 'Carrera' : 'Career', url: lang === 'en' ? '/career' : '/es/career' },
+];
 ---
 
-<Layout 
-    title={t('career.pageTitle')} 
+<Layout
+    title={t('career.pageTitle')}
     description={description}
     keywords={keywords}
     lang={lang}
 >
-    <SEOSchema type="WebPage" lang={lang} slot="schema" />
+    <SEOSchema type="ProfilePage" lang={lang} breadcrumbs={breadcrumbs} pageName={t('career.pageTitle')} pageDescription={description} slot="schema" />
     <div class="grid gap-8 sm:gap-10 md:gap-12 animate-fade-in-up max-w-3xl mx-auto">
         <section>
             <h2 class="text-base sm:text-lg md:text-xl font-bold font-mono uppercase tracking-widest text-slate-600 mb-6 sm:mb-8">

@@ -12,12 +12,18 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const description = lang === 'es'
-    ? 'Contacta con Alberto García Sola. Abierto a colaboraciones, proyectos y oportunidades laborales como desarrollador web frontend.'
-    : 'Contact Alberto García Sola. Open to collaborations, projects, and job opportunities as a frontend web developer.';
+    ? 'Contacta con Alberto García Sola — Desarrollador Web Frontend en España. Email, LinkedIn y GitHub. Disponible para colaboraciones, proyectos freelance y oportunidades laborales.'
+    : 'Contact Alberto García Sola — Frontend Web Developer based in Spain. Email, LinkedIn and GitHub. Open to collaborations, freelance projects and job opportunities.';
 
 const keywords = lang === 'es'
-    ? 'contacto, email, LinkedIn, GitHub, colaboración, contratar desarrollador, frontend developer'
-    : 'contact, email, LinkedIn, GitHub, collaboration, hire developer, frontend developer';
+    ? 'contacto Alberto García Sola, email desarrollador, LinkedIn, GitHub, colaboración, contratar desarrollador frontend, freelance React, frontend developer España'
+    : 'contact Alberto García Sola, developer email, LinkedIn, GitHub, collaboration, hire frontend developer, freelance React, frontend developer Spain';
+
+const contactBaseUrl = lang === 'en' ? '/' : '/es/';
+const breadcrumbs = [
+    { name: lang === 'es' ? 'Inicio' : 'Home', url: contactBaseUrl },
+    { name: lang === 'es' ? 'Contacto' : 'Contact', url: lang === 'en' ? '/contact' : '/es/contact' },
+];
 
 const contacts = [
   {
@@ -50,7 +56,7 @@ const contacts = [
     keywords={keywords}
     lang={lang}
 >
-    <SEOSchema type="WebPage" lang={lang} slot="schema" />
+    <SEOSchema type="ContactPage" lang={lang} breadcrumbs={breadcrumbs} pageName={t('contact.pageTitle')} pageDescription={description} slot="schema" />
   <section class="pb-8 sm:pb-12 md:pb-20">
     <div class="max-w-4xl mx-auto px-4">
       <!-- Header -->
@@ -74,7 +80,8 @@ const contacts = [
             <a
               href={contact.href}
               target="_blank"
-              rel={contact.icon !== 'message' ? 'noopener noreferrer' : undefined}
+              rel={contact.icon !== 'message' ? 'me noopener noreferrer' : undefined}
+              aria-label={`${contact.label}: ${contact.value}`}
               class="group flex items-center gap-3 sm:gap-4 md:gap-6 p-4 sm:p-5 md:p-6 bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] hover:bg-accent hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_rgba(26,26,26,1)] transition-all duration-200 rounded-3xl"
             >
               <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-accent border-2 border-slate-900 flex items-center justify-center shrink-0 rounded-3xl group-hover:bg-slate-900 transition-colors duration-200">
@@ -105,7 +112,7 @@ const contacts = [
               </div>
 
               <svg
-                class="w-5 h-5 sm:w-6 sm:h-6 text-slate-900 group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0"
+                class="w-5 h-5 sm:w-6 sm:h-6 text-slate-900 group-hover:translate-x-2 transition-transform duration-300 shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -127,6 +134,8 @@ const contacts = [
                 loop
                 muted
                 playsinline
+                preload="metadata"
+                aria-label={lang === 'es' ? 'Animación pixel art volando' : 'Flying pixel art animation'}
                 class="w-full h-auto rounded-3xl block"
               ></video>
             </div>

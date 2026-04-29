@@ -11,51 +11,83 @@ interface Props {
     description?: string;
     keywords?: string;
     image?: string;
+    imageAlt?: string;
     fullWidth?: boolean;
     lang?: 'en' | 'es';
+    type?: 'website' | 'article' | 'profile';
 }
 
-const { 
+const {
     title,
     description: propDescription,
     keywords: propKeywords,
     image = '/og-image.png',
-    fullWidth = false, 
-    lang: propLang 
+    imageAlt: propImageAlt,
+    fullWidth = false,
+    lang: propLang,
+    type = 'website',
 } = Astro.props;
 const lang = propLang || getLangFromUrl(Astro.url);
 
-const description = propDescription || (lang === 'es' 
-    ? 'Portfolio de Alberto García Sola - Desarrollador Web Frontend especializado en React, TypeScript y tecnologías modernas. Descubre mis proyectos y experiencia.'
-    : 'Alberto García Sola - Frontend Web Developer specialized in React, TypeScript and modern web technologies. Explore my projects and experience.');
+const description = propDescription || (lang === 'es'
+    ? 'Portfolio de Alberto García Sola — Desarrollador Web Frontend en España, especializado en React, TypeScript, Next.js y Astro. Descubre mi experiencia en NTT DATA, Cipher, Kairos e Inditex y mis proyectos.'
+    : 'Alberto García Sola — Frontend Web Developer based in Spain, specialized in React, TypeScript, Next.js and Astro. Explore my experience at NTT DATA, Cipher, Kairos and Inditex, plus my personal projects.');
 
 const keywords = propKeywords || (lang === 'es'
-    ? 'desarrollador web, frontend, React, TypeScript, Astro, JavaScript, portfolio, Alberto García'
-    : 'web developer, frontend, React, TypeScript, Astro, JavaScript, portfolio, Alberto García');
+    ? 'Alberto García Sola, desarrollador web frontend, frontend developer España, desarrollador React, desarrollador TypeScript, Next.js, Astro, JavaScript, portfolio, Sevilla, Alicante, contratar desarrollador frontend, ex NTT DATA, ex Cipher, Kairos, Inditex'
+    : 'Alberto García Sola, frontend web developer, frontend developer Spain, React developer, TypeScript developer, Next.js, Astro, JavaScript, portfolio, Seville, Alicante, hire frontend developer, ex NTT DATA, ex Cipher, Kairos, Inditex');
+
+const imageAlt = propImageAlt || (lang === 'es'
+    ? 'Alberto García Sola — Desarrollador Web Frontend'
+    : 'Alberto García Sola — Frontend Web Developer');
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
+
+// Build robust hreflang URLs by stripping a leading "/es" segment only
+const pathname = Astro.url.pathname;
+const enPath = pathname.startsWith('/es') ? (pathname.slice(3) || '/') : pathname;
+const esPath = pathname.startsWith('/es') ? pathname : ('/es' + (pathname === '/' ? '' : pathname));
+const enURL = new URL(enPath, Astro.site);
+const esURL = new URL(esPath, Astro.site);
 
 const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-LELLMXG5XK';
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-smooth">
+<html lang={lang === 'es' ? 'es-ES' : 'en'} class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="color-scheme" content="light" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
 		<!-- Primary Meta Tags -->
 		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
 		<meta name="author" content="Alberto García Sola" />
+		<meta name="creator" content="Alberto García Sola" />
+		<meta name="publisher" content="Alberto García Sola" />
 		<meta name="generator" content={Astro.generator} />
-		
+		<meta name="application-name" content="thisisalberto.dev" />
+
+		<!-- Robots / crawlers -->
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="bingbot" content="index, follow" />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+
+		<!-- Geo / locale hints -->
+		<meta name="geo.region" content="ES" />
+		<meta name="geo.placename" content="Seville, Spain" />
+		<meta name="language" content={lang === 'es' ? 'Spanish' : 'English'} />
+
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonicalURL} />
-		
+
 		<!-- Favicons -->
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -63,36 +95,55 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-LELLMXG5XK';
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="theme-color" content="#ffd93d" />
-		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="thisisalberto" />
+		<meta name="mobile-web-app-capable" content="yes" />
+
 		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={type} />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:image:secure_url" content={ogImageURL} />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={imageAlt} />
 		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
-		<meta property="og:site_name" content="Alberto García Sola" />
-		
+		<meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
+		<meta property="og:site_name" content="Alberto García Sola — thisisalberto.dev" />
+
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content={canonicalURL} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageURL} />
-		
+		<meta name="twitter:image:alt" content={imageAlt} />
+
 		<!-- Alternate Languages -->
-		{lang === 'en' ? (
-			<link rel="alternate" hreflang="es" href={new URL('/es' + Astro.url.pathname, Astro.site)} />
-		) : (
-			<link rel="alternate" hreflang="en" href={new URL(Astro.url.pathname.replace('/es', ''), Astro.site)} />
-		)}
-		<link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname.replace('/es', ''), Astro.site)} />
-		
+		<link rel="alternate" hreflang="en" href={enURL} />
+		<link rel="alternate" hreflang="en-US" href={enURL} />
+		<link rel="alternate" hreflang="es" href={esURL} />
+		<link rel="alternate" hreflang="es-ES" href={esURL} />
+		<link rel="alternate" hreflang="x-default" href={enURL} />
+
         <ClientRouter />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Fira+Code:wght@400;500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-		
+
+		<!-- Performance: preconnect + DNS prefetch -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        {gaId && (
+            <>
+                <link rel="preconnect" href="https://www.googletagmanager.com" />
+                <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+            </>
+        )}
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Fira+Code:wght@400;500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+
 		<!-- Google Analytics -->
 		{gaId && (
 			<>
@@ -101,16 +152,19 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || 'G-LELLMXG5XK';
 					window.dataLayer = window.dataLayer || [];
 					function gtag(){dataLayer.push(arguments);}
 					gtag('js', new Date());
-					gtag('config', gaId);
+					gtag('config', gaId, { anonymize_ip: true });
 				</script>
 			</>
 		)}
-		
+
 		<slot name="schema" />
 	</head>
 	<body class="bg-white text-slate-900 font-sans antialiased">
+        <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-100 focus:bg-accent focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-lg focus:border-2 focus:border-slate-900">
+            {lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}
+        </a>
         <Navbar />
-		<main class={`min-h-screen ${fullWidth ? 'w-full' : 'max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-8 sm:pb-10 md:pb-12'}`}>
+		<main id="main" class={`min-h-screen ${fullWidth ? 'w-full' : 'max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-8 sm:pb-10 md:pb-12'}`}>
 			<slot />
 		</main>
         <Footer />
