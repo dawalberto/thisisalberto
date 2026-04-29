@@ -4,7 +4,7 @@ description: 'Una aplicación de escritorio construida con tecnologías web para
 tags: ['Vue', 'Electron', 'Tailwind']
 image: '../../../assets/jjoin-logo.png'
 repo: 'https://github.com/dawalberto/Jjoin'
-order: 2
+order: 3
 ---
 
 ## ¿Por qué?
