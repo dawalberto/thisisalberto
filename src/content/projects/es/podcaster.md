@@ -5,7 +5,7 @@ tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Cypress', 'Jest']
 image: '../../../assets/podcaster-logo.png'
 repo: 'https://github.com/dawalberto/podcaster'
 demo: 'https://dawalberto.github.io/podcaster'
-order: 1
+order: 2
 ---
 
 ## ¿Por qué?

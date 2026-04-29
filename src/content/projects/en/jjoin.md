@@ -4,7 +4,7 @@ description: 'A desktop application built with web technologies to simplify merg
 tags: ['Vue', 'Electron', 'Tailwind']
 image: '../../../assets/jjoin-logo.png'
 repo: 'https://github.com/dawalberto/Jjoin'
-order: 2
+order: 3
 ---
 
 ## Why?
