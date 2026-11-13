@@ -15,12 +15,12 @@ const projects = (await getCollection('projects', ({ id }) => id.startsWith(`${l
     .sort((a, b) => a.data.order - b.data.order);
 
 const description = lang === 'es'
-    ? 'Proyectos personales de Alberto García Sola: MacroCalc (calculadora nutricional con IA on-device en WebGPU), Jjoin (Electron + Vue) y Podcaster (React + TypeScript). Aplicaciones web reales con código abierto.'
-    : "Personal projects by Alberto García Sola: MacroCalc (nutrition calculator with on-device AI on WebGPU), Jjoin (Electron + Vue) and Podcaster (React + TypeScript). Real-world open source web apps.";
+    ? 'Proyectos personales de Alberto García Sola: RepNami, MacroCalc (calculadora nutricional con IA on-device en WebGPU), Jjoin (Electron + Vue) y Podcaster (React + TypeScript). Aplicaciones web reales con código abierto.'
+    : "Personal projects by Alberto García Sola: RepNami, MacroCalc (nutrition calculator with on-device AI on WebGPU), Jjoin (Electron + Vue) and Podcaster (React + TypeScript). Real-world open source web apps.";
 
 const keywords = lang === 'es'
-    ? 'proyectos web, portfolio proyectos, React projects, TypeScript, Astro, Electron, Vue, MacroCalc, Jjoin, Podcaster, IA on-device, WebGPU, Transformers.js, desarrollo web, aplicaciones web open source'
-    : 'web projects, portfolio projects, React projects, TypeScript, Astro, Electron, Vue, MacroCalc, Jjoin, Podcaster, on-device AI, WebGPU, Transformers.js, web development, open source web applications';
+    ? 'proyectos web, portfolio proyectos, React projects, TypeScript, Astro, Electron, Vue, RepNami, MacroCalc, Jjoin, Podcaster, IA on-device, WebGPU, Transformers.js, desarrollo web, aplicaciones web open source'
+    : 'web projects, portfolio projects, React projects, TypeScript, Astro, Electron, Vue, RepNami, MacroCalc, Jjoin, Podcaster, on-device AI, WebGPU, Transformers.js, web development, open source web applications';
 
 const projectsBaseUrl = lang === 'en' ? '/' : '/es/';
 const breadcrumbs = [
