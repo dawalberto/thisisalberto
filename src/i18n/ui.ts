@@ -22,7 +22,7 @@ export const ui = {
     'home.cta.role_highlight': 'Frontend',
     'home.cta.role_suffix': ' Developer',
     'home.cta.description':
-      'Building modern, accessible, and performant web experiences with passion and precision.',
+      'Building modern, accessible, and performant web experiences with passion, precision and AI.',
     'footer.made': 'Made with 💛 by Alberto García Sola',
     'projects.title': 'Selected Works',
     'projects.title.prefix': 'Selected',
@@ -67,7 +67,7 @@ export const ui = {
     'home.cta.role_highlight': 'Frontend',
     'home.cta.role_suffix': ' ',
     'home.cta.description':
-      'Construyendo experiencias web modernas, accesibles y eficientes con pasión y precisión.',
+      'Construyendo experiencias web modernas, accesibles y eficientes con pasión, precisión e IA.',
     'footer.made': 'Hecho con 💛 por Alberto García Sola',
     'projects.title': 'Trabajos Seleccionados',
     'projects.title.prefix': 'Selección de',
